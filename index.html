@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom luxury fragrances online. Explore our range of signature premium scents. Inspired by afeem.in.">
+    <title>Afeem Fragrances - Premium Signature Scents</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+
+
+    <!-- Main Navigation Header -->
+    <header class="main-header" id="site-header">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle with MENU text (afeem.in style) -->
+            <button class="mobile-menu-btn" id="menu-toggle" aria-label="Open navigation menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+                <span class="menu-label-text">MENU</span>
+            </button>
+
+            <!-- Brand Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo/logo.png" alt="AFEEM" class="brand-logo-img">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Catalog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Icons -->
+            <div class="header-actions">
+                <button class="action-btn" id="search-trigger" aria-label="Search website">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="action-btn" id="account-trigger" aria-label="Open account drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="action-btn" id="wishlist-trigger" aria-label="Open wishlist drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="badge-count" id="wishlist-count">0</span>
+                </button>
+                <button class="action-btn" id="cart-trigger" aria-label="Open shopping cart drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="badge-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Hero Section (Full-Width Luxury Cover Slider) -->
+        <section class="hero-slider-section full-width-hero" aria-label="Main Banner Carousel">
+            <div class="slider-wrapper" id="hero-slider">
+                <!-- Slide 1 -->
+                <div class="slide active" style="background-image: url('assets/images/banner/hero-1.webp');">
+                    <div class="slide-content-wrap container">
+                        <div class="slide-content">
+                            <p class="slide-subtitle">THE LUXURY COLLECTION</p>
+                            <h2 class="slide-title">A Range Of<br>Perfume</h2>
+                            <p class="slide-offer">Use Code: <strong>SALE15 OFF</strong></p>
+                            <a href="shop.html" class="btn btn-primary hero-cta-btn">SHOP NOW ➔</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide" style="background-image: url('assets/images/banner/hero-2.webp');">
+                    <div class="slide-content-wrap container">
+                        <div class="slide-content">
+                            <p class="slide-subtitle">SPRING SUMMER 2026</p>
+                            <h2 class="slide-title">Spring Summer<br>Collection</h2>
+                            <p class="slide-offer">Use Code: <strong>SALE30 OFF</strong></p>
+                            <a href="shop.html" class="btn btn-primary hero-cta-btn">SHOP NOW ➔</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Controls -->
+            <button class="slider-nav prev" id="slider-prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="slider-nav next" id="slider-next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <!-- Slider Dots -->
+            <div class="slider-dots" id="slider-dots-container"></div>
+        </section>
+
+        <!-- ========== BEST SELLER SECTION ========== -->
+        <section class="afeem-product-section" id="bestsellers-section">
+            <div class="container">
+                <div class="afeem-section-header">
+                    <span class="section-tag">CURATED COLLECTION</span>
+                    <h2 class="afeem-section-title">BEST SELLERS</h2>
+                    <div class="afeem-heading-line"></div>
+                    <p class="afeem-section-subtitle">Discover India's Most Loved Handcrafted Fragrances</p>
+                </div>
+
+                <div class="bestsellers-slider-wrapper" id="bestsellers-slider-wrapper">
+                    <button class="slider-arrow prev-arrow" id="bs-prev-btn" aria-label="Previous">&lsaquo;</button>
+                    <div class="bestsellers-slider-track-container">
+                        <div class="bestsellers-slider-track" id="bestsellers-slider-track">
+
+                            <!-- Product 1: Ocean -->
+                            <article class="afeem-product-card product-card" data-product-id="afeem-ocean">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-ocean">
+                                        <img src="assets/images/products/ocean-1.webp" alt="Afeem - Ocean EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/ocean-2.webp" alt="Afeem - Ocean EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-ocean" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-ocean" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-ocean" onclick="CartManager.addItem({id:'afeem-ocean', title:'Afeem - Ocean', size:'100ml', price:499, image:'assets/images/products/ocean-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(48)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-ocean">Afeem - Ocean EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Product 2: Loop -->
+                            <article class="afeem-product-card product-card" data-product-id="afeem-loop">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-loop">
+                                        <img src="assets/images/products/loop-1.webp" alt="Afeem - Loop EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/loop-2.webp" alt="Afeem - Loop EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-loop" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-loop" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-loop" onclick="CartManager.addItem({id:'afeem-loop', title:'Afeem - Loop', size:'100ml', price:499, image:'assets/images/products/loop-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(38)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-loop">Afeem - Loop EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Product 3: Combat -->
+                            <article class="afeem-product-card product-card" data-product-id="afeem-combat">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-combat">
+                                        <img src="assets/images/products/combat-1.webp" alt="Afeem - Combat EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/combat-2.webp" alt="Afeem - Combat EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-combat" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-combat" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-combat" onclick="CartManager.addItem({id:'afeem-combat', title:'Afeem - Combat', size:'100ml', price:499, image:'assets/images/products/combat-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(29)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-combat">Afeem - Combat EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Product 4: Buzz -->
+                            <article class="afeem-product-card product-card" data-product-id="afeem-buzz">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-buzz">
+                                        <img src="assets/images/products/buzz-1.webp" alt="Afeem - Buzz EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/buzz-2.webp" alt="Afeem - Buzz EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-buzz" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-buzz" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-buzz" onclick="CartManager.addItem({id:'afeem-buzz', title:'Afeem - Buzz', size:'100ml', price:499, image:'assets/images/products/buzz-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(31)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-buzz">Afeem - Buzz EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Product 5: Midnight Secret -->
+                            <article class="afeem-product-card product-card" data-product-id="afeem-midnight">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-44% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-midnight">
+                                        <img src="assets/images/products/loop-2.webp" alt="Afeem - Midnight Secret EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/combat-1.webp" alt="Afeem - Midnight Secret EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-midnight" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-midnight" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-midnight" onclick="CartManager.addItem({id:'afeem-midnight', title:'Afeem - Midnight Secret', size:'100ml', price:499, image:'assets/images/products/loop-2.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(45)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-midnight">Afeem - Midnight Secret EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 899.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Cloned Products for 100% Seamless Infinite Right-to-Left Loop -->
+                            <article class="afeem-product-card product-card" data-product-id="afeem-ocean">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-ocean">
+                                        <img src="assets/images/products/ocean-1.webp" alt="Afeem - Ocean EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/ocean-2.webp" alt="Afeem - Ocean EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-ocean" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-ocean" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-ocean" onclick="CartManager.addItem({id:'afeem-ocean', title:'Afeem - Ocean', size:'100ml', price:499, image:'assets/images/products/ocean-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(48)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-ocean">Afeem - Ocean EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="afeem-product-card product-card" data-product-id="afeem-loop">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-loop">
+                                        <img src="assets/images/products/loop-1.webp" alt="Afeem - Loop EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/loop-2.webp" alt="Afeem - Loop EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-loop" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-loop" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-loop" onclick="CartManager.addItem({id:'afeem-loop', title:'Afeem - Loop', size:'100ml', price:499, image:'assets/images/products/loop-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(38)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-loop">Afeem - Loop EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="afeem-product-card product-card" data-product-id="afeem-combat">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-combat">
+                                        <img src="assets/images/products/combat-1.webp" alt="Afeem - Combat EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/combat-2.webp" alt="Afeem - Combat EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-combat" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-combat" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-combat" onclick="CartManager.addItem({id:'afeem-combat', title:'Afeem - Combat', size:'100ml', price:499, image:'assets/images/products/combat-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(29)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-combat">Afeem - Combat EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="afeem-product-card product-card" data-product-id="afeem-buzz">
+                                <div class="afeem-card-img-link">
+                                    <span class="card-badge sale-badge">-50% OFF</span>
+                                    <span class="card-badge stock-badge">In Stock</span>
+                                    <a href="product.html?id=afeem-buzz">
+                                        <img src="assets/images/products/buzz-1.webp" alt="Afeem - Buzz EDP" class="afeem-card-img main-image">
+                                        <img src="assets/images/products/buzz-2.webp" alt="Afeem - Buzz EDP" class="afeem-card-img hover-image">
+                                    </a>
+                                    <div class="afeem-card-actions">
+                                        <button class="action-btn add-to-wishlist" data-product-id="afeem-buzz" aria-label="Add to Wishlist" title="Wishlist">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                        </button>
+                                        <button class="action-btn quick-view" data-product-id="afeem-buzz" aria-label="Quick View" title="Quick View">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                        </button>
+                                    </div>
+                                    <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-buzz" onclick="CartManager.addItem({id:'afeem-buzz', title:'Afeem - Buzz', size:'100ml', price:499, image:'assets/images/products/buzz-1.webp', qty:1})">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Bag
+                                    </button>
+                                </div>
+                                <div class="afeem-card-info">
+                                    <div class="card-rating">
+                                        <span class="stars">★★★★★</span>
+                                        <span class="rating-count">(31)</span>
+                                    </div>
+                                    <h3 class="afeem-card-name"><a href="product.html?id=afeem-buzz">Afeem - Buzz EDP</a></h3>
+                                    <div class="afeem-card-price">
+                                        <span class="price-current">Rs. 499.00</span>
+                                        <span class="price-strike">Rs. 999.00</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                    <button class="slider-arrow next-arrow" id="bs-next-btn" aria-label="Next">&rsaquo;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 3D COVERFLOW SHOWCASE CAROUSEL ========== -->
+        <section class="afeem-3d-showcase-section" id="showcase-3d-section">
+            <div class="container">
+                <div class="afeem-section-header">
+                    <span class="section-tag">SIGNATURE SHOWCASE</span>
+                    <h2 class="afeem-section-title">New Release</h2>
+                    <div class="afeem-heading-line"></div>
+                    <p class="afeem-section-subtitle">Experience Our Masterpiece Perfumes in 3D Carousel</p>
+                </div>
+                
+                <div class="coverflow-3d-container" id="coverflow-carousel">
+                    <div class="coverflow-track">
+                        <!-- Slide 1: Ocean -->
+                        <div class="coverflow-card" data-index="0" data-product-id="afeem-ocean">
+                            <div class="card-3d-inner">
+                                <a href="product.html?id=afeem-ocean" class="card-3d-img">
+                                    <img src="assets/images/products/ocean-1.webp" alt="Afeem Ocean Parfum">
+                                </a>
+                                <div class="card-3d-bar">
+                                    <button class="c3d-action-btn quick-view" data-product-id="afeem-ocean" aria-label="Quick View" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                    <button class="c3d-action-btn add-to-wishlist" data-product-id="afeem-ocean" aria-label="Add to Wishlist" title="Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    </button>
+                                </div>
+                                <div class="card-3d-meta">
+                                    <h4 class="c3d-title"><a href="product.html?id=afeem-ocean">Afeem Ocean Parfum 40ml</a></h4>
+                                    <div class="c3d-price">Rs. 499.00</div>
+                                    <button class="c3d-cart-btn quick-add-btn" data-product-id="afeem-ocean" onclick="CartManager.addItem({id:'afeem-ocean', title:'Afeem Ocean Parfum', size:'40ml', price:499, image:'assets/images/products/ocean-1.webp', qty:1})" style="width: 100%; margin-top: 10px; padding: 8px 14px; background: #2f889a; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Loop -->
+                        <div class="coverflow-card" data-index="1" data-product-id="afeem-loop">
+                            <div class="card-3d-inner">
+                                <a href="product.html?id=afeem-loop" class="card-3d-img">
+                                    <img src="assets/images/products/loop-1.webp" alt="Afeem Loop Parfum">
+                                </a>
+                                <div class="card-3d-bar">
+                                    <button class="c3d-action-btn quick-view" data-product-id="afeem-loop" aria-label="Quick View" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                    <button class="c3d-action-btn add-to-wishlist" data-product-id="afeem-loop" aria-label="Add to Wishlist" title="Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    </button>
+                                </div>
+                                <div class="card-3d-meta">
+                                    <h4 class="c3d-title"><a href="product.html?id=afeem-loop">Afeem Story Parfum 40ml</a></h4>
+                                    <div class="c3d-price">Rs. 299.00</div>
+                                    <button class="c3d-cart-btn quick-add-btn" data-product-id="afeem-loop" onclick="CartManager.addItem({id:'afeem-loop', title:'Afeem Story Parfum', size:'40ml', price:299, image:'assets/images/products/loop-1.webp', qty:1})" style="width: 100%; margin-top: 10px; padding: 8px 14px; background: #2f889a; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Combat -->
+                        <div class="coverflow-card" data-index="2" data-product-id="afeem-combat">
+                            <div class="card-3d-inner">
+                                <a href="product.html?id=afeem-combat" class="card-3d-img">
+                                    <img src="assets/images/products/combat-1.webp" alt="Afeem Combat Parfum">
+                                </a>
+                                <div class="card-3d-bar">
+                                    <button class="c3d-action-btn quick-view" data-product-id="afeem-combat" aria-label="Quick View" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                    <button class="c3d-action-btn add-to-wishlist" data-product-id="afeem-combat" aria-label="Add to Wishlist" title="Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    </button>
+                                </div>
+                                <div class="card-3d-meta">
+                                    <h4 class="c3d-title"><a href="product.html?id=afeem-combat">Afeem Raid Parfum 40ml</a></h4>
+                                    <div class="c3d-price">Rs. 299.00</div>
+                                    <button class="c3d-cart-btn quick-add-btn" data-product-id="afeem-combat" onclick="CartManager.addItem({id:'afeem-combat', title:'Afeem Raid Parfum', size:'40ml', price:299, image:'assets/images/products/combat-1.webp', qty:1})" style="width: 100%; margin-top: 10px; padding: 8px 14px; background: #2f889a; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Buzz -->
+                        <div class="coverflow-card" data-index="3" data-product-id="afeem-buzz">
+                            <div class="card-3d-inner">
+                                <a href="product.html?id=afeem-buzz" class="card-3d-img">
+                                    <img src="assets/images/products/buzz-1.webp" alt="Afeem Buzz Parfum">
+                                </a>
+                                <div class="card-3d-bar">
+                                    <button class="c3d-action-btn quick-view" data-product-id="afeem-buzz" aria-label="Quick View" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                    <button class="c3d-action-btn add-to-wishlist" data-product-id="afeem-buzz" aria-label="Add to Wishlist" title="Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    </button>
+                                </div>
+                                <div class="card-3d-meta">
+                                    <h4 class="c3d-title"><a href="product.html?id=afeem-buzz">Afeem Pure Parfum 40ml</a></h4>
+                                    <div class="c3d-price">Rs. 299.00</div>
+                                    <button class="c3d-cart-btn quick-add-btn" data-product-id="afeem-buzz" onclick="CartManager.addItem({id:'afeem-buzz', title:'Afeem Pure Parfum', size:'40ml', price:299, image:'assets/images/products/buzz-1.webp', qty:1})" style="width: 100%; margin-top: 10px; padding: 8px 14px; background: #2f889a; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Aura -->
+                        <div class="coverflow-card" data-index="4" data-product-id="afeem-aura">
+                            <div class="card-3d-inner">
+                                <a href="product.html?id=afeem-aura" class="card-3d-img">
+                                    <img src="assets/images/products/aura-1.webp" alt="Afeem Aura Parfum">
+                                </a>
+                                <div class="card-3d-bar">
+                                    <button class="c3d-action-btn quick-view" data-product-id="afeem-aura" aria-label="Quick View" title="Quick View">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    </button>
+                                    <button class="c3d-action-btn add-to-wishlist" data-product-id="afeem-aura" aria-label="Add to Wishlist" title="Wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                    </button>
+                                </div>
+                                <div class="card-3d-meta">
+                                    <h4 class="c3d-title"><a href="product.html?id=afeem-aura">Afeem Gold Parfum 40ml</a></h4>
+                                    <div class="c3d-price">Rs. 399.00</div>
+                                    <button class="c3d-cart-btn quick-add-btn" data-product-id="afeem-aura" onclick="CartManager.addItem({id:'afeem-aura', title:'Afeem Gold Parfum', size:'40ml', price:399, image:'assets/images/products/aura-1.webp', qty:1})" style="width: 100%; margin-top: 10px; padding: 8px 14px; background: #2f889a; color: #ffffff; border: none; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Coverflow Pagination Dots -->
+                    <div class="coverflow-dots" id="c3d-dots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== HOT DEAL SECTION WITH COUNTDOWN ========== -->
+        <section class="afeem-product-section afeem-hotdeal-section" id="hotdeals-section">
+            <div class="container">
+                <div class="afeem-section-header">
+                    <span class="section-tag hot-tag">LIMITED TIME OFFER</span>
+                    <h2 class="afeem-section-title">HOT DEALS OF THE WEEK</h2>
+                    <div class="afeem-heading-line"></div>
+                    <p class="afeem-section-subtitle">Exclusive Discounts on Signature Masterpieces</p>
+                    
+                    <!-- Flash Deal Countdown Timer -->
+                    <div class="flash-countdown-bar">
+                        <span class="countdown-label">Offers Expire In:</span>
+                        <div class="countdown-boxes">
+                            <span class="c-unit"><strong id="timer-hours">08</strong><small>HRS</small></span>
+                            <span class="c-sep">:</span>
+                            <span class="c-unit"><strong id="timer-mins">42</strong><small>MINS</small></span>
+                            <span class="c-sep">:</span>
+                            <span class="c-unit"><strong id="timer-secs">19</strong><small>SECS</small></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="afeem-grid-3col" id="hotdeals-grid">
+
+                    <!-- Hot Deal 1: Ocean -->
+                    <article class="afeem-product-card afeem-card-wide product-card" data-product-id="afeem-ocean">
+                        <div class="afeem-card-img-link">
+                            <span class="card-badge sale-badge">HOT DEAL</span>
+                            <a href="product.html?id=afeem-ocean">
+                                <img src="assets/images/products/ocean-1.webp" alt="Afeem - Ocean EDP" class="afeem-card-img main-image">
+                                <img src="assets/images/products/ocean-2.webp" alt="Afeem - Ocean EDP" class="afeem-card-img hover-image">
+                            </a>
+                            <div class="afeem-card-actions">
+                                <button class="action-btn add-to-wishlist" data-product-id="afeem-ocean" aria-label="Add to Wishlist" title="Wishlist">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                </button>
+                                <button class="action-btn quick-view" data-product-id="afeem-ocean" aria-label="Quick View" title="Quick View">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                            <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-ocean" onclick="CartManager.addItem({id:'afeem-ocean', title:'Afeem - Ocean', size:'100ml', price:499, image:'assets/images/products/ocean-1.webp', qty:1})">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                Add to Bag
+                            </button>
+                        </div>
+                        <div class="afeem-card-info">
+                            <div class="card-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(42)</span>
+                            </div>
+                            <h3 class="afeem-card-name"><a href="product.html?id=afeem-ocean">Afeem - Ocean EDP</a></h3>
+                            <div class="afeem-card-price">
+                                <span class="price-current">Rs. 499.00</span>
+                                <span class="price-strike">Rs. 999.00</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Hot Deal 2: Loop -->
+                    <article class="afeem-product-card afeem-card-wide product-card" data-product-id="afeem-loop">
+                        <div class="afeem-card-img-link">
+                            <span class="card-badge sale-badge">HOT DEAL</span>
+                            <a href="product.html?id=afeem-loop">
+                                <img src="assets/images/products/loop-1.webp" alt="Afeem - Loop EDP" class="afeem-card-img main-image">
+                                <img src="assets/images/products/loop-2.webp" alt="Afeem - Loop EDP" class="afeem-card-img hover-image">
+                            </a>
+                            <div class="afeem-card-actions">
+                                <button class="action-btn add-to-wishlist" data-product-id="afeem-loop" aria-label="Add to Wishlist" title="Wishlist">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                </button>
+                                <button class="action-btn quick-view" data-product-id="afeem-loop" aria-label="Quick View" title="Quick View">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                            <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-loop" onclick="CartManager.addItem({id:'afeem-loop', title:'Afeem - Loop', size:'100ml', price:499, image:'assets/images/products/loop-1.webp', qty:1})">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                Add to Bag
+                            </button>
+                        </div>
+                        <div class="afeem-card-info">
+                            <div class="card-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(38)</span>
+                            </div>
+                            <h3 class="afeem-card-name"><a href="product.html?id=afeem-loop">Afeem - Loop EDP</a></h3>
+                            <div class="afeem-card-price">
+                                <span class="price-current">Rs. 499.00</span>
+                                <span class="price-strike">Rs. 999.00</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Hot Deal 3: Combat -->
+                    <article class="afeem-product-card afeem-card-wide product-card" data-product-id="afeem-combat">
+                        <div class="afeem-card-img-link">
+                            <span class="card-badge sale-badge">HOT DEAL</span>
+                            <a href="product.html?id=afeem-combat">
+                                <img src="assets/images/products/combat-1.webp" alt="Afeem - Combat EDP" class="afeem-card-img main-image">
+                                <img src="assets/images/products/combat-2.webp" alt="Afeem - Combat EDP" class="afeem-card-img hover-image">
+                            </a>
+                            <div class="afeem-card-actions">
+                                <button class="action-btn add-to-wishlist" data-product-id="afeem-combat" aria-label="Add to Wishlist" title="Wishlist">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                </button>
+                                <button class="action-btn quick-view" data-product-id="afeem-combat" aria-label="Quick View" title="Quick View">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                            <button class="card-slide-cart-btn quick-add-btn" data-product-id="afeem-combat" onclick="CartManager.addItem({id:'afeem-combat', title:'Afeem - Combat', size:'100ml', price:499, image:'assets/images/products/combat-1.webp', qty:1})">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                Add to Bag
+                            </button>
+                        </div>
+                        <div class="afeem-card-info">
+                            <div class="card-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(29)</span>
+                            </div>
+                            <h3 class="afeem-card-name"><a href="product.html?id=afeem-combat">Afeem - Combat EDP</a></h3>
+                            <div class="afeem-card-price">
+                                <span class="price-current">Rs. 499.00</span>
+                                <span class="price-strike">Rs. 999.00</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+                        <!-- Newsletter Subscription Banner -->
+        <section class="newsletter-section" aria-label="Newsletter Subscription">
+            <div class="newsletter-container container">
+                <span class="newsletter-tag">Join Our World</span>
+                <h2 class="newsletter-title">Subscribe to our newsletter and get discount 30% off</h2>
+                <p class="newsletter-subtitle">Get notified of new products, limited releases, and luxury deals.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Your email address" required aria-label="Email Address">
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <!-- Site Footer -->
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <!-- Column 1: Brand & Socials & Newsletter -->
+            <div class="footer-brand-col">
+                <img src="assets/images/logo/logo-white.png" alt="AFEEM Logo" class="footer-logo-img">
+                <p class="footer-about-text">Crafting Handcrafted Luxury Fragrances for India's Modern Presence.</p>
+                
+                <!-- Social media buttons -->
+                <div class="footer-social-icons">
+                    <a href="https://www.instagram.com/whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="Instagram">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="YouTube">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="Facebook">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Newsletter signup -->
+                <div class="footer-newsletter-section">
+                    <h5 class="newsletter-sub-title">STAY UPDATED</h5>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Your email address..." required>
+                        <button type="submit" aria-label="Subscribe">&rarr;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">QUICK LINKS</h4>
+                <ul class="footer-links-arrow">
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Luxury EDP</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Attar / Oils</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Best Sellers</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Fresh & Aquatic</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Woody & Amber</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Us -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">CONTACT US</h4>
+                <div class="footer-contacts-list">
+                    <!-- Phone Support -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">PHONE SUPPORT</span>
+                            <span class="contact-row-value"><a href="tel:+919876543210" style="color: inherit; text-decoration: none;">+91 98765 43210</a></span>
+                        </div>
+                    </div>
+                    <!-- Email Support -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">EMAIL CONCIERGE</span>
+                            <span class="contact-row-value"><a href="mailto:afeemlifestyle@gmail.com" style="color: #ffffff !important; text-decoration: underline;">afeemlifestyle@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <!-- Operating Hours -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">OPERATING HOURS</span>
+                            <span class="contact-row-value">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 4: Leadership Card -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">LEADERSHIP</h4>
+                <div class="leadership-card">
+                    <!-- Profile Row -->
+                    <div class="leadership-profile-row">
+                        <div class="leadership-avatar">
+                            <!-- SVG decorative crest/icon for master perfumers -->
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="leadership-info">
+                            <span class="leadership-name">Afeem Perfumery House</span>
+                            <span class="leadership-tagline">Kannauj & Grasse Masters</span>
+                            <span class="leadership-company">Afeem Fragrances Pvt. Ltd.</span>
+                        </div>
+                    </div>
+                    <!-- Bullet checklist -->
+                    <ul class="leadership-checkpoints">
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">100% Handcrafted Luxury Oils</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">French & Indian Master Noses</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">8-Week Aged Maceration</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">Sustainable & Cruelty-Free</span>
+                        </li>
+                    </ul>
+                    <!-- Button -->
+                    <button type="button" class="btn leadership-card-btn">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        CONTACT CONCIERGE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p class="copyright-text">&copy; Copyright 2026 AFEEM. Made with Passion. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SIDE DRAWERS & MODALS -->
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="drawer drawer-left" id="mobile-menu-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">MENU</span>
+                <button class="drawer-close" aria-label="Close menu">&times;</button>
+            </div>
+            <div class="drawer-body">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="shop.html">Catalog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Shopping Cart Drawer -->
+    <aside class="drawer drawer-right" id="cart-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR SHOPPING BAG (<span id="cart-drawer-count">0</span>)</span>
+                <button class="drawer-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="drawer-body" id="cart-drawer-body">
+                <!-- Empty state shown by default -->
+                <div class="drawer-empty-state" id="cart-empty-state">
+                    <p>Your shopping bag is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Go to the shop</a>
+                </div>
+                <!-- Dynamic cart items container -->
+                <div class="drawer-items-list hidden" id="cart-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="cart-drawer-footer">
+                <div class="cart-totals">
+                    <span>CART TOTAL:</span>
+                    <span class="cart-total-price" id="cart-total-price">Rs. 0.00</span>
+                </div>
+                <button class="btn btn-primary btn-block">Checkout Securely</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Search Slide-down Panel Overlay -->
+    <aside class="search-overlay" id="search-panel" aria-hidden="true">
+        <div class="search-overlay-bg" data-close></div>
+        <div class="search-container">
+            <div class="search-header">
+                <h3 class="search-title">Search Our Store</h3>
+                <button class="search-close" id="search-close-btn" aria-label="Close search">&times;</button>
+            </div>
+            <div class="search-body">
+                <form class="search-form" id="search-panel-form">
+                    <input type="search" placeholder="Search for fragrances, scents..." required id="search-input" autofocus>
+                    <button type="submit" class="search-submit-btn" aria-label="Submit search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+                <div class="search-results-preview" id="search-results-preview">
+                    <!-- Dynamic live suggestion list -->
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Wishlist Drawer -->
+    <aside class="drawer drawer-right" id="wishlist-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR WISHLIST</span>
+                <button class="drawer-close" aria-label="Close wishlist">&times;</button>
+            </div>
+            <div class="drawer-body" id="wishlist-drawer-body">
+                <div class="drawer-empty-state" id="wishlist-empty-state">
+                    <p>Your wishlist is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Discover Fragrances</a>
+                </div>
+                <div class="drawer-items-list hidden" id="wishlist-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="wishlist-drawer-footer"></div>
+        </div>
+    </aside>
+
+    <!-- Login/Register / Recovery Account Drawer -->
+    <aside class="drawer drawer-right" id="account-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title" id="account-drawer-title">Login</span>
+                <button class="drawer-close" aria-label="Close account">&times;</button>
+            </div>
+            
+            <div class="drawer-body">
+                <!-- Login Panel -->
+                <div class="account-panel active" id="panel-login">
+                    <h3>Great to have you back!</h3>
+                    <form class="account-form" id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email Address *</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password *</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-recover">Forgot your password?</a>
+                            <a href="#" class="switch-panel-btn" data-target="panel-register">Register now</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Registration Panel -->
+                <div class="account-panel" id="panel-register">
+                    <h3>Create an Account</h3>
+                    <form class="account-form" id="register-form">
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text" id="register-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email Address *</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password *</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-login">Back to login</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Password Recovery Panel -->
+                <div class="account-panel" id="panel-recover">
+                    <h3>Reset your password</h3>
+                    <p class="panel-subtitle">We will send you an email to reset your password.</p>
+                    <form class="account-form" id="recover-form">
+                        <div class="form-group">
+                            <label for="recover-email">Email Address *</label>
+                            <input type="email" id="recover-email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-login">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickview-modal" aria-hidden="true">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close dialog">&times;</button>
+            <div class="modal-content" id="quickview-modal-content">
+                <!-- Content injected dynamically via product.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookies Consent Bar -->
+    <div class="cookies-bar" id="cookies-consent-bar">
+        <div class="cookies-container container">
+            <p>This website uses cookies to ensure you get the best experience on our website. <a href="#">Privacy & Policy</a></p>
+            <button class="btn btn-primary btn-sm" id="accept-cookies">Got it!</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Files (Custom Logic) -->
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/slider.js" defer></script>
+    <script src="assets/js/product.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</body>
+</html>
+

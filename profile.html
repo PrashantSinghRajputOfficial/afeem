@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account Dashboard | AFEEM Luxury Fragrances</title>
+    <meta name="description" content="Manage your AFEEM luxury fragrances account, track live orders, view saved wishlist perfumes, update shipping addresses, and edit profile details.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Full-screen Luxury Dashboard Layout System */
+        body {
+            background-color: #fafafa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile-container-fullscreen {
+            width: 95%;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .profile-hero-banner {
+            background: linear-gradient(135deg, #0d1214 0%, #172428 100%);
+            color: #ffffff;
+            padding: 36px 0;
+            border-bottom: 1px solid #222222;
+        }
+
+        .profile-user-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .profile-avatar-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-avatar-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+
+        .profile-avatar-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2eaaa0 0%, #1c6d66 100%);
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(46, 170, 160, 0.35);
+            border: 3px solid #ffffff;
+            overflow: hidden;
+        }
+
+        .avatar-camera-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #111;
+            color: #fff;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        .profile-name-heading {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            margin: 0 0 4px 0;
+            color: #ffffff;
+        }
+
+        .profile-vip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(46, 170, 160, 0.18);
+            border: 1px solid #2eaaa0;
+            color: #2eaaa0;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .profile-main-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 36px;
+            padding: 40px 0 80px;
+        }
+
+        .profile-sidebar-card {
+            background: #ffffff;
+            border: 1px solid #eef0f2;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            height: fit-content;
+        }
+
+        .profile-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .profile-nav-btn {
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            padding: 14px 18px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #444444;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .profile-nav-btn:hover,
+        .profile-nav-btn.active {
+            background: #eef8f7;
+            color: #2eaaa0;
+            font-weight: 600;
+        }
+
+        .profile-tab-panel {
+            display: none;
+            background: #ffffff;
+            border: 1px solid #eef0f2;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .profile-tab-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .profile-section-title {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            margin-bottom: 28px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Add Address Modal Dialog */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 36px;
+            width: 100%;
+            max-width: 550px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- Profile Hero Banner (Standalone Luxury Dashboard Header) -->
+    <section class="profile-hero-banner">
+        <div class="profile-container-fullscreen profile-user-flex">
+            <div class="profile-avatar-row">
+                <a href="index.html" title="AFEEM Luxury Fragrances" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; margin-right: 16px; border-right: 1px solid rgba(255,255,255,0.15); padding-right: 20px;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #2eaaa0; display: flex; align-items: center; justify-content: center; color: #2eaaa0;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 7v10M8 12h8"></path>
+                        </svg>
+                    </div>
+                    <span style="font-family: var(--font-heading); font-size: 20px; font-weight: 700; letter-spacing: 0.1em; color: #ffffff;">AFEEM</span>
+                </a>
+
+                <div class="profile-avatar-wrapper">
+                    <div class="profile-avatar-circle" id="profile-avatar-preview">RS</div>
+                    <label for="avatar-file-input" class="avatar-camera-btn" title="Change Avatar Photo">📷</label>
+                    <input type="file" id="avatar-file-input" accept="image/*" style="display: none;">
+                </div>
+                <div>
+                    <h1 class="profile-name-heading">Rahul Sharma</h1>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-top: 4px;">
+                        <span class="profile-vip-badge">✨ AFEEM VIP Concierge Member</span>
+                        <span style="font-size: 13px; color: #a0a0a0;">vip.user@afeem.in</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Prominent Back to Shop Button -->
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <a href="shop.html" class="btn btn-primary" style="background: #2f889a; color: #ffffff; border: none; padding: 12px 26px; font-weight: 700; display: flex; align-items: center; gap: 8px; font-size: 13px; border-radius: 8px; text-decoration: none;">
+                    &larr; BACK TO SHOP / PURCHASE
+                </a>
+                <a href="index.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 12px 18px; font-size: 13px; border-radius: 8px; text-decoration: none;">SIGN OUT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Full-Screen Profile Content Grid -->
+    <main class="profile-container-fullscreen profile-main-grid">
+        <!-- Sidebar Navigation Tabs -->
+        <aside class="profile-sidebar-card">
+            <ul class="profile-nav-list">
+                <li>
+                    <button class="profile-nav-btn active" data-tab="personal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        Personal Details
+                    </button>
+                </li>
+                <li>
+                    <button class="profile-nav-btn" data-tab="wishlist">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        My Wishlist
+                    </button>
+                </li>
+                <li>
+                    <button class="profile-nav-btn" data-tab="cart">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                        Shopping Bag
+                    </button>
+                </li>
+                <li>
+                    <button class="profile-nav-btn" data-tab="orders">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                        Orders & Live Tracking
+                    </button>
+                </li>
+                <li>
+                    <button class="profile-nav-btn" data-tab="addresses">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Saved Addresses
+                    </button>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Right Tab Panels -->
+        <section style="flex: 1;">
+            <!-- Tab 1: Personal Info -->
+            <div class="profile-tab-panel active" id="panel-personal">
+                <h3 class="profile-section-title">
+                    Personal Information
+                    <span style="font-size: 13px; font-weight: normal; color: #888;">Update your personal profile details</span>
+                </h3>
+
+                <div id="profile-save-toast" style="display: none; background: #eef8f7; border: 1px solid #2eaaa0; color: #1c6d66; padding: 14px 20px; border-radius: 10px; font-size: 14px; margin-bottom: 24px;">
+                    ✓ Profile details updated successfully!
+                </div>
+
+                <form id="personal-info-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div>
+                            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: #444; letter-spacing: 0.05em;">Full Name *</label>
+                            <input type="text" value="Rahul Sharma" required style="width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: #444; letter-spacing: 0.05em;">Email Address *</label>
+                            <input type="email" value="vip.user@afeem.in" required style="width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px;">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                        <div>
+                            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: #444; letter-spacing: 0.05em;">Phone Number *</label>
+                            <input type="tel" value="+91 98765 43210" required style="width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px;">
+                        </div>
+                        <div>
+                            <label style="display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: #444; letter-spacing: 0.05em;">Account Password</label>
+                            <input type="password" value="••••••••••••" style="width: 100%; padding: 14px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 14px;">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="padding: 14px 36px; font-size: 13px; background: #111111; color: #ffffff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; text-transform: uppercase;">Save & Update Profile</button>
+                </form>
+            </div>
+
+            <!-- Tab 2: Wishlist -->
+            <div class="profile-tab-panel" id="panel-wishlist">
+                <h3 class="profile-section-title">
+                    My Saved Wishlist
+                    <span style="font-size: 13px; font-weight: normal; color: #888;">Perfumes saved for later</span>
+                </h3>
+
+                <div id="profile-wishlist-empty" style="display: none; text-align: center; padding: 50px 0; color: #777;">
+                    <p>Your wishlist is currently empty.</p>
+                    <a href="shop.html" class="btn btn-primary" style="margin-top: 14px;">Explore Fragrances</a>
+                </div>
+
+                <div id="profile-wishlist-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                    <!-- Rendered dynamically by profile.js with working Add to Bag & Delete buttons -->
+                </div>
+            </div>
+
+            <!-- Tab 3: Cart Summary -->
+            <div class="profile-tab-panel" id="panel-cart">
+                <h3 class="profile-section-title">
+                    Shopping Bag Summary
+                    <span style="font-size: 13px; font-weight: normal; color: #888;">Items in your shopping bag</span>
+                </h3>
+
+                <div id="profile-cart-empty" style="display: none; text-align: center; padding: 50px 0; color: #777;">
+                    <p>Your shopping bag is currently empty.</p>
+                    <a href="shop.html" class="btn btn-primary" style="margin-top: 14px;">Go to Shop</a>
+                </div>
+
+                <div id="profile-cart-container" style="display: flex; flex-direction: column; margin-bottom: 24px;">
+                    <!-- Rendered dynamically by profile.js with Quantity (+/-) and Delete actions -->
+                </div>
+
+                <div id="profile-cart-footer-section">
+                    <!-- Rendered dynamically by profile.js with Coupon System, Price Breakdown & BUY NOW button -->
+                </div>
+            </div>
+
+            <!-- Tab 4: Orders & Tracking -->
+            <div class="profile-tab-panel" id="panel-orders">
+                <h3 class="profile-section-title">
+                    Order History & Live Tracking
+                    <span style="font-size: 13px; font-weight: normal; color: #888;">WooCommerce Plugin API Integration Ready</span>
+                </h3>
+
+                <!-- Active Order Tracking Card -->
+                <div class="order-tracking-card">
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                        <div>
+                            <span style="font-size: 11px; text-transform: uppercase; color: #888; letter-spacing: 0.05em; font-weight: 700;">ORDER #AFM-98412</span>
+                            <h4 style="font-size: 17px; font-weight: 700; margin: 4px 0 0 0;">Afeem - Ocean EDP (100ml)</h4>
+                        </div>
+                        <span style="background: #eef8f7; color: #2eaaa0; border: 1px solid #2eaaa0; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;">IN TRANSIT</span>
+                    </div>
+
+                    <div style="font-size: 14px; color: #555; margin-bottom: 20px;">
+                        Tracking ID: <strong>SF-88941209-IN</strong> &bull; Courier: <strong>BlueDart Express</strong> &bull; Expected: <strong>Tomorrow, 2:00 PM</strong>
+                    </div>
+
+                    <!-- Live Progress Bar Stepper -->
+                    <div class="tracking-stepper">
+                        <div class="tracking-stepper-progress"></div>
+                        <div class="tracking-step completed">
+                            <div class="step-dot">✓</div>
+                            <span>Ordered</span>
+                        </div>
+                        <div class="tracking-step completed">
+                            <div class="step-dot">✓</div>
+                            <span>Packed</span>
+                        </div>
+                        <div class="tracking-step completed">
+                            <div class="step-dot">📦</div>
+                            <span>In Transit</span>
+                        </div>
+                        <div class="tracking-step">
+                            <div class="step-dot">🏠</div>
+                            <span>Delivered</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Order Item -->
+                <div style="border: 1px solid #eee; border-radius: 14px; padding: 24px; display: flex; align-items: center; justify-content: space-between;">
+                    <div>
+                        <span style="font-size: 11px; text-transform: uppercase; color: #888; font-weight: 700;">ORDER #AFM-91045 &bull; JUNE 14, 2026</span>
+                        <h4 style="font-size: 16px; font-weight: 600; margin-top: 4px;">Afeem - Loop EDP + Afeem Combat EDP</h4>
+                        <span style="font-size: 14px; color: #2eaaa0; font-weight: 700;">Total: Rs. 998.00 (Paid via UPI)</span>
+                    </div>
+                    <div>
+                        <span style="background: #f0fdf4; color: #16a34a; border: 1px solid #16a34a; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;">DELIVERED</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 5: Addresses -->
+            <div class="profile-tab-panel" id="panel-addresses">
+                <h3 class="profile-section-title" style="display: flex; align-items: center; justify-content: space-between;">
+                    <span>Saved Addresses</span>
+                    <button class="btn btn-primary" id="add-address-btn" style="font-size: 12px; padding: 10px 20px; background: #2f889a !important; color: #ffffff !important; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">+ Add New Address</button>
+                </h3>
+
+                <div id="profile-address-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                    <!-- Rendered dynamically by profile.js with Edit, Delete, Set Default actions -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add New Address Modal Dialog -->
+    <div class="modal-backdrop" id="add-address-modal">
+        <div class="modal-box">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 20px;">Add New Shipping Address</h3>
+            <form id="new-address-form">
+                <div style="margin-bottom: 16px;">
+                    <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px;">Full Name *</label>
+                    <input type="text" id="addr-name" required placeholder="e.g. Rahul Sharma" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 16px;">
+                    <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px;">Address Line *</label>
+                    <input type="text" id="addr-line" required placeholder="House No, Street, Sector" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                    <div>
+                        <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px;">City *</label>
+                        <input type="text" id="addr-city" required placeholder="Noida" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px;">State *</label>
+                        <input type="text" id="addr-state" required placeholder="Uttar Pradesh" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+                    <div>
+                        <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px;">Pincode *</label>
+                        <input type="text" id="addr-pincode" required placeholder="201301" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px;">Phone Number *</label>
+                        <input type="tel" id="addr-phone" required placeholder="+91 98765 43210" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 12px; justify-content: flex-end;">
+                    <button type="button" class="btn btn-secondary" id="close-address-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="background: #2f889a; border: none;">Save Address</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Universal Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>

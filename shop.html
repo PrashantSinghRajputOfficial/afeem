@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop our premium signature luxury fragrances. Find the perfect Eau de Parfum online.">
+    <title>Catalog - Afeem Fragrances</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header" id="site-header">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" id="menu-toggle" aria-label="Open navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Brand Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo/logo.png" alt="AFEEM" class="brand-logo-img">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link active">Catalog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Icons -->
+            <div class="header-actions">
+                <button class="action-btn" id="search-trigger" aria-label="Search website">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="action-btn" id="account-trigger" aria-label="Open account drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="action-btn" id="wishlist-trigger" aria-label="Open wishlist drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="badge-count" id="wishlist-count">0</span>
+                </button>
+                <button class="action-btn" id="cart-trigger" aria-label="Open shopping cart drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="badge-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="catalog-page-main">
+        
+        <!-- Shop Title & Breadcrumbs Header -->
+        <section class="catalog-header-section">
+            <div class="container text-center">
+                <h1 class="catalog-main-title">Products</h1>
+                <nav class="catalog-breadcrumbs" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="crumb-separator">&gt;</span>
+                    <span class="crumb-current">Products</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Catalog Toolbar (Filter Button & Sorting) -->
+        <section class="catalog-toolbar-section container">
+            <div class="catalog-toolbar-bar">
+                <!-- Left: Teal Filter Button matching Screenshot 2 -->
+                <button class="catalog-filter-btn teal-filter-btn" id="open-filter-drawer-btn" aria-expanded="false" aria-label="Toggle Filters Panel">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    <span>Filter</span>
+                </button>
+
+                <!-- Right: Sorting & View Toggles matching Screenshot 2 -->
+                <div class="catalog-toolbar-right">
+                    <div class="view-toggle-buttons">
+                        <button class="view-btn active" aria-label="Grid View">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="sort-select-box">
+                        <select id="catalog-sort" class="catalog-select">
+                            <option value="default">Default sorting</option>
+                            <option value="bestseller">Best Selling</option>
+                            <option value="price-low-high">Price: Low to High</option>
+                            <option value="price-high-low">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Expanded Collapsible Filter Panel (Luxury Pure White Design) -->
+            <div class="top-collapsible-filter-panel" id="top-filter-panel">
+                <div class="filter-panel-card">
+                    <div class="filter-panel-grid">
+                        
+                        <!-- Col 1: RANGE / CATEGORIES -->
+                        <div class="filter-col">
+                            <h4 class="filter-col-title">RANGE / CATEGORIES</h4>
+                            <ul class="filter-link-list">
+                                <li><a href="#" class="filter-pill-link active" data-category="all">All Collections</a></li>
+                                <li><a href="#" class="filter-pill-link" data-category="100ml new">100ml New</a></li>
+                                <li><a href="#" class="filter-pill-link" data-category="2026 new">2026 New</a></li>
+                                <li><a href="#" class="filter-pill-link" data-category="prime 2026">Prime 2026</a></li>
+                                <li><a href="#" class="filter-pill-link" data-category="100ml old">100ml Old</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Col 2: PRICE -->
+                        <div class="filter-col">
+                            <h4 class="filter-col-title">PRICE RANGE</h4>
+                            <ul class="filter-checkbox-list">
+                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="200-300"> Rs. 200 - Rs. 300</label></li>
+                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="300-400"> Rs. 300 - Rs. 400</label></li>
+                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="400-500"> Rs. 400 - Rs. 500</label></li>
+                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="500-1000"> Rs. 500 & Above</label></li>
+                            </ul>
+                        </div>
+
+                        <!-- Col 3: SIZE -->
+                        <div class="filter-col">
+                            <h4 class="filter-col-title">SELECT SIZE</h4>
+                            <div class="size-swatch-boxes">
+                                <button type="button" class="size-box active" data-size="all">ALL</button>
+                                <button type="button" class="size-box" data-size="50ml">50ML</button>
+                                <button type="button" class="size-box" data-size="100ml">100ML</button>
+                                <button type="button" class="size-box" data-size="150ml">150ML</button>
+                            </div>
+                        </div>
+
+                        <!-- Col 4: COLOR / SCENT NOTES -->
+                        <div class="filter-col">
+                            <h4 class="filter-col-title">SCENT FAMILY</h4>
+                            <ul class="color-dots-list">
+                                <li data-scent="spicy"><span class="color-dot" style="background:#111111;"></span> Black Leather (Spicy)</li>
+                                <li data-scent="oceanic"><span class="color-dot" style="background:#2f889a;"></span> Ocean Blue (Oceanic)</li>
+                                <li data-scent="citrus"><span class="color-dot" style="background:#00ffff;"></span> Cyan Fresh (Citrus)</li>
+                                <li data-scent="floral"><span class="color-dot" style="background:#8b008b;"></span> Dark Magenta (Floral)</li>
+                                <li data-scent="woody"><span class="color-dot" style="background:#ff8c00;"></span> Dark Amber (Woody)</li>
+                                <li data-scent="oudh"><span class="color-dot" style="background:#d4af37;"></span> Gold Luxury (Oudh)</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="filter-panel-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; margin-top: 20px; padding-top: 14px;">
+                        <span id="filter-active-count-label" style="font-size: 12px; font-weight: 700; color: #2eaaa0;">Showing All Fragrances</span>
+                        <button type="button" id="clear-all-filters-btn" style="background: none; border: 1px solid #ddd; padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; cursor: pointer; color: #666; text-transform: uppercase;">Reset All Filters ✕</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Catalog Section: ALL PRODUCTS -->
+        <section class="all-products-catalog-section container">
+            <div class="catalog-section-badge">
+                <span class="sparkle-icon">✨</span>
+                <h3 class="badge-title">ALL PRODUCTS</h3>
+            </div>
+
+            <!-- All Products 4-Column Grid -->
+            <div class="afeem-grid-4col product-grid-compact" id="all-products-grid">
+                <!-- Dynamically rendered by shop.js -->
+            </div>
+
+            <!-- Pagination Bar -->
+            <div class="catalog-pagination-bar" id="catalog-pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">&gt;</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <!-- Column 1: Brand & Socials & Newsletter -->
+            <div class="footer-brand-col">
+                <img src="assets/images/logo/logo-white.png" alt="AFEEM Logo" class="footer-logo-img">
+                <p class="footer-about-text">Crafting Handcrafted Luxury Fragrances for India's Modern Presence.</p>
+                
+                <!-- Social media buttons -->
+                <div class="footer-social-icons">
+                    <a href="https://www.instagram.com/whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="Instagram">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="YouTube">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="Facebook">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Newsletter signup -->
+                <div class="footer-newsletter-section">
+                    <h5 class="newsletter-sub-title">STAY UPDATED</h5>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Your email address..." required>
+                        <button type="submit" aria-label="Subscribe">&rarr;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">QUICK LINKS</h4>
+                <ul class="footer-links-arrow">
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Luxury EDP</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Attar / Oils</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Best Sellers</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Fresh & Aquatic</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Woody & Amber</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Us -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">CONTACT US</h4>
+                <div class="footer-contacts-list">
+                    <!-- Phone Support -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">PHONE SUPPORT</span>
+                            <span class="contact-row-value"><a href="tel:+919876543210" style="color: inherit; text-decoration: none;">+91 98765 43210</a></span>
+                        </div>
+                    </div>
+                    <!-- Email Support -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">EMAIL CONCIERGE</span>
+                            <span class="contact-row-value"><a href="mailto:afeemlifestyle@gmail.com" style="color: #ffffff !important; text-decoration: underline;">afeemlifestyle@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <!-- Operating Hours -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">OPERATING HOURS</span>
+                            <span class="contact-row-value">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 4: Leadership Card -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">LEADERSHIP</h4>
+                <div class="leadership-card">
+                    <!-- Profile Row -->
+                    <div class="leadership-profile-row">
+                        <div class="leadership-avatar">
+                            <!-- SVG decorative crest/icon for master perfumers -->
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="leadership-info">
+                            <span class="leadership-name">Afeem Perfumery House</span>
+                            <span class="leadership-tagline">Kannauj & Grasse Masters</span>
+                            <span class="leadership-company">Afeem Fragrances Pvt. Ltd.</span>
+                        </div>
+                    </div>
+                    <!-- Bullet checklist -->
+                    <ul class="leadership-checkpoints">
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">100% Handcrafted Luxury Oils</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">French & Indian Master Noses</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">8-Week Aged Maceration</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">Sustainable & Cruelty-Free</span>
+                        </li>
+                    </ul>
+                    <!-- Button -->
+                    <button type="button" class="btn leadership-card-btn">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        CONTACT CONCIERGE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p class="copyright-text">&copy; Copyright 2026 AFEEM. Made with Passion. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SIDE DRAWERS & MODALS (Loaded universally on pages) -->
+    
+    <!-- Mobile Navigation Drawer -->
+    <aside class="drawer drawer-left" id="mobile-menu-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">MENU</span>
+                <button class="drawer-close" aria-label="Close menu">&times;</button>
+            </div>
+            <div class="drawer-body">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Catalog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Shopping Cart Drawer -->
+    <aside class="drawer drawer-right" id="cart-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR SHOPPING BAG (<span id="cart-drawer-count">0</span>)</span>
+                <button class="drawer-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="drawer-body" id="cart-drawer-body">
+                <div class="drawer-empty-state" id="cart-empty-state">
+                    <p>Your shopping bag is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Go to the shop</a>
+                </div>
+                <div class="drawer-items-list hidden" id="cart-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="cart-drawer-footer">
+                <div class="cart-totals">
+                    <span>CART TOTAL:</span>
+                    <span class="cart-total-price" id="cart-total-price">Rs. 0.00</span>
+                </div>
+                <button class="btn btn-primary btn-block">Checkout Securely</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Search Slide-down Panel Overlay -->
+    <aside class="search-overlay" id="search-panel" aria-hidden="true">
+        <div class="search-overlay-bg" data-close></div>
+        <div class="search-container">
+            <div class="search-header">
+                <h3 class="search-title">Search Our Store</h3>
+                <button class="search-close" id="search-close-btn" aria-label="Close search">&times;</button>
+            </div>
+            <div class="search-body">
+                <form class="search-form" id="search-panel-form">
+                    <input type="search" placeholder="Search for fragrances, scents..." required id="search-input">
+                    <button type="submit" class="search-submit-btn" aria-label="Submit search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+                <div class="search-results-preview" id="search-results-preview"></div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Wishlist Drawer -->
+    <aside class="drawer drawer-right" id="wishlist-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR WISHLIST</span>
+                <button class="drawer-close" aria-label="Close wishlist">&times;</button>
+            </div>
+            <div class="drawer-body" id="wishlist-drawer-body">
+                <div class="drawer-empty-state" id="wishlist-empty-state">
+                    <p>Your wishlist is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Discover Fragrances</a>
+                </div>
+                <div class="drawer-items-list hidden" id="wishlist-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="wishlist-drawer-footer"></div>
+        </div>
+    </aside>
+
+    <!-- Login/Register / Recovery Account Drawer -->
+    <aside class="drawer drawer-right" id="account-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title" id="account-drawer-title">Login</span>
+                <button class="drawer-close" aria-label="Close account">&times;</button>
+            </div>
+            
+            <div class="drawer-body">
+                <div class="account-panel active" id="panel-login">
+                    <h3>Great to have you back!</h3>
+                    <form class="account-form" id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email Address *</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password *</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-recover">Forgot your password?</a>
+                            <a href="#" class="switch-panel-btn" data-target="panel-register">Register now</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="account-panel" id="panel-register">
+                    <h3>Create an Account</h3>
+                    <form class="account-form" id="register-form">
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text" id="register-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email Address *</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password *</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-login">Back to login</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="account-panel" id="panel-recover">
+                    <h3>Reset your password</h3>
+                    <p class="panel-subtitle">We will send you an email to reset your password.</p>
+                    <form class="account-form" id="recover-form">
+                        <div class="form-group">
+                            <label for="recover-email">Email Address *</label>
+                            <input type="email" id="recover-email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-login">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickview-modal" aria-hidden="true">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close dialog">&times;</button>
+            <div class="modal-content" id="quickview-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/product.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/shop.js" defer></script>
+</body>
+</html>

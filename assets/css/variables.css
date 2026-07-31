@@ -1,0 +1,99 @@
+/* CSS Variables & Theme Definitions */
+:root {
+    /* Color Palette */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #fcfcfc;
+    --color-bg-tertiary: #f4f4f4;
+    --color-bg-dark: #111111;
+    --color-bg-overlay: rgba(0, 0, 0, 0.4);
+
+    --color-text-primary: #111111;
+    --color-text-secondary: #555555;
+    --color-text-muted: #888888;
+    --color-text-light: #ffffff;
+
+    --color-accent: #111111; /* Luxury dark accent */
+    --color-accent-hover: #333333;
+    
+    --color-border: #e5e5e5;
+    --color-border-dark: #333333;
+    
+    --color-sale: #c0392b; /* Rich discount red */
+    --color-sale-light: #fdf2f2;
+    --color-success: #27ae60;
+    --color-rating: #f1c40f; /* Gold stars */
+
+    /* Typography */
+    --font-heading: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-md: 1.125rem;  /* 18px */
+    --font-size-lg: 1.25rem;   /* 20px */
+    --font-size-xl: 1.5rem;    /* 24px */
+    --font-size-2xl: 2rem;     /* 32px */
+    --font-size-3xl: 2.5rem;   /* 40px */
+    --font-size-4xl: 3.5rem;   /* 56px */
+
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.8;
+
+    /* Spacing & Layout */
+    --spacing-xs: 0.25rem;  /* 4px */
+    --spacing-sm: 0.5rem;   /* 8px */
+    --spacing-md: 1rem;     /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
+    --spacing-2xl: 3rem;    /* 48px */
+    --spacing-3xl: 4rem;    /* 64px */
+
+    --container-max-width: 1280px;
+    --header-height: 80px;
+    --topbar-height: 40px;
+
+    /* Borders & Radius */
+    --border-radius-none: 0px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-card: 16px;
+    --border-radius-pill: 50px;
+    --border-radius-circle: 50%;
+
+    /* Luxury Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-card-hover: 0 20px 48px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 25px rgba(74, 186, 171, 0.25);
+
+    /* Accent & Status Colors */
+    --color-teal: #2eaaa0;
+    --color-teal-dark: #238981;
+    --color-teal-light: #e6f7f5;
+    --color-gold: #c59b27;
+    --color-gold-light: #fef9ec;
+
+    /* Transitions & Animations */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --z-index-back: -10;
+    --z-index-base: 1;
+    --z-index-dropdown: 100;
+    --z-index-header: 500;
+    --z-index-drawer: 1000;
+    --z-index-modal: 2000;
+    --z-index-popup: 3000;
+}

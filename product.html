@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View product details and buy signature French-inspired perfumes online.">
+    <title>Afeem - Loop - Premium Fragrances</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header (Centered Nav Links) -->
+    <header class="main-header" id="site-header">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" id="menu-toggle" aria-label="Open navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Brand Logo (Left) -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/images/logo/logo.png" alt="AFEEM Logo" class="brand-logo-img">
+                </a>
+            </div>
+
+            <!-- Desktop Navigation Links (Centered) -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Catalog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Icons (Right) -->
+            <div class="header-actions">
+                <button class="action-btn" id="search-trigger" aria-label="Search website">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="action-btn" id="account-trigger" aria-label="Open account drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="action-btn" id="wishlist-trigger" aria-label="Open wishlist drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="badge-count" id="wishlist-count">0</span>
+                </button>
+                <button class="action-btn" id="cart-trigger" aria-label="Open shopping cart drawer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="badge-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        
+        <!-- Product Inner Navigation (Centered Breadcrumbs) -->
+        <section class="product-navigation-bar" style="padding: 16px 0; border-bottom: 1px solid #f0f0f0; margin-bottom: 24px;">
+            <div class="container" style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                <nav class="breadcrumbs" aria-label="Breadcrumb" style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px;">
+                    <a href="index.html" style="color: #666; text-decoration: none;">Home</a>
+                    <span class="separator" style="color: #aaa;">&gt;</span>
+                    <span class="current" id="breadcrumb-product-name" style="color: #111; font-weight: 600;">Afeem - Loop</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Product Three Column Layout -->
+        <section class="product-details-section container">
+            <div class="product-three-col-layout" id="product-details-container">
+                
+                <!-- Column 1 (Left): Meta Details, Size, Fragrance Notes & Best For Occasions -->
+                <div class="product-col-left">
+                    <div class="product-meta-header">
+                        <div class="title-wishlist-row">
+                            <h1 class="product-name" id="product-title-heading">Afeem - Loop</h1>
+                        </div>
+                        
+                        <!-- Selected Size (ML) Display replacing price in Left Column -->
+                        <div class="product-selected-size-block">
+                            <span class="size-badge-pill" id="left-selected-size-badge">Selected Size: <strong>100ml EDP</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: FRAGRANCE NOTES Card (Top, Middle, Base Notes with Circular Images) -->
+                    <div class="fragrance-notes-card" id="left-fragrance-notes">
+                        <h4 class="notes-card-title">FRAGRANCE NOTES</h4>
+                        <div class="notes-grid-container" id="notes-grid-container">
+                            <!-- Injected dynamically by product.js -->
+                        </div>
+                    </div>
+
+                    <!-- Section 3: BEST FOR Occasion Tags Card -->
+                    <div class="best-for-occasions-card" id="left-best-for-occasions">
+                        <h4 class="occasions-card-title">BEST FOR</h4>
+                        <div class="occasions-pills-wrap" id="occasions-pills-wrap">
+                            <!-- Injected dynamically by product.js -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2 (Center): Gallery Images Stacking -->
+                <div class="product-col-center" id="product-gallery-list">
+                    <!-- Images & Video rendered dynamically by product.js -->
+                </div>
+
+                <!-- Column 3 (Right): Sizing, Range, Special Offers & Actions -->
+                <div class="product-col-right">
+                    <!-- Urgency Sold Stat -->
+                    <div class="sold-stat">
+                        <span><strong id="sold-count">8</strong> sold in last <strong id="sold-hour">15</strong> Hour</span>
+                    </div>
+
+                    <!-- Rating display -->
+                    <div class="product-right-rating-row" id="right-rating-summary">
+                        <!-- Rating injected by product.js -->
+                    </div>
+
+                    <!-- Options & Purchase Form -->
+                    <form class="product-purchase-form" id="product-buy-form">
+                        
+                        <!-- Size swatches (Label above is sizing choices) -->
+                        <div class="product-option-group">
+                            <div class="size-headers">
+                                <span class="size-label">Size: <strong id="selected-size-label">100ml</strong></span>
+                            </div>
+                            <div class="option-selector size-selector">
+                                <label class="size-swatch">
+                                    <input type="radio" name="option-size" value="50ml" class="hidden-radio">
+                                    <span>50ml</span>
+                                </label>
+                                <label class="size-swatch">
+                                    <input type="radio" name="option-size" value="100ml" checked class="hidden-radio">
+                                    <span>100ml</span>
+                                </label>
+                                <label class="size-swatch">
+                                    <input type="radio" name="option-size" value="150ml" class="hidden-radio">
+                                    <span>150ml</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <!-- Scents Variant Selector (Other perfumes in the range) -->
+                    <div class="scents-variant-selector">
+                        <span class="variant-label">COLLECTION RANGE:</span>
+                        <div class="scents-grid" id="right-scents-grid">
+                            <!-- Injected dynamically by product.js -->
+                        </div>
+                    </div>
+
+                    <!-- Special Offer Box (Moved to Right Column below RANGE) -->
+                    <div class="special-offer-box">
+                        <h4 class="offer-title">Special Offer</h4>
+                        <ul class="offer-list">
+                            <li><span class="bullet-arrow">&#9656;</span> Free Delivery Available*</li>
+                            <li><span class="bullet-arrow">&#9656;</span> Sale 30% Off Use Code: Deal30</li>
+                            <li><span class="bullet-arrow">&#9656;</span> Complimentary Tester Included</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Brand Feature Highlights Section (24hr Lasting, 3000 Sprays, 20% Oil Concentration) -->
+        <section class="brand-feature-badges-section container">
+            <div class="brand-feature-badges-grid">
+                <div class="brand-badge-card">
+                    <div class="badge-img-wrapper">
+                        <img src="assets/images/product logo/Screenshot 2026-07-31 162901.png?v=2" alt="Lasts Up To 24hr" class="brand-badge-img">
+                    </div>
+                    <h4 class="badge-feature-title">LASTS UP TO 24 HOURS</h4>
+                    <p class="badge-feature-sub">Long-lasting Eau De Parfum formula that lingers all day and night.</p>
+                </div>
+                <div class="brand-badge-card">
+                    <div class="badge-img-wrapper">
+                        <img src="assets/images/product logo/Screenshot 2026-07-31 162920.png?v=2" alt="Up To 3000 Sprays" class="brand-badge-img">
+                    </div>
+                    <h4 class="badge-feature-title">UP TO 3000 SPRAYS</h4>
+                    <p class="badge-feature-sub">High-capacity micro-misting pump for maximum usage.</p>
+                </div>
+                <div class="brand-badge-card">
+                    <div class="badge-img-wrapper">
+                        <img src="assets/images/product logo/Screenshot 2026-07-31 163003.png?v=2" alt="Up To 20% Oil Concentration" class="brand-badge-img badge-wide">
+                    </div>
+                    <h4 class="badge-feature-title">20% OIL CONCENTRATION</h4>
+                    <p class="badge-feature-sub">Intense French fragrance oil ratio for powerful sillage.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges Section -->
+        <section class="trust-badges-section container">
+            <div class="trust-badges-grid">
+                <div class="trust-badge-card">
+                    <div class="badge-icon">
+                        <!-- Plane icon -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+                        </svg>
+                    </div>
+                    <h4>WORLDWIDE SHIPPING</h4>
+                </div>
+                <div class="trust-badge-card">
+                    <div class="badge-icon">
+                        <!-- Return box icon -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                        </svg>
+                    </div>
+                    <h4>FREE 60 DAY RETURNS</h4>
+                </div>
+                <div class="trust-badge-card">
+                    <div class="badge-icon">
+                        <!-- Shield ribbon icon -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h4>24 MONTH WARRANTY</h4>
+                </div>
+                <div class="trust-badge-card">
+                    <div class="badge-icon">
+                        <!-- Secure card lock icon -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h4>100% SECURE CHECKOUT</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Tab Section (Centered Tab Headers) -->
+        <section class="product-tabs-section container" id="product-extra-info">
+            <div class="product-info-tabs">
+                <div class="tabs-nav-centered" role="tablist">
+                    <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-description" id="btn-tab-description">DESCRIPTION</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-specifications" id="btn-tab-specifications">ADDITIONAL INFORMATION</button>
+                    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-reviews" id="btn-tab-reviews">REVIEW</button>
+                </div>
+                
+                <div class="tab-panels-content">
+                    <!-- Description Panel -->
+                    <div class="tab-panel active" id="tab-description" role="tabpanel" aria-labelledby="btn-tab-description">
+                        <p id="product-desc-text" class="tab-body-paragraph">Afeem - Loop is a captivating Eau de Parfum crafted for the modern Indian who loves making a statement. This French-inspired fragrance blends sophisticated notes with an irresistible charm that keeps people intrigued. Whether you're heading to a night out or want to elevate your everyday moments, Loop delivers an enchanting aura that lingers beautifully. Experience the perfect fusion of Parisian elegance and contemporary flair—because sometimes the best conversations start with a great scent.</p>
+                    </div>
+
+                    <!-- Specs Panel -->
+                    <div class="tab-panel" id="tab-specifications" role="tabpanel" aria-labelledby="btn-tab-specifications">
+                        <table class="specs-table">
+                            <tbody>
+                                <tr>
+                                    <th>Concentration</th>
+                                    <td>Eau de Parfum (EDP)</td>
+                                </tr>
+                                <tr>
+                                    <th>Scent Family</th>
+                                    <td>Woody Amber, Spiced Musk</td>
+                                </tr>
+                                <tr>
+                                    <th>Size Options</th>
+                                    <td>50ml, 100ml, 150ml</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Reviews Panel -->
+                    <div class="tab-panel" id="tab-reviews" role="tabpanel" aria-labelledby="btn-tab-reviews">
+                        <div class="reviews-section" id="reviews">
+                            <!-- Injected dynamically by product.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Continuous Social Media Video Showcase Section (Right-to-Left Auto-Scroll Marquee) -->
+        <section class="social-video-showcase-section container">
+            <div class="video-marquee-container">
+                <div class="video-marquee-track">
+                    <!-- Set 1 of 5 Video Cards -->
+                    <div class="social-video-card video-card-landscape" onclick="openSocialVideoModal('W0irE55U8XQ')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/W0irE55U8XQ?autoplay=1&mute=1&controls=0&loop=1&playlist=W0irE55U8XQ&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-portrait" onclick="openSocialVideoModal('n8IexNP6e5E')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/n8IexNP6e5E?autoplay=1&mute=1&controls=0&loop=1&playlist=n8IexNP6e5E&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-landscape" onclick="openSocialVideoModal('R8TDppYuQe4')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/R8TDppYuQe4?autoplay=1&mute=1&controls=0&loop=1&playlist=R8TDppYuQe4&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-portrait" onclick="openSocialVideoModal('FZXiWHJtzQo')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/FZXiWHJtzQo?autoplay=1&mute=1&controls=0&loop=1&playlist=FZXiWHJtzQo&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-landscape" onclick="openSocialVideoModal('ahznKjecGLM')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/ahznKjecGLM?autoplay=1&mute=1&controls=0&loop=1&playlist=ahznKjecGLM&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+
+                    <!-- Duplicate Set for Infinite Marquee Scroll -->
+                    <div class="social-video-card video-card-landscape" onclick="openSocialVideoModal('W0irE55U8XQ')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/W0irE55U8XQ?autoplay=1&mute=1&controls=0&loop=1&playlist=W0irE55U8XQ&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-portrait" onclick="openSocialVideoModal('n8IexNP6e5E')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/n8IexNP6e5E?autoplay=1&mute=1&controls=0&loop=1&playlist=n8IexNP6e5E&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-landscape" onclick="openSocialVideoModal('R8TDppYuQe4')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/R8TDppYuQe4?autoplay=1&mute=1&controls=0&loop=1&playlist=R8TDppYuQe4&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-portrait" onclick="openSocialVideoModal('FZXiWHJtzQo')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/FZXiWHJtzQo?autoplay=1&mute=1&controls=0&loop=1&playlist=FZXiWHJtzQo&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                    <div class="social-video-card video-card-landscape" onclick="openSocialVideoModal('ahznKjecGLM')">
+                        <iframe class="video-preview-iframe" src="https://www.youtube-nocookie.com/embed/ahznKjecGLM?autoplay=1&mute=1&controls=0&loop=1&playlist=ahznKjecGLM&playsinline=1&enablejsapi=1" title="Video preview" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+                        <div class="video-play-overlay"><span class="play-icon-triangle">&#9654;</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products Section -->
+        <section class="related-products-section container">
+            <h2 class="section-title-centered">RELATED PRODUCTS</h2>
+            <div class="product-grid" id="related-products-grid">
+                <!-- Injected dynamically by product.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="main-footer">
+        <div class="footer-container container">
+            <!-- Column 1: Brand & Socials & Newsletter -->
+            <div class="footer-brand-col">
+                <img src="assets/images/logo/logo-white.png" alt="AFEEM Logo" class="footer-logo-img">
+                <p class="footer-about-text">Crafting Handcrafted Luxury Fragrances for India's Modern Presence.</p>
+                
+                <!-- Social media buttons -->
+                <div class="footer-social-icons">
+                    <a href="https://www.instagram.com/whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="Instagram">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="YouTube">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/whiffofafeem" target="_blank" rel="noopener" class="social-icon-box" aria-label="Facebook">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Newsletter signup -->
+                <div class="footer-newsletter-section">
+                    <h5 class="newsletter-sub-title">STAY UPDATED</h5>
+                    <form class="footer-newsletter-form">
+                        <input type="email" placeholder="Your email address..." required>
+                        <button type="submit" aria-label="Subscribe">&rarr;</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Column 2: Quick Links -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">QUICK LINKS</h4>
+                <ul class="footer-links-arrow">
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Luxury EDP</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Attar / Oils</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Best Sellers</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Fresh & Aquatic</a></li>
+                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Woody & Amber</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Us -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">CONTACT US</h4>
+                <div class="footer-contacts-list">
+                    <!-- Phone Support -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">PHONE SUPPORT</span>
+                            <span class="contact-row-value"><a href="tel:+919876543210" style="color: inherit; text-decoration: none;">+91 98765 43210</a></span>
+                        </div>
+                    </div>
+                    <!-- Email Support -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">EMAIL CONCIERGE</span>
+                            <span class="contact-row-value"><a href="mailto:afeemlifestyle@gmail.com" style="color: #ffffff !important; text-decoration: underline;">afeemlifestyle@gmail.com</a></span>
+                        </div>
+                    </div>
+                    <!-- Operating Hours -->
+                    <div class="contact-info-row">
+                        <div class="contact-circle-icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text-meta">
+                            <span class="contact-row-title">OPERATING HOURS</span>
+                            <span class="contact-row-value">24/7 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 4: Leadership Card -->
+            <div class="footer-links-col">
+                <h4 class="footer-title">LEADERSHIP</h4>
+                <div class="leadership-card">
+                    <!-- Profile Row -->
+                    <div class="leadership-profile-row">
+                        <div class="leadership-avatar">
+                            <!-- SVG decorative crest/icon for master perfumers -->
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="leadership-info">
+                            <span class="leadership-name">Afeem Perfumery House</span>
+                            <span class="leadership-tagline">Kannauj & Grasse Masters</span>
+                            <span class="leadership-company">Afeem Fragrances Pvt. Ltd.</span>
+                        </div>
+                    </div>
+                    <!-- Bullet checklist -->
+                    <ul class="leadership-checkpoints">
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">100% Handcrafted Luxury Oils</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">French & Indian Master Noses</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">8-Week Aged Maceration</span>
+                        </li>
+                        <li>
+                            <span class="green-check">&bull;</span>
+                            <span class="checkpoint-text">Sustainable & Cruelty-Free</span>
+                        </li>
+                    </ul>
+                    <!-- Button -->
+                    <button type="button" class="btn leadership-card-btn">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 6px;">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        CONTACT CONCIERGE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p class="copyright-text">&copy; Copyright 2026 AFEEM. Made with Passion. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Side Drawers & Dialog Modals -->
+    <!-- Mobile Navigation Drawer -->
+    <aside class="drawer drawer-left" id="mobile-menu-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">MENU</span>
+                <button class="drawer-close" aria-label="Close menu">&times;</button>
+            </div>
+            <div class="drawer-body">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Catalog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Shopping Cart Drawer -->
+    <aside class="drawer drawer-right" id="cart-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR SHOPPING BAG (<span id="cart-drawer-count">0</span>)</span>
+                <button class="drawer-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="drawer-body" id="cart-drawer-body">
+                <div class="drawer-empty-state" id="cart-empty-state">
+                    <p>Your shopping bag is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Go to the shop</a>
+                </div>
+                <div class="drawer-items-list hidden" id="cart-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="cart-drawer-footer">
+                <div class="cart-totals">
+                    <span>CART TOTAL:</span>
+                    <span class="cart-total-price" id="cart-total-price">Rs. 0.00</span>
+                </div>
+                <button class="btn btn-primary btn-block">Checkout Securely</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Search Slide-down Panel Overlay -->
+    <aside class="search-overlay" id="search-panel" aria-hidden="true">
+        <div class="search-overlay-bg" data-close></div>
+        <div class="search-container">
+            <div class="search-header">
+                <h3 class="search-title">Search Our Store</h3>
+                <button class="search-close" id="search-close-btn" aria-label="Close search">&times;</button>
+            </div>
+            <div class="search-body">
+                <form class="search-form" id="search-panel-form">
+                    <input type="search" placeholder="Search for fragrances, scents..." required id="search-input">
+                    <button type="submit" class="search-submit-btn" aria-label="Submit search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+                <div class="search-results-preview" id="search-results-preview"></div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Wishlist Drawer -->
+    <aside class="drawer drawer-right" id="wishlist-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR WISHLIST</span>
+                <button class="drawer-close" aria-label="Close wishlist">&times;</button>
+            </div>
+            <div class="drawer-body" id="wishlist-drawer-body">
+                <div class="drawer-empty-state" id="wishlist-empty-state">
+                    <p>Your wishlist is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Discover Fragrances</a>
+                </div>
+                <div class="drawer-items-list hidden" id="wishlist-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="wishlist-drawer-footer"></div>
+        </div>
+    </aside>
+
+    <!-- Account Drawer -->
+    <aside class="drawer drawer-right" id="account-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title" id="account-drawer-title">Login</span>
+                <button class="drawer-close" aria-label="Close account">&times;</button>
+            </div>
+            
+            <div class="drawer-body">
+                <div class="account-panel active" id="panel-login">
+                    <h3>Great to have you back!</h3>
+                    <form class="account-form" id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email Address *</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password *</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Size Guide Modal -->
+    <div class="modal" id="size-guide-modal" aria-hidden="true">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close dialog">&times;</button>
+            <div class="modal-content text-padding">
+                <h2>Fragrance Size Guide</h2>
+                <p>Choose the volume that fits your routine best:</p>
+                <ul class="modal-list">
+                    <li><strong>50ml (1.7 fl. oz)</strong>: Travel-friendly, perfect to carry on-the-go or test a new scent. Lasts around 1-2 months of daily use.</li>
+                    <li><strong>100ml (3.4 fl. oz)</strong>: The industry standard. Perfect for your dresser and regular daily wear. Lasts around 3-4 months.</li>
+                    <li><strong>150ml (5.1 fl. oz)</strong>: Best value option. Extended lifespan for your signature daily scent.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delivery & Returns Modal -->
+    <div class="modal" id="delivery-modal" aria-hidden="true">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close dialog">&times;</button>
+            <div class="modal-content text-padding">
+                <h2>Delivery & Returns</h2>
+                <h4>Free Shipping</h4>
+                <p>We provide free delivery across India for all orders above ₹999. Standard shipping takes 3-5 business days.</p>
+                <h4>Hassle-Free Returns</h4>
+                <p>If you're not completely satisfied, you can initiate a return within 14 days of delivery. The item must be in its original packaging and unused.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ask a Question Modal -->
+    <div class="modal" id="question-modal" aria-hidden="true">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close dialog">&times;</button>
+            <div class="modal-content text-padding">
+                <h2>Ask a Question</h2>
+                <form class="account-form" id="ask-question-form">
+                    <div class="form-group">
+                        <label for="qa-name">Your Name</label>
+                        <input type="text" id="qa-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qa-email">Email Address</label>
+                        <input type="email" id="qa-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qa-message">Your Question</label>
+                        <textarea id="qa-message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Question</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Bottom Action Bar -->
+    <div class="sticky-bottom-action-bar" id="sticky-bottom-bar">
+        <div class="sticky-bar-container container">
+            <div class="sticky-bar-product-info">
+                <span class="sticky-product-title" id="sticky-title-display">Afeem - Ocean</span>
+            </div>
+            <div class="sticky-bar-actions">
+                <div class="sticky-stock-status" id="sticky-stock-badge">
+                    <span class="stock-green-dot">🟢</span>
+                    <span class="stock-label-text">In Stock</span>
+                </div>
+
+                <div class="sticky-option-group">
+                    <select class="sticky-size-select" id="sticky-size-select-input">
+                        <option value="50ml">50ml</option>
+                        <option value="100ml" selected>100ml</option>
+                        <option value="150ml">150ml</option>
+                    </select>
+                </div>
+                
+                <div class="sticky-quantity-picker">
+                    <button type="button" class="sticky-qty-btn" id="sticky-qty-minus">&minus;</button>
+                    <input type="number" id="sticky-qty-input" value="1" min="1" max="10" readonly>
+                    <button type="button" class="sticky-qty-btn" id="sticky-qty-plus">&plus;</button>
+                </div>
+
+                <span class="sticky-product-price" id="sticky-price-display">Rs. 499.00</span>
+                
+                <button type="button" class="btn sticky-add-to-cart-btn" id="sticky-add-to-cart-submit-btn" style="background: linear-gradient(135deg, #ffaa00 0%, #ff5500 100%); color: #ffffff; font-weight: 800; font-size: 14px; letter-spacing: 0.08em; border: none; border-radius: 6px; padding: 12px 28px; box-shadow: 0 4px 16px rgba(255, 120, 0, 0.45); cursor: pointer;">ADD TO CART</button>
+                
+                <button type="button" class="sticky-wishlist-btn add-to-wishlist" data-product-id="afeem-loop" aria-label="Add to Wishlist" title="Add to Wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Video YouTube Lightbox Modal -->
+    <div class="social-video-modal-overlay hidden" id="social-video-modal" aria-hidden="true">
+        <div class="social-video-modal-bg" onclick="closeSocialVideoModal()"></div>
+        <div class="social-video-modal-content">
+            <button type="button" class="social-video-modal-close" onclick="closeSocialVideoModal()" aria-label="Close Video">&times;</button>
+            <div class="social-video-iframe-wrap" id="social-video-iframe-container">
+                <!-- Injected dynamically by product.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/product.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</body>
+</html>
