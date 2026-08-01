@@ -6064,51 +6064,36 @@ a[href^="mailto:support@afeem.in"] {
 .reels-carousel-wrapper {
     position: relative;
     width: 100%;
+    overflow: hidden;
     margin-top: 30px;
+}
+
+.reels-carousel-track-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0 20px;
 }
 
 .reels-carousel-track {
     display: flex;
-    gap: 18px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 10px 4px 20px;
-    scrollbar-width: none;
+    gap: 20px;
+    width: max-content;
+    animation: reelsMarquee 35s linear infinite;
+    will-change: transform;
 }
 
-.reels-carousel-track::-webkit-scrollbar {
-    display: none;
+.reels-carousel-track:hover {
+    animation-play-state: paused !important;
 }
 
-.reels-arrow {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    color: #111111;
-    font-size: 24px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    transition: all 0.25s ease;
+@keyframes reelsMarquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
-
-.reels-arrow:hover {
-    background: #111111;
-    color: #ffffff;
-    border-color: #111111;
-}
-
-.reels-prev-btn { left: -18px; }
-.reels-next-btn { right: -18px; }
 
 /* Reel Card Item (Image 2 Style) */
 .reel-item-card {

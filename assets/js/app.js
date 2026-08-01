@@ -911,25 +911,31 @@ function initShoppableReelsCarousel() {
     const track = document.getElementById("reels-carousel-track");
     if (!track) return;
 
-    track.innerHTML = AFEEM_REELS_DATA.map((reel, index) => `
-        <div class="reel-item-card" onclick="openReelModal(${index})">
-            <div class="reel-video-box">
-                <iframe class="reel-card-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; pointer-events:none; border:none;"></iframe>
-                <div class="reel-play-icon-overlay">▶</div>
-                <div class="reel-badge-thumb">
-                    <img src="${reel.img}" alt="${reel.title}">
+    // Double the array for 100% seamless infinite 0% to -50% marquee loop
+    const infiniteReelsData = [...AFEEM_REELS_DATA, ...AFEEM_REELS_DATA];
+
+    track.innerHTML = infiniteReelsData.map((reel, index) => {
+        const realDataIndex = index % AFEEM_REELS_DATA.length;
+        return `
+            <div class="reel-item-card" onclick="openReelModal(${realDataIndex})">
+                <div class="reel-video-box">
+                    <iframe class="reel-card-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; pointer-events:none; border:none;"></iframe>
+                    <div class="reel-play-icon-overlay">▶</div>
+                    <div class="reel-badge-thumb">
+                        <img src="${reel.img}" alt="${reel.title}">
+                    </div>
+                </div>
+                <div class="reel-item-meta">
+                    <h4 class="reel-item-title">${reel.title}</h4>
+                    <div class="reel-item-price-row">
+                        <span class="reel-curr-price">₹${reel.price}</span>
+                        <span class="reel-old-price">₹${reel.originalPrice}</span>
+                        <span class="reel-disc-badge">${reel.discount}</span>
+                    </div>
                 </div>
             </div>
-            <div class="reel-item-meta">
-                <h4 class="reel-item-title">${reel.title}</h4>
-                <div class="reel-item-price-row">
-                    <span class="reel-curr-price">₹${reel.price}</span>
-                    <span class="reel-old-price">₹${reel.originalPrice}</span>
-                    <span class="reel-disc-badge">${reel.discount}</span>
-                </div>
-            </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
 
 window.scrollReelsCarousel = function(direction) {
