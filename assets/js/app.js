@@ -835,4 +835,187 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+/* ==========================================================================
+   Shoppable Video Reels Controller (Matching Reference Screenshots 1 & 2)
+   ========================================================================== */
+const AFEEM_REELS_DATA = [
+    {
+        id: "afeem-loop",
+        title: "Afeem Loop - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/loop-1.webp",
+        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=198d1d3f-4d4a-4156-9799-5980e81cd9a7&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjE5OGQxZDNmLTRkNGEtNDE1Ni05Nzk5LTU5ODBlODFjZDlhNyIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.xHCcog0VVIMmJJhtcR_FN9sp50fdPgO3HpLdShfriLo&type=master&shop=pypyyn-d1.myshopify.com",
+        desc: "GILDED. GRAND. GLORIOUS. Quiet luxury and effortlessly premium handcrafted EDP.",
+        productPage: "product.html?id=afeem-loop"
+    },
+    {
+        id: "afeem-ocean",
+        title: "Afeem Ocean - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/ocean-1.webp",
+        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=1db0635c-b0ef-41e5-9c1e-b20f06899010&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjFkYjA2MzVjLWIwZWYtNDFlNS05YzFlLWIyMGYwNjg5OTAxMCIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.HGiuKeYGkHbnmdYB4N7aIwCv4Pf8pXgxbMI58AI8z6Q&type=master&shop=pypyyn-d1.myshopify.com",
+        desc: "DEEP. MARINE. VIBRANT. Fresh sea breeze notes for high-power daytime confidence.",
+        productPage: "product.html?id=afeem-ocean"
+    },
+    {
+        id: "afeem-combat",
+        title: "Afeem Combat - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/combat-1.webp",
+        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=7def9ad7-14f1-40ee-81cc-849f95e23b1f&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjdkZWY5YWQ3LTE0ZjEtNDBlZS04MWNjLTg0OWY5NWUyM2IxZiIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.F3K4VFcDzcls_h40xxHR4zL2pcMBIhZ17wtVJp99QwM&type=master&shop=pypyyn-d1.myshopify.com",
+        desc: "BOLD. LEATHER. INTENSE. Warm spicy leather accord crafted for evening presence.",
+        productPage: "product.html?id=afeem-combat"
+    },
+    {
+        id: "afeem-buzz",
+        title: "Afeem Buzz - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/buzz-1.webp",
+        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=3dd1f405-e186-4e54-927a-b0c008e41a8f&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjNkZDFmNDA1LWUxODYtNGU1NC05MjdhLWIwYzAwOGU4MWE4ZiIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.leOTc3FOZPUM1F8e4kmNKnht0ap9fbC3zLrAIEb_F3Q&type=master&shop=pypyyn-d1.myshopify.com",
+        desc: "ELECTRIC. CITRUS. CHARMING. High energy zesty opening with smooth amber trail.",
+        productPage: "product.html?id=afeem-buzz"
+    },
+    {
+        id: "afeem-aura",
+        title: "Afeem Aura - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/aura-1.webp",
+        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=198d1d3f-4d4a-4156-9799-5980e81cd9a7&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjE5OGQxZDNmLTRkNGEtNDE1Ni05Nzk5LTU5ODBlODFjZDlhNyIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.xHCcog0VVIMmJJhtcR_FN9sp50fdPgO3HpLdShfriLo&type=master&shop=pypyyn-d1.myshopify.com",
+        desc: "SOPHISTICATED. MYSTICAL. LUXE. French-inspired master perfumery signature.",
+        productPage: "product.html?id=afeem-aura"
+    },
+    {
+        id: "afeem-pure",
+        title: "Afeem Pure - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/pure-1.webp",
+        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=1db0635c-b0ef-41e5-9c1e-b20f06899010&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjFkYjA2MzVjLWIwZWYtNDFlNS05YzFlLWIyMGYwNjg5OTAxMCIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.HGiuKeYGkHbnmdYB4N7aIwCv4Pf8pXgxbMI58AI8z6Q&type=master&shop=pypyyn-d1.myshopify.com",
+        desc: "PURE. ELEGANT. SILK. 24hr duration handcrafted French EDP experience.",
+        productPage: "product.html?id=afeem-pure"
+    }
+];
+
+function initShoppableReelsCarousel() {
+    const track = document.getElementById("reels-carousel-track");
+    if (!track) return;
+
+    track.innerHTML = AFEEM_REELS_DATA.map((reel, index) => `
+        <div class="reel-item-card" onclick="openReelModal(${index})">
+            <div class="reel-video-box">
+                <video class="reel-card-video" src="${reel.videoUrl}" autoplay loop muted playsinline></video>
+                <div class="reel-play-icon-overlay">▶</div>
+                <div class="reel-badge-thumb">
+                    <img src="${reel.img}" alt="${reel.title}">
+                </div>
+            </div>
+            <div class="reel-item-meta">
+                <h4 class="reel-item-title">${reel.title}</h4>
+                <div class="reel-item-price-row">
+                    <span class="reel-curr-price">₹${reel.price}</span>
+                    <span class="reel-old-price">₹${reel.originalPrice}</span>
+                    <span class="reel-disc-badge">${reel.discount}</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+window.scrollReelsCarousel = function(direction) {
+    const track = document.getElementById("reels-carousel-track");
+    if (track) {
+        track.scrollBy({ left: direction * 450, behavior: 'smooth' });
+    }
+};
+
+window.openReelModal = function(index) {
+    const reel = AFEEM_REELS_DATA[index];
+    if (!reel) return;
+
+    const modal = document.getElementById("shoppable-reel-modal");
+    const video = document.getElementById("reel-modal-video");
+    const img = document.getElementById("reel-modal-prod-img");
+    const title = document.getElementById("reel-modal-prod-title");
+    const price = document.getElementById("reel-modal-prod-price");
+    const strike = document.getElementById("reel-modal-prod-strike");
+    const discount = document.getElementById("reel-modal-prod-discount");
+    const desc = document.getElementById("reel-modal-prod-desc");
+    const addCartBtn = document.getElementById("reel-modal-add-cart-btn");
+    const moreInfoBtn = document.getElementById("reel-modal-more-info-btn");
+
+    if (modal && video) {
+        video.src = reel.videoUrl;
+        video.muted = false;
+        video.play().catch(() => { video.muted = true; video.play(); });
+
+        const soundIcon = document.getElementById("reel-sound-icon");
+        if (soundIcon) soundIcon.textContent = video.muted ? "🔇" : "🔊";
+
+        if (img) img.src = reel.img;
+        if (title) title.textContent = reel.title;
+        if (price) price.textContent = `₹${reel.price}`;
+        if (strike) strike.textContent = `₹${reel.originalPrice}`;
+        if (discount) discount.textContent = reel.discount;
+        if (desc) desc.textContent = reel.desc;
+
+        if (addCartBtn) {
+            addCartBtn.onclick = function() {
+                CartManager.addItem({
+                    id: reel.id,
+                    title: reel.title,
+                    size: '100ml',
+                    price: reel.price,
+                    image: reel.img,
+                    qty: 1
+                });
+                closeReelModal();
+            };
+        }
+
+        if (moreInfoBtn) {
+            moreInfoBtn.href = reel.productPage;
+        }
+
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+};
+
+window.closeReelModal = function() {
+    const modal = document.getElementById("shoppable-reel-modal");
+    const video = document.getElementById("reel-modal-video");
+    if (modal) {
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+    if (video) {
+        video.pause();
+        video.src = "";
+    }
+};
+
+window.toggleReelModalSound = function() {
+    const video = document.getElementById("reel-modal-video");
+    const soundIcon = document.getElementById("reel-sound-icon");
+    if (video && soundIcon) {
+        video.muted = !video.muted;
+        soundIcon.textContent = video.muted ? "🔇" : "🔊";
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    initShoppableReelsCarousel();
+});
+
 

@@ -6051,3 +6051,403 @@ a[href^="mailto:support@afeem.in"] {
     font-size: 11px;
     color: #64748b;
 }
+
+/* ==========================================================================
+   Shoppable Video Reels Section (Below Hot Deals) & Lightbox Split Modal
+   Matching Reference Screenshots 1 & 2
+   ========================================================================== */
+.shoppable-reels-section {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.reels-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.reels-carousel-track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 4px 20px;
+    scrollbar-width: none;
+}
+
+.reels-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.reels-arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #111111;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+
+.reels-arrow:hover {
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}
+
+.reels-prev-btn { left: -18px; }
+.reels-next-btn { right: -18px; }
+
+/* Reel Card Item (Image 2 Style) */
+.reel-item-card {
+    flex: 0 0 210px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.reel-item-card:hover {
+    transform: translateY(-6px);
+}
+
+.reel-video-box {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #111111;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.reel-card-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+/* Overlaid Square Product Thumbnail Badge at Bottom Center (Image 2) */
+.reel-badge-thumb {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 3px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 3;
+}
+
+.reel-badge-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.reel-play-icon-overlay {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    backdrop-filter: blur(4px);
+}
+
+/* Card Meta Below Reel Video (Image 2) */
+.reel-item-meta {
+    padding: 12px 4px 0;
+}
+
+.reel-item-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reel-item-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+}
+
+.reel-curr-price {
+    font-weight: 800;
+    color: #111111;
+}
+
+.reel-old-price {
+    color: #94a3b8;
+    text-decoration: line-through;
+    font-size: 11.5px;
+}
+
+.reel-disc-badge {
+    color: #27a89d;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+/* ==========================================================================
+   Shoppable Reel Lightbox Split Modal (Image 1 Style)
+   ========================================================================== */
+.shoppable-reel-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.shoppable-reel-modal[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reel-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.reel-modal-dialog {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 820px;
+    height: 85vh;
+    max-height: 600px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.reel-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111111;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.reel-modal-close:hover {
+    transform: scale(1.1);
+}
+
+.reel-modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .reel-modal-body {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+}
+
+/* Left: Vertical Video Panel */
+.reel-video-panel {
+    position: relative;
+    background: #000000;
+    height: 100%;
+}
+
+.reel-modal-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.reel-sound-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+/* Right: Product Details Panel (Matching Image 1) */
+.reel-product-panel {
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+}
+
+.reel-product-img-box {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reel-product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.reel-prod-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111111;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.reel-prod-price-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.reel-price-current {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111111;
+}
+
+.reel-price-strike {
+    font-size: 15px;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.reel-price-discount {
+    font-size: 13px;
+    font-weight: 800;
+    color: #e11d48;
+}
+
+.reel-prod-desc {
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.reel-modal-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-reel-add-cart {
+    flex: 1;
+    padding: 14px 20px;
+    background: #d92d20;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(217, 45, 32, 0.3);
+}
+
+.btn-reel-add-cart:hover {
+    background: #b42318;
+    transform: translateY(-1px);
+}
+
+.btn-reel-more-info {
+    flex: 1;
+    padding: 14px 20px;
+    background: #f1f5f9;
+    color: #111111;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+}
+
+.btn-reel-more-info:hover {
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}

@@ -450,6 +450,23 @@
                     </div>
                     <button class="slider-arrow next-arrow" id="bs-next-btn" aria-label="Next">&rsaquo;</button>
                 </div>
+        <!-- ========== SHOPPABLE VIDEO REELS CAROUSEL SECTION (BELOW HOT DEALS) ========== -->
+        <section class="shoppable-reels-section" id="shoppable-reels-section">
+            <div class="container">
+                <div class="afeem-section-header">
+                    <span class="section-tag">AS SEEN ON SOCIALS</span>
+                    <h2 class="afeem-section-title">Trending Reels</h2>
+                    <div class="afeem-heading-line"></div>
+                    <p class="afeem-section-subtitle">Watch Real Fragrance Reviews & Shop Your Favorite EDPs Directly</p>
+                </div>
+
+                <div class="reels-carousel-wrapper">
+                    <button class="reels-arrow reels-prev-btn" id="reels-prev-btn" onclick="scrollReelsCarousel(-1)" aria-label="Previous Reels">&lsaquo;</button>
+                    <div class="reels-carousel-track" id="reels-carousel-track">
+                        <!-- Reel cards injected dynamically by JS -->
+                    </div>
+                    <button class="reels-arrow reels-next-btn" id="reels-next-btn" onclick="scrollReelsCarousel(1)" aria-label="Next Reels">&rsaquo;</button>
+                </div>
             </div>
         </section>
 
@@ -1063,6 +1080,39 @@
             <button class="modal-close" aria-label="Close dialog">&times;</button>
             <div class="modal-content" id="quickview-modal-content">
                 <!-- Content injected dynamically via product.js -->
+            </div>
+    </div>
+
+    <!-- Shoppable Reel Lightbox Split Modal (Matching Image 1) -->
+    <div class="shoppable-reel-modal" id="shoppable-reel-modal" aria-hidden="true">
+        <div class="reel-modal-overlay" onclick="closeReelModal()"></div>
+        <div class="reel-modal-dialog">
+            <button class="reel-modal-close" onclick="closeReelModal()" aria-label="Close Modal">&times;</button>
+            <div class="reel-modal-body">
+                <!-- Left: Full Height Reel Video Player -->
+                <div class="reel-video-panel">
+                    <video id="reel-modal-video" class="reel-modal-video" autoplay loop muted playsinline></video>
+                    <button class="reel-sound-toggle" id="reel-sound-toggle" onclick="toggleReelModalSound()" aria-label="Toggle Sound">
+                        <span id="reel-sound-icon">🔇</span>
+                    </button>
+                </div>
+                <!-- Right: Product Card Panel (Matching Image 1) -->
+                <div class="reel-product-panel">
+                    <div class="reel-product-img-box">
+                        <img id="reel-modal-prod-img" src="assets/images/products/loop-1.webp" alt="Product Image">
+                    </div>
+                    <h3 class="reel-prod-title" id="reel-modal-prod-title">Afeem Golden Oud - 100ml</h3>
+                    <div class="reel-prod-price-row">
+                        <span class="reel-price-current" id="reel-modal-prod-price">₹499</span>
+                        <span class="reel-price-strike" id="reel-modal-prod-strike">₹999</span>
+                        <span class="reel-price-discount" id="reel-modal-prod-discount">50% OFF</span>
+                    </div>
+                    <p class="reel-prod-desc" id="reel-modal-prod-desc">GILDED. GRAND. GLORIOUS. Quiet luxury and effortlessly premium handcrafted EDP.</p>
+                    <div class="reel-modal-actions">
+                        <button class="btn-reel-add-cart" id="reel-modal-add-cart-btn">Add to cart</button>
+                        <a href="#" class="btn-reel-more-info" id="reel-modal-more-info-btn">More info</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
