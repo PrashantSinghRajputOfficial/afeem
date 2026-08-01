@@ -6325,6 +6325,7 @@ a[href^="mailto:support@afeem.in"] {
     object-fit: cover;
     display: block;
     border-radius: 16px;
+    pointer-events: none;
 }
 
 .reel-modal-video {
@@ -6333,6 +6334,7 @@ a[href^="mailto:support@afeem.in"] {
     object-fit: cover;
     display: block;
     border: none;
+    pointer-events: none;
 }
 
 .reel-sound-toggle {

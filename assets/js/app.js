@@ -987,7 +987,7 @@ function initShoppableReelsCarousel() {
         return `
             <div class="reel-item-card" onclick="openReelModal(${realDataIndex})">
                 <div class="reel-video-box">
-                    <video class="reel-card-video" src="${reel.videoUrl}" autoplay loop muted playsinline poster="${reel.img}"></video>
+                    <video class="reel-card-video" src="${reel.videoUrl}" autoplay loop muted playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" poster="${reel.img}"></video>
                     <div class="reel-badge-thumb">
                         <img src="${reel.img}" alt="${reel.title}">
                     </div>
@@ -1034,7 +1034,7 @@ window.openReelModalByData = function(reel) {
 
     if (modal && videoFrameContainer) {
         videoFrameContainer.innerHTML = `
-            <video id="reel-modal-video" class="reel-modal-video" src="${reel.videoUrl}" autoplay loop muted playsinline poster="${reel.img}"></video>
+            <video id="reel-modal-video" class="reel-modal-video" src="${reel.videoUrl}" autoplay loop muted playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" poster="${reel.img}"></video>
         `;
 
         if (soundIcon) soundIcon.textContent = "🔇";
