@@ -423,11 +423,11 @@
             <div class="footer-links-col">
                 <h4 class="footer-title">QUICK LINKS</h4>
                 <ul class="footer-links-arrow">
+                    <li><a href="about.html"><span class="caret-arrow">&gt;</span> About Us</a></li>
                     <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Luxury EDP</a></li>
                     <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Attar / Oils</a></li>
                     <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Best Sellers</a></li>
-                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Fresh & Aquatic</a></li>
-                    <li><a href="shop.html"><span class="caret-arrow">&gt;</span> Woody & Amber</a></li>
+                    <li><a href="contact.html"><span class="caret-arrow">&gt;</span> Contact Us</a></li>
                 </ul>
             </div>
 
@@ -503,9 +503,29 @@
         </div>
     </footer>
 
+    <!-- Mobile Navigation Drawer -->
+    <aside class="drawer drawer-left" id="mobile-menu-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">MENU</span>
+                <button class="drawer-close" aria-label="Close menu">&times;</button>
+            </div>
+            <div class="drawer-body">
+                <ul class="mobile-nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Catalog</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
     <!-- Scripts -->
-    <script src="assets/js/products.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/products.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
     <script>
         function toggleFaq(btn) {
             const item = btn.parentElement;
