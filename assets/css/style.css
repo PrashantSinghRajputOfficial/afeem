@@ -6121,10 +6121,10 @@ a[href^="mailto:support@afeem.in"] {
 
 .reel-iframe-cropper {
     position: absolute;
-    top: -28%;
-    left: -28%;
-    width: 156%;
-    height: 156%;
+    top: -35%;
+    left: -35%;
+    width: 170%;
+    height: 170%;
     pointer-events: none;
 }
 
@@ -6309,10 +6309,10 @@ a[href^="mailto:support@afeem.in"] {
 
 .reel-modal-video-cropper {
     position: absolute;
-    top: -28%;
-    left: -28%;
-    width: 156%;
-    height: 156%;
+    top: -35%;
+    left: -35%;
+    width: 170%;
+    height: 170%;
     pointer-events: none;
 }
 
