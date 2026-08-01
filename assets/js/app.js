@@ -1039,6 +1039,34 @@ window.openReelModalByData = function(reel) {
 
         if (soundIcon) soundIcon.textContent = "🔇";
 
+        const soundBtn = document.getElementById("reel-sound-toggle");
+        if (soundBtn) {
+            soundBtn.onclick = function(e) {
+                if (e) e.stopPropagation();
+                const video = document.getElementById("reel-modal-video");
+                if (!video) return;
+
+                if (video.muted) {
+                    video.muted = false;
+                    video.volume = 1.0;
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            if (soundIcon) soundIcon.textContent = "🔊";
+                        }).catch(() => {
+                            video.muted = false;
+                            if (soundIcon) soundIcon.textContent = "🔊";
+                        });
+                    } else {
+                        if (soundIcon) soundIcon.textContent = "🔊";
+                    }
+                } else {
+                    video.muted = true;
+                    if (soundIcon) soundIcon.textContent = "🔇";
+                }
+            };
+        }
+
         if (img) img.src = reel.img;
         if (title) title.textContent = reel.title;
         if (price) price.textContent = `₹${reel.price}`;

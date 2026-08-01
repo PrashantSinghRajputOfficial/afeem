@@ -6346,20 +6346,20 @@ a[href^="mailto:support@afeem.in"] {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(17, 17, 17, 0.75);
+    background: rgba(17, 17, 17, 0.85);
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    font-size: 18px;
+    border: 1px.5px solid rgba(255, 255, 255, 0.4);
+    font-size: 20px;
     cursor: pointer;
-    z-index: 20;
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(8px);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
     transition: all 0.25s ease;
     pointer-events: auto;
 }
