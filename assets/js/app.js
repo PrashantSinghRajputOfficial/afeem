@@ -974,7 +974,7 @@ function initShoppableReelsCarousel() {
         return `
             <div class="reel-item-card" onclick="openReelModal(${realDataIndex})">
                 <div class="reel-video-box">
-                    <iframe class="reel-card-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; pointer-events:none; border:none;"></iframe>
+                    <iframe class="reel-card-video" src="https://www.youtube.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1&rel=0" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; pointer-events:none; border:none;"></iframe>
                     <div class="reel-play-icon-overlay">▶</div>
                     <div class="reel-badge-thumb">
                         <img src="${reel.img}" alt="${reel.title}">
@@ -1017,7 +1017,7 @@ window.openReelModal = function(index) {
 
     if (modal && videoPanel) {
         videoPanel.innerHTML = `
-            <iframe id="reel-modal-video-iframe" class="reel-modal-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=0&controls=1&loop=1&playlist=${reel.youtubeId}&playsinline=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;"></iframe>
+            <iframe id="reel-modal-video-iframe" class="reel-modal-video" src="https://www.youtube.com/embed/${reel.youtubeId}?autoplay=1&mute=0&controls=1&loop=1&playlist=${reel.youtubeId}&playsinline=1&rel=0" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="width:100%; height:100%; border:none;"></iframe>
         `;
 
         if (img) img.src = reel.img;
