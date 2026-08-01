@@ -7144,3 +7144,102 @@ a[href^="mailto:support@afeem.in"] {
     .pillars-grid { grid-template-columns: 1fr; }
     .founder-card { padding: 30px 20px; }
 }
+
+/* ==========================================================================
+   Image 4 Style Fragrance Notes Component (3 Columns: HEAD, HEART, BASE)
+   ========================================================================== */
+.fragrance-notes-section-image4 {
+    width: 100%;
+    margin: 30px 0 10px;
+    padding: 24px 0;
+    border-top: 1px dashed #cbd5e1;
+    border-bottom: 1px dashed #cbd5e1;
+}
+
+.fragrance-notes-image4-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.note-column-image4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.note-column-title-bar {
+    width: 100%;
+    border-top: 2px solid #0f172a;
+    padding-top: 10px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.note-column-title {
+    font-family: var(--font-heading), 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0f172a;
+    margin: 0;
+}
+
+.note-ingredients-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.ingredient-item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 85px;
+}
+
+.ingredient-img-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 8px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.ingredient-img-wrapper:hover {
+    transform: scale(1.08);
+}
+
+.ingredient-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ingredient-label-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+    line-height: 1.25;
+}
+
+@media (max-width: 768px) {
+    .fragrance-notes-image4-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}

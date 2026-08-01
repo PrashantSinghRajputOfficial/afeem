@@ -31,6 +31,18 @@ const PRODUCT_DATABASE = {
             "Size Options": "50ml, 100ml, 150ml",
             "Origin": "French Sourced Raw Oils, Bottled in India"
         },
+        headNotes: [
+            { name: "Lavender", img: "assets/images/notes/lavender.jpg" },
+            { name: "Saffron", img: "assets/images/notes/lavender.jpg" },
+            { name: "Nutmeg", img: "assets/images/notes/lavender.jpg" }
+        ],
+        heartNotes: [
+            { name: "Agarwood (Oud)", img: "assets/images/notes/agarwood-oud.jpg" }
+        ],
+        baseNotes: [
+            { name: "Patchouli", img: "assets/images/notes/lavender.jpg" },
+            { name: "Musk", img: "assets/images/notes/agarwood-oud.jpg" }
+        ],
         reviews: [
             {
                 author: "Rohit K.",
@@ -476,30 +488,51 @@ function renderProductPage(product) {
         leftSizeBadge.innerHTML = `Selected Size: <strong>100ml EDP</strong>`;
     }
 
-    // E. Fragrance Notes Card Rendering (3 Rectangular Cards with TOP, MIDDLE, BASE Headers)
+    // E. Fragrance Notes Component Rendering (Image 4 Style: HEAD NOTES, HEART NOTES, BASE NOTES)
     const notesContainer = document.getElementById("notes-grid-container");
     if (notesContainer) {
-        const defaultNotes = [
-            { tier: "TOP", name: "Chocolate & Bergamot", img: "assets/images/notes/chocolate.jpg" },
-            { tier: "MIDDLE", name: "French Vanilla & Sage", img: "assets/images/notes/vanilla.jpg" },
-            { tier: "BASE", name: "Cedarwood & Musk", img: "assets/images/notes/cedarwood.jpg" }
+        const headNotes = product.headNotes || [
+            { name: "Lavender", img: "assets/images/notes/lavender.jpg" },
+            { name: "Saffron", img: "assets/images/notes/lavender.jpg" },
+            { name: "Nutmeg", img: "assets/images/notes/lavender.jpg" }
         ];
 
-        const notesList = product.notesData || defaultNotes;
+        const heartNotes = product.heartNotes || [
+            { name: "Agarwood (Oud)", img: "assets/images/notes/agarwood-oud.jpg" }
+        ];
 
-        notesContainer.innerHTML = notesList.map(n => `
-            <div class="note-card-sketch">
-                <div class="note-card-top-bar">
-                    <span class="note-top-text">${n.tier}</span>
+        const baseNotes = product.baseNotes || [
+            { name: "Patchouli", img: "assets/images/notes/lavender.jpg" },
+            { name: "Musk", img: "assets/images/notes/agarwood-oud.jpg" }
+        ];
+
+        const renderNoteGroup = (title, items) => `
+            <div class="note-column-image4">
+                <div class="note-column-title-bar">
+                    <h4 class="note-column-title">${title}</h4>
                 </div>
-                <div class="note-card-center-img">
-                    <img src="${n.img}" alt="${n.name}">
-                </div>
-                <div class="note-card-bottom-bar">
-                    <span class="note-bottom-name">${n.name}</span>
+                <div class="note-ingredients-row">
+                    ${items.map(item => `
+                        <div class="ingredient-item-box">
+                            <div class="ingredient-img-wrapper">
+                                <img src="${item.img}" alt="${item.name}">
+                            </div>
+                            <span class="ingredient-label-name">${item.name}</span>
+                        </div>
+                    `).join('')}
                 </div>
             </div>
-        `).join('');
+        `;
+
+        notesContainer.innerHTML = `
+            <div class="fragrance-notes-section-image4">
+                <div class="fragrance-notes-image4-grid">
+                    ${renderNoteGroup("HEAD NOTES", headNotes)}
+                    ${renderNoteGroup("HEART NOTES", heartNotes)}
+                    ${renderNoteGroup("BASE NOTES", baseNotes)}
+                </div>
+            </div>
+        `;
     }
 
     // F. BEST FOR Occasion Tags Rendering (Compact 2-Column Cards with Tick Badge)
