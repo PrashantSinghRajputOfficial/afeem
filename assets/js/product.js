@@ -488,7 +488,7 @@ function renderProductPage(product) {
         leftSizeBadge.innerHTML = `Selected Size: <strong>100ml EDP</strong>`;
     }
 
-    // E. Fragrance Notes Component Rendering (Image 2 Style: HEAD NOTES, HEART NOTES, BASE NOTES in Horizontal Rows)
+    // E. Fragrance Notes Component Rendering (Image 2 Full-Width 3-Column Layout: HEAD NOTES | HEART NOTES | BASE NOTES)
     const notesContainer = document.getElementById("notes-grid-container");
     if (notesContainer) {
         const headNotes = product.headNotes || [
@@ -506,10 +506,10 @@ function renderProductPage(product) {
             { name: "Musk", img: "assets/images/notes/agarwood-oud.jpg" }
         ];
 
-        const renderNoteTier = (title, items) => `
-            <div class="note-tier-row-block">
-                <h4 class="note-tier-title-head">${title}</h4>
-                <div class="note-tier-ingredients-flex">
+        const renderNoteColumn = (title, items) => `
+            <div class="note-column-image2">
+                <h4 class="note-column-title-clean">${title}</h4>
+                <div class="note-column-ingredients-row">
                     ${items.map(item => `
                         <div class="note-ingredient-single">
                             <div class="note-ingredient-img-box">
@@ -523,10 +523,10 @@ function renderProductPage(product) {
         `;
 
         notesContainer.innerHTML = `
-            <div class="fragrance-notes-clean-wrapper">
-                ${renderNoteTier("HEAD NOTES", headNotes)}
-                ${renderNoteTier("HEART NOTES", heartNotes)}
-                ${renderNoteTier("BASE NOTES", baseNotes)}
+            <div class="fragrance-notes-image2-row-grid">
+                ${renderNoteColumn("HEAD NOTES", headNotes)}
+                ${renderNoteColumn("HEART NOTES", heartNotes)}
+                ${renderNoteColumn("BASE NOTES", baseNotes)}
             </div>
         `;
     }

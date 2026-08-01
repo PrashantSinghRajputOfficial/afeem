@@ -7146,41 +7146,43 @@ a[href^="mailto:support@afeem.in"] {
 }
 
 /* ==========================================================================
-   Clean Image 2 Style Fragrance Notes Component (No Borders, Horizontal Rows)
+   Image 2 Full-Width 3-Column Fragrance Notes Component (No Borders)
    ========================================================================== */
-.fragrance-notes-clean-wrapper {
+.fragrance-notes-image2-row-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     width: 100%;
-    margin: 25px 0 15px;
+    margin: 30px 0 20px;
     padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    background: transparent;
     border: none !important;
+    background: transparent;
 }
 
-.note-tier-row-block {
-    width: 100%;
+.note-column-image2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     border: none !important;
 }
 
-.note-tier-title-head {
+.note-column-title-clean {
     font-family: 'Oswald', 'Bebas Neue', var(--font-heading), sans-serif;
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #0b0f19;
-    margin: 0 0 14px 0;
+    margin: 0 0 16px 0;
     text-align: center;
 }
 
-.note-tier-ingredients-flex {
+.note-column-ingredients-row {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 36px;
+    gap: 24px;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -7190,12 +7192,11 @@ a[href^="mailto:support@afeem.in"] {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    min-width: 90px;
 }
 
 .note-ingredient-img-box {
-    width: 80px;
-    height: 70px;
+    width: 76px;
+    height: 66px;
     margin-bottom: 6px;
     background: transparent;
     display: flex;
@@ -7220,12 +7221,9 @@ a[href^="mailto:support@afeem.in"] {
     line-height: 1.25;
 }
 
-@media (max-width: 576px) {
-    .note-tier-ingredients-flex {
-        gap: 20px;
-    }
-    .note-ingredient-img-box {
-        width: 64px;
-        height: 56px;
+@media (max-width: 768px) {
+    .fragrance-notes-image2-row-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 }
