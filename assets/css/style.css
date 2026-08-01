@@ -6187,42 +6187,47 @@ a[href^="mailto:support@afeem.in"] {
 
 /* Card Meta Below Reel Video (Image 2) */
 .reel-item-meta {
-    padding: 12px 4px 0;
+    padding: 10px 2px 0;
 }
 
 .reel-item-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: #111111;
-    margin: 0 0 4px 0;
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 5px 0;
     line-height: 1.3;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    letter-spacing: -0.01em;
 }
 
 .reel-item-price-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 12.5px;
+    font-size: 13.5px;
 }
 
 .reel-curr-price {
     font-weight: 800;
-    color: #111111;
+    color: #0f172a;
+    font-size: 14.5px;
 }
 
 .reel-old-price {
-    color: #94a3b8;
+    color: #64748b;
     text-decoration: line-through;
-    font-size: 11.5px;
+    font-size: 12.5px;
 }
 
 .reel-disc-badge {
-    color: #27a89d;
-    font-weight: 700;
-    font-size: 11px;
+    color: #0284c7;
+    font-weight: 800;
+    font-size: 11.5px;
+    background: #f0f9ff;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 /* ==========================================================================
@@ -6451,16 +6456,16 @@ a[href^="mailto:support@afeem.in"] {
 }
 
 .reel-product-img-box {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 20px;
+    width: 200px;
+    height: 200px;
+    margin: 10px auto 16px;
     border-radius: 16px;
     overflow: hidden;
     background: #f8fafc;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .reel-product-img-box img {
@@ -6470,10 +6475,10 @@ a[href^="mailto:support@afeem.in"] {
 }
 
 .reel-prod-title {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 800;
-    color: #111111;
-    margin: 0 0 10px 0;
+    color: #0f172a;
+    margin: 0 0 8px 0;
     line-height: 1.3;
 }
 
@@ -6481,37 +6486,43 @@ a[href^="mailto:support@afeem.in"] {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .reel-price-current {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 800;
-    color: #111111;
+    color: #0f172a;
 }
 
 .reel-price-strike {
     font-size: 15px;
-    color: #94a3b8;
+    color: #64748b;
     text-decoration: line-through;
 }
 
 .reel-price-discount {
     font-size: 13px;
     font-weight: 800;
-    color: #27a89d;
-    background: #eefaf8;
+    color: #0284c7;
+    background: #f0f9ff;
     padding: 3px 8px;
     border-radius: 6px;
 }
 
 .reel-prod-desc {
-    font-size: 12.5px;
-    color: #64748b;
+    font-size: 13px;
+    color: #334155;
+    font-weight: 600;
     line-height: 1.5;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
