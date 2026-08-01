@@ -1115,9 +1115,14 @@ window.toggleReelModalSound = function() {
     const soundIcon = document.getElementById("reel-sound-icon");
     if (!video) return;
 
-    video.muted = !video.muted;
-    if (soundIcon) {
-        soundIcon.textContent = video.muted ? "🔇" : "🔊";
+    if (video.muted) {
+        video.muted = false;
+        video.volume = 1.0;
+        video.play().catch(() => {});
+        if (soundIcon) soundIcon.textContent = "🔊";
+    } else {
+        video.muted = true;
+        if (soundIcon) soundIcon.textContent = "🔇";
     }
 };
 

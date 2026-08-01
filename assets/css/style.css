@@ -6409,8 +6409,17 @@ a[href^="mailto:support@afeem.in"] {
     padding: 36px 32px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     background: #ffffff;
+    height: 100%;
+}
+
+.reel-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
 }
 
 /* Wishlist Heart Button Directly Below Close (X) Button */
@@ -6505,11 +6514,7 @@ a[href^="mailto:support@afeem.in"] {
     letter-spacing: 0.04em;
 }
 
-.reel-modal-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+
 
 .btn-reel-add-cart {
     flex: 1.4;
