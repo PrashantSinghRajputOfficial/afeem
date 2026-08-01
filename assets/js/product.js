@@ -1378,9 +1378,63 @@ window.scrollToGalleryMedia = function(targetId, btnEl) {
         }
     };
 
-    // H. Sticky Bottom Bar visibility on scroll
+    // Sticky Bottom Bar visibility on scroll
     const stickyBar = document.getElementById("sticky-bottom-bar");
     if (stickyBar) {
         stickyBar.classList.add("visible");
     }
+
+    // Initialize Collection Range Filtered Shoppable Video Reels Carousel
+    initProductRangeReelsCarousel(product);
+}
+
+function initProductRangeReelsCarousel(product) {
+    const track = document.getElementById("reels-carousel-track");
+    if (!track) return;
+
+    const allReels = window.AFEEM_REELS_DATA || [];
+    if (!allReels.length) return;
+
+    // Filter reels matching this product or its collection range (multiple videos supported per product/range)
+    let rangeReels = allReels.filter(reel => {
+        return reel.id === product.id || 
+               reel.productPage.includes(product.id) || 
+               (product.category && reel.id.includes(product.category.split(' ')[0]));
+    });
+
+    // Fallback: Ensure at least 4 reels are shown in the carousel
+    if (rangeReels.length < 2) {
+        rangeReels = allReels.slice(0, 6);
+    }
+
+    // Multiply array items to form seamless infinite marquee scroll track
+    let infiniteRangeData = [...rangeReels];
+    while (infiniteRangeData.length < 10) {
+        infiniteRangeData = [...infiniteRangeData, ...rangeReels];
+    }
+
+    track.innerHTML = infiniteRangeData.map((reel) => {
+        const globalIndex = allReels.findIndex(r => r.id === reel.id || r.youtubeId === reel.youtubeId);
+        return `
+            <div class="reel-item-card" onclick="openReelModalByData(window.AFEEM_REELS_DATA[${globalIndex >= 0 ? globalIndex : 0}])">
+                <div class="reel-video-box">
+                    <div class="reel-iframe-cropper">
+                        <iframe class="reel-card-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1&enablejsapi=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                    <div class="reel-video-touch-shield"></div>
+                    <div class="reel-badge-thumb">
+                        <img src="${reel.img}" alt="${reel.title}">
+                    </div>
+                </div>
+                <div class="reel-item-meta">
+                    <h4 class="reel-item-title">${reel.title}</h4>
+                    <div class="reel-item-price-row">
+                        <span class="reel-curr-price">₹${reel.price}</span>
+                        <span class="reel-old-price">₹${reel.originalPrice}</span>
+                        <span class="reel-disc-badge">${reel.discount}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
 }

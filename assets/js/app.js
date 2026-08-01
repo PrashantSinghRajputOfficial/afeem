@@ -973,6 +973,8 @@ const AFEEM_REELS_DATA = [
     }
 ];
 
+window.AFEEM_REELS_DATA = AFEEM_REELS_DATA;
+
 function initShoppableReelsCarousel() {
     const track = document.getElementById("reels-carousel-track");
     if (!track) return;
@@ -1015,8 +1017,7 @@ window.scrollReelsCarousel = function(direction) {
 
 let isReelModalMuted = true;
 
-window.openReelModal = function(index) {
-    const reel = AFEEM_REELS_DATA[index];
+window.openReelModalByData = function(reel) {
     if (!reel) return;
     isReelModalMuted = true;
 
@@ -1096,6 +1097,11 @@ window.openReelModal = function(index) {
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
     }
+};
+
+window.openReelModal = function(index) {
+    const reel = AFEEM_REELS_DATA[index];
+    if (reel) window.openReelModalByData(reel);
 };
 
 window.closeReelModal = function() {
