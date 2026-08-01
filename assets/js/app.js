@@ -39,89 +39,137 @@ const CartManager = {
             return;
         }
 
-        const cartCompact = this.items.map(item => `${item.id}:${item.qty}:${encodeURIComponent(item.size || '100ml')}`).join(';');
-        const shareUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?shared_cart=${encodeURIComponent(cartCompact)}`;
+        // Full payload encoding: preserves 100% of items, titles, prices, images & sizes across all pages
+        const cartPayload = this.items.map(item => ({
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            image: item.image,
+            size: item.size || '100ml',
+            qty: item.qty || 1
+        }));
 
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(shareUrl).then(() => {
-                if (window.showWishlistToast) {
-                    window.showWishlistToast("🔗 Cart link copied! Share it with friends.");
-                } else {
-                    alert("🔗 Cart link copied to clipboard:\n" + shareUrl);
-                }
-            }).catch(() => {
-                prompt("Copy your cart share link below:", shareUrl);
+        const encodedData = btoa(encodeURIComponent(JSON.stringify(cartPayload)));
+        const shareUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?cart_data=${encodedData}`;
+
+        const copySuccess = () => {
+            if (window.showWishlistToast) {
+                window.showWishlistToast("🔗 Cart link copied! Share it with friends.");
+            } else {
+                alert("🔗 Cart link copied to clipboard!");
+            }
+        };
+
+        // Silent direct clipboard copy (no prompt popup dialog!)
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(shareUrl).then(copySuccess).catch(() => {
+                this.fallbackCopyToClipboard(shareUrl, copySuccess);
             });
         } else {
-            prompt("Copy your cart share link below:", shareUrl);
+            this.fallbackCopyToClipboard(shareUrl, copySuccess);
+        }
+    },
+
+    fallbackCopyToClipboard(text, callback) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            textArea.remove();
+            if (callback) callback();
+        } catch (err) {
+            textArea.remove();
+            console.error('Fallback copy failed', err);
         }
     },
 
     checkSharedCartUrl() {
         const urlParams = new URLSearchParams(window.location.search);
-        const sharedData = urlParams.get('shared_cart');
-        if (!sharedData) return;
+
+        // Support both new base64 JSON payload (?cart_data=) and legacy query string (?shared_cart=)
+        const cartData = urlParams.get('cart_data');
+        const legacySharedData = urlParams.get('shared_cart');
+
+        if (!cartData && !legacySharedData) return;
 
         try {
-            const itemPairs = decodeURIComponent(sharedData).split(';');
-            let addedCount = 0;
+            let totalAddedQty = 0;
 
-            itemPairs.forEach(pair => {
-                const [id, qtyStr, sizeStr] = pair.split(':');
-                const qty = parseInt(qtyStr, 10) || 1;
-                const size = sizeStr ? decodeURIComponent(sizeStr) : '100ml';
+            if (cartData) {
+                const decodedJson = decodeURIComponent(atob(cartData));
+                const sharedItems = JSON.parse(decodedJson);
+                if (Array.isArray(sharedItems) && sharedItems.length > 0) {
+                    sharedItems.forEach(sharedItem => {
+                        if (!sharedItem.id || !sharedItem.price) return;
+                        const qty = parseInt(sharedItem.qty, 10) || 1;
+                        const size = sharedItem.size || '100ml';
 
-                let prod = null;
-                if (window.AFEEM_PRODUCTS) {
-                    prod = window.AFEEM_PRODUCTS.find(p => p.id === id);
+                        // MERGE: Find if item already exists in local cart (DO NOT REPLACE)
+                        const match = this.items.find(i => i.id === sharedItem.id && i.size === size);
+                        if (match) {
+                            match.qty += qty;
+                        } else {
+                            this.items.push({
+                                id: sharedItem.id,
+                                title: sharedItem.title || 'Luxury Perfume EDP',
+                                price: parseFloat(sharedItem.price) || 499,
+                                image: sharedItem.image || 'assets/images/products/loop-1.webp',
+                                size: size,
+                                qty: qty
+                            });
+                        }
+                        totalAddedQty += qty;
+                    });
                 }
-                if (!prod && window.AFEEM_REELS_DATA) {
-                    const reel = window.AFEEM_REELS_DATA.find(r => r.id === id);
-                    if (reel) {
-                        prod = {
-                            id: reel.id,
-                            title: reel.title,
-                            price: reel.price,
-                            image: reel.img
-                        };
+            } else if (legacySharedData) {
+                const itemPairs = decodeURIComponent(legacySharedData).split(';');
+                itemPairs.forEach(pair => {
+                    const [id, qtyStr, sizeStr] = pair.split(':');
+                    const qty = parseInt(qtyStr, 10) || 1;
+                    const size = sizeStr ? decodeURIComponent(sizeStr) : '100ml';
+
+                    let prod = null;
+                    if (window.AFEEM_PRODUCTS) {
+                        prod = window.AFEEM_PRODUCTS.find(p => p.id === id);
                     }
-                }
-
-                if (prod) {
-                    // MERGE into existing cart (DO NOT REPLACE)
-                    const match = this.items.find(i => i.id === id && i.size === size);
-                    if (match) {
-                        match.qty += qty;
-                    } else {
-                        this.items.push({
-                            id: prod.id,
-                            title: prod.title,
-                            size: size,
-                            price: prod.price,
-                            image: prod.image || prod.img,
-                            qty: qty
-                        });
+                    if (!prod && window.AFEEM_REELS_DATA) {
+                        const reel = window.AFEEM_REELS_DATA.find(r => r.id === id);
+                        if (reel) prod = { id: reel.id, title: reel.title, price: reel.price, image: reel.img };
                     }
-                    addedCount += qty;
-                }
-            });
+                    if (prod) {
+                        const match = this.items.find(i => i.id === id && i.size === size);
+                        if (match) {
+                            match.qty += qty;
+                        } else {
+                            this.items.push({ id: prod.id, title: prod.title, size: size, price: prod.price, image: prod.image || prod.img, qty: qty });
+                        }
+                        totalAddedQty += qty;
+                    }
+                });
+            }
 
-            if (addedCount > 0) {
+            if (totalAddedQty > 0) {
                 this.save();
                 setTimeout(() => {
                     const drawer = document.getElementById("cart-drawer");
                     if (drawer) drawer.setAttribute("aria-hidden", "false");
                     if (window.showWishlistToast) {
-                        window.showWishlistToast(`🛒 ${addedCount} item(s) from shared cart added to your Bag!`);
+                        window.showWishlistToast(`🛒 ${totalAddedQty} item(s) from shared cart added to your Bag!`);
                     }
                 }, 400);
             }
 
-            // Remove query string from address bar without reloading
+            // Remove query parameter cleanly from address bar without reloading page
             const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
             window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
         } catch (e) {
-            console.error("Error parsing shared cart:", e);
+            console.error("Error decoding shared cart data:", e);
         }
     },
 
