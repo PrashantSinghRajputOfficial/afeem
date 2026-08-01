@@ -846,7 +846,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/loop-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "X9oGw8cJ_Pw",
+        youtubeUrl: "https://www.youtube.com/shorts/X9oGw8cJ_Pw",
         desc: "GILDED. GRAND. GLORIOUS. Quiet luxury and effortlessly premium handcrafted EDP.",
         productPage: "product.html?id=afeem-loop"
     },
@@ -857,7 +858,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/ocean-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "3RGKaBxLV-0",
+        youtubeUrl: "https://www.youtube.com/shorts/3RGKaBxLV-0",
         desc: "DEEP. MARINE. VIBRANT. Fresh sea breeze notes for high-power daytime confidence.",
         productPage: "product.html?id=afeem-ocean"
     },
@@ -868,7 +870,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/combat-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "FZXiWHJtzQo",
+        youtubeUrl: "https://www.youtube.com/shorts/FZXiWHJtzQo",
         desc: "BOLD. LEATHER. INTENSE. Warm spicy leather accord crafted for evening presence.",
         productPage: "product.html?id=afeem-combat"
     },
@@ -879,7 +882,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/buzz-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "bNLaCgR6SBk",
+        youtubeUrl: "https://www.youtube.com/shorts/bNLaCgR6SBk",
         desc: "ELECTRIC. CITRUS. CHARMING. High energy zesty opening with smooth amber trail.",
         productPage: "product.html?id=afeem-buzz"
     },
@@ -890,7 +894,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/aura-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "qF3jAq8v3qQ",
+        youtubeUrl: "https://www.youtube.com/shorts/qF3jAq8v3qQ",
         desc: "SOPHISTICATED. MYSTICAL. LUXE. French-inspired master perfumery signature.",
         productPage: "product.html?id=afeem-aura"
     },
@@ -901,7 +906,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/pure-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "3VQfDTdWXAI",
+        youtubeUrl: "https://www.youtube.com/shorts/3VQfDTdWXAI",
         desc: "PURE. ELEGANT. SILK. 24hr duration handcrafted French EDP experience.",
         productPage: "product.html?id=afeem-pure"
     },
@@ -912,7 +918,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/raid-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "DlkKiwFdKuw",
+        youtubeUrl: "https://www.youtube.com/shorts/DlkKiwFdKuw",
         desc: "RAW. POWERFUL. MAGNETIC. Spicy oriental blend for unstoppable charisma.",
         productPage: "product.html?id=afeem-raid"
     },
@@ -923,7 +930,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/guilty-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "W0irE55U8XQ",
+        youtubeUrl: "https://www.youtube.com/shorts/W0irE55U8XQ",
         desc: "SEDUCTIVE. DARK. AMBER. Midnight luxury perfume for late-night impression.",
         productPage: "product.html?id=afeem-guilty"
     },
@@ -934,7 +942,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/royal-1.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "R8TDppYuQe4",
+        youtubeUrl: "https://www.youtube.com/shorts/R8TDppYuQe4",
         desc: "KINGS. MAJESTIC. OUD. Imperial rich oud blend crafted for royalty.",
         productPage: "product.html?id=afeem-royal"
     },
@@ -945,7 +954,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/loop-2.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "n8IexNP6e5E",
+        youtubeUrl: "https://www.youtube.com/shorts/n8IexNP6e5E",
         desc: "UNFORGETTABLE. MEMORY. ROSE. Enchanting floral woody accord.",
         productPage: "product.html?id=afeem-story"
     },
@@ -956,7 +966,8 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/aura-2.webp",
-        videoUrl: "assets/videos/product/Rosila Video.mp4",
+        youtubeId: "s4eG-Zz87dU",
+        youtubeUrl: "https://www.youtube.com/shorts/s4eG-Zz87dU",
         desc: "GILDED. RADIANT. WARM. 24karat liquid gold scent experience.",
         productPage: "product.html?id=afeem-gold"
     }
@@ -974,7 +985,10 @@ function initShoppableReelsCarousel() {
         return `
             <div class="reel-item-card" onclick="openReelModal(${realDataIndex})">
                 <div class="reel-video-box">
-                    <video class="reel-card-video" src="${reel.videoUrl}" autoplay loop muted playsinline poster="${reel.img}"></video>
+                    <div class="reel-iframe-cropper">
+                        <iframe class="reel-card-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1&enablejsapi=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+                    </div>
+                    <div class="reel-video-touch-shield"></div>
                     <div class="reel-badge-thumb">
                         <img src="${reel.img}" alt="${reel.title}">
                     </div>
@@ -999,9 +1013,12 @@ window.scrollReelsCarousel = function(direction) {
     }
 };
 
+let isReelModalMuted = true;
+
 window.openReelModal = function(index) {
     const reel = AFEEM_REELS_DATA[index];
     if (!reel) return;
+    isReelModalMuted = true;
 
     const modal = document.getElementById("shoppable-reel-modal");
     const videoFrameContainer = document.getElementById("reel-video-frame-container");
@@ -1019,7 +1036,10 @@ window.openReelModal = function(index) {
 
     if (modal && videoFrameContainer) {
         videoFrameContainer.innerHTML = `
-            <video id="reel-modal-video" class="reel-modal-video" src="${reel.videoUrl}" autoplay loop muted playsinline poster="${reel.img}"></video>
+            <div class="reel-modal-video-cropper">
+                <iframe id="reel-modal-video-iframe" class="reel-modal-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1&enablejsapi=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+            </div>
+            <div class="reel-video-touch-shield"></div>
         `;
 
         if (soundIcon) soundIcon.textContent = "🔇";
@@ -1049,15 +1069,10 @@ window.openReelModal = function(index) {
             viewProdBtn.href = reel.productPage;
         }
 
-        // Share button copies link or opens share dialog
+        // Share button opens YouTube Shorts URL in new tab
         if (videoShareBtn) {
             videoShareBtn.onclick = function() {
-                if (navigator.share) {
-                    navigator.share({ title: reel.title, url: window.location.href });
-                } else if (navigator.clipboard) {
-                    navigator.clipboard.writeText(window.location.href);
-                    if (window.showWishlistToast) window.showWishlistToast("🔗 Video link copied!");
-                }
+                window.open(reel.youtubeUrl, '_blank');
             };
         }
 
@@ -1096,13 +1111,17 @@ window.closeReelModal = function() {
 };
 
 window.toggleReelModalSound = function() {
-    const video = document.getElementById("reel-modal-video");
+    const iframe = document.getElementById("reel-modal-video-iframe");
     const soundIcon = document.getElementById("reel-sound-icon");
-    if (!video) return;
+    if (!iframe) return;
 
-    video.muted = !video.muted;
-    if (soundIcon) {
-        soundIcon.textContent = video.muted ? "🔇" : "🔊";
+    isReelModalMuted = !isReelModalMuted;
+    if (isReelModalMuted) {
+        iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+        if (soundIcon) soundIcon.textContent = "🔇";
+    } else {
+        iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+        if (soundIcon) soundIcon.textContent = "🔊";
     }
 };
 
