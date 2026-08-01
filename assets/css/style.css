@@ -6592,3 +6592,555 @@ a[href^="mailto:support@afeem.in"] {
     color: #ffffff !important;
     transform: translateY(-1px);
 }
+
+/* ==========================================================================
+   Grand Professional About Us Page Styling (about.html)
+   ========================================================================== */
+
+/* 1. Hero Banner & Stats Counter Bar */
+.about-hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, #0b0f19 0%, #172554 40%, #090d16 100%);
+    color: #ffffff;
+    padding: 80px 0 60px;
+    overflow: hidden;
+}
+
+.about-hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(226, 177, 60, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-hero-tag {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(226, 177, 60, 0.18);
+    border: 1px solid rgba(226, 177, 60, 0.4);
+    color: #e2b13c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.about-hero-title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-hero-sub {
+    font-size: 16px;
+    color: #94a3b8;
+    line-height: 1.6;
+    max-width: 720px;
+    margin: 0 auto 40px;
+}
+
+.about-stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-num {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: #e2b13c;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.stat-lbl {
+    font-size: 11.5px;
+    color: #cbd5e1;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* 2. Story Chapter Split Sections */
+.about-chapter-section {
+    padding: 70px 0;
+}
+
+.about-chapter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-chapter-grid.reverse {
+    direction: rtl;
+}
+
+.about-chapter-grid.reverse > * {
+    direction: ltr;
+}
+
+.chapter-badge {
+    font-size: 11px;
+    font-weight: 800;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.chapter-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+}
+
+.chapter-text {
+    font-size: 14.5px;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.chapter-img-box {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.chapter-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.chapter-img-box:hover img {
+    transform: scale(1.04);
+}
+
+/* 3. Artisanal 4-Step Crafting Timeline */
+.crafting-section {
+    background: #f8fafc;
+    padding: 80px 0;
+}
+
+.section-head-center {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 50px;
+}
+
+.section-head-tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: #e2b13c;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.section-head-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.section-head-desc {
+    font-size: 14.5px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+}
+
+.timeline-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 24px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.timeline-num {
+    font-size: 36px;
+    font-weight: 900;
+    color: #e2b13c;
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+.timeline-card h4 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.timeline-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 4. Olfactory Pyramid Showcase */
+.pyramid-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.pyramid-container {
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pyramid-tier {
+    border-radius: 16px;
+    padding: 28px 32px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pyramid-tier:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.pyramid-tier.top-notes {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-color: #bae6fd;
+}
+
+.pyramid-tier.heart-notes {
+    background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+    border-color: #fef08a;
+}
+
+.pyramid-tier.base-notes {
+    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    border-color: #e9d5ff;
+}
+
+.tier-badge {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+
+.top-notes .tier-badge { background: #0284c7; color: #ffffff; }
+.heart-notes .tier-badge { background: #ca8a04; color: #ffffff; }
+.base-notes .tier-badge { background: #7e22ce; color: #ffffff; }
+
+.tier-details h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.tier-details p {
+    font-size: 13.5px;
+    color: #475569;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 5. 6 Core Brand Pillars Grid */
+.pillars-section {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 80px 0;
+}
+
+.pillars-section .section-head-title {
+    color: #ffffff;
+}
+
+.pillars-section .section-head-desc {
+    color: #94a3b8;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.pillar-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px 24px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(226, 177, 60, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.pillar-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.pillar-card h4 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.pillar-card p {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 6. Leadership & Founder's Statement */
+.founder-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.founder-card {
+    max-width: 860px;
+    margin: 0 auto;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 40px 50px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.founder-quote {
+    font-size: 18px;
+    font-style: italic;
+    color: #1e293b;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.founder-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.founder-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #e2b13c;
+    color: #111111;
+    font-size: 22px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.founder-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 2px 0;
+}
+
+.founder-role {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* 7. Brand FAQ Accordion */
+.faq-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.faq-accordion {
+    max-width: 780px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.faq-toggle-icon {
+    font-size: 18px;
+    font-weight: 400;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 24px 20px;
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.6;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* 8. Grand Call To Action Banner */
+.about-cta-section {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.cta-sub {
+    font-size: 15px;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.btn-about-gold-cta {
+    display: inline-block;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #e2b13c 0%, #d4a029 100%);
+    color: #111111 !important;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(226, 177, 60, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-about-gold-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(226, 177, 60, 0.55);
+}
+
+/* Responsive Rules for About Us Page */
+@media (max-width: 992px) {
+    .about-hero-title { font-size: 34px; }
+    .about-stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .about-chapter-grid { grid-template-columns: 1fr; gap: 30px; }
+    .timeline-grid { grid-template-columns: repeat(2, 1fr); }
+    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .pyramid-tier { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 576px) {
+    .about-hero-title { font-size: 28px; }
+    .about-stats-bar { grid-template-columns: 1fr; }
+    .timeline-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .founder-card { padding: 30px 20px; }
+}
