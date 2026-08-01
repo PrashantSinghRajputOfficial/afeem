@@ -1008,7 +1008,7 @@ window.openReelModal = function(index) {
     isReelModalMuted = false;
 
     const modal = document.getElementById("shoppable-reel-modal");
-    const videoPanel = document.querySelector(".reel-video-panel");
+    const videoFrameContainer = document.getElementById("reel-video-frame-container");
     const img = document.getElementById("reel-modal-prod-img");
     const title = document.getElementById("reel-modal-prod-title");
     const price = document.getElementById("reel-modal-prod-price");
@@ -1016,14 +1016,13 @@ window.openReelModal = function(index) {
     const discount = document.getElementById("reel-modal-prod-discount");
     const desc = document.getElementById("reel-modal-prod-desc");
     const addCartBtn = document.getElementById("reel-modal-add-cart-btn");
-    const moreInfoBtn = document.getElementById("reel-modal-more-info-btn");
+    const viewProdBtn = document.getElementById("reel-modal-view-prod-btn");
+    const videoWishlistBtn = document.getElementById("reel-video-wishlist-btn");
+    const panelWishlistBtn = document.getElementById("reel-modal-panel-wishlist-btn");
 
-    if (modal && videoPanel) {
-        videoPanel.innerHTML = `
+    if (modal && videoFrameContainer) {
+        videoFrameContainer.innerHTML = `
             <iframe id="reel-modal-video-iframe" class="reel-modal-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&loop=1&playlist=${reel.youtubeId}&playsinline=1&enablejsapi=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-            <button class="reel-sound-toggle" id="reel-sound-toggle" onclick="toggleReelModalSound()" aria-label="Toggle Sound">
-                <span id="reel-sound-icon">🔊</span>
-            </button>
         `;
 
         if (img) img.src = reel.img;
@@ -1047,9 +1046,25 @@ window.openReelModal = function(index) {
             };
         }
 
-        if (moreInfoBtn) {
-            moreInfoBtn.href = reel.productPage;
+        if (viewProdBtn) {
+            viewProdBtn.href = reel.productPage;
         }
+
+        const handleWishlistToggle = function() {
+            if (window.WishlistManager) {
+                window.WishlistManager.toggleItem({
+                    id: reel.id,
+                    title: reel.title,
+                    price: reel.price,
+                    image: reel.img
+                });
+            } else if (window.showWishlistToast) {
+                window.showWishlistToast(`❤️ Added ${reel.title} to Wishlist!`);
+            }
+        };
+
+        if (videoWishlistBtn) videoWishlistBtn.onclick = handleWishlistToggle;
+        if (panelWishlistBtn) panelWishlistBtn.onclick = handleWishlistToggle;
 
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
@@ -1058,13 +1073,13 @@ window.openReelModal = function(index) {
 
 window.closeReelModal = function() {
     const modal = document.getElementById("shoppable-reel-modal");
-    const videoPanel = document.querySelector(".reel-video-panel");
+    const videoFrameContainer = document.getElementById("reel-video-frame-container");
     if (modal) {
         modal.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
     }
-    if (videoPanel) {
-        videoPanel.innerHTML = "";
+    if (videoFrameContainer) {
+        videoFrameContainer.innerHTML = "";
     }
 };
 

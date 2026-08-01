@@ -6336,7 +6336,47 @@ a[href^="mailto:support@afeem.in"] {
     background: #111111;
 }
 
-/* Right: Product Details Panel (Matching Image 1) */
+/* Floating Wishlist Button Bottom Right Over Video (Requested by User) */
+.reel-video-wishlist-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(17, 17, 17, 0.75);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease;
+    pointer-events: auto;
+}
+
+.reel-video-wishlist-btn:hover,
+.reel-video-wishlist-btn.active {
+    background: #e11d48;
+    border-color: #e11d48;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.reel-video-wishlist-btn svg,
+.btn-reel-wishlist svg {
+    transition: transform 0.2s ease;
+}
+
+.reel-video-wishlist-btn:hover svg,
+.btn-reel-wishlist:hover svg {
+    transform: scale(1.15);
+}
+
+/* Right: Product Details Panel (Matching Image 1 & Brand Teal Theme) */
 .reel-product-panel {
     padding: 36px 32px;
     display: flex;
@@ -6355,6 +6395,7 @@ a[href^="mailto:support@afeem.in"] {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 
 .reel-product-img-box img {
@@ -6393,60 +6434,88 @@ a[href^="mailto:support@afeem.in"] {
 .reel-price-discount {
     font-size: 13px;
     font-weight: 800;
-    color: #e11d48;
+    color: #27a89d; /* Brand Teal Discount Tag */
+    background: #eefaf8;
+    padding: 3px 8px;
+    border-radius: 6px;
 }
 
 .reel-prod-desc {
     font-size: 12.5px;
     color: #64748b;
     line-height: 1.5;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
 
 .reel-modal-actions {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 10px;
 }
 
 .btn-reel-add-cart {
-    flex: 1;
-    padding: 14px 20px;
-    background: #d92d20;
+    flex: 1.4;
+    padding: 13px 16px;
+    background: #2f889a; /* Brand Luxury Teal Primary Button */
     color: #ffffff;
     border: none;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 800;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     cursor: pointer;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 14px rgba(217, 45, 32, 0.3);
+    box-shadow: 0 4px 14px rgba(47, 136, 154, 0.3);
 }
 
 .btn-reel-add-cart:hover {
-    background: #b42318;
+    background: #246d7c;
     transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(47, 136, 154, 0.4);
 }
 
-.btn-reel-more-info {
-    flex: 1;
-    padding: 14px 20px;
-    background: #f1f5f9;
-    color: #111111;
-    border: 1px solid #cbd5e1;
+.btn-reel-wishlist {
+    width: 44px;
+    height: 44px;
     border-radius: 10px;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    text-align: center;
-    text-decoration: none !important;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     transition: all 0.25s ease;
 }
 
-.btn-reel-more-info:hover {
-    background: #111111;
+.btn-reel-wishlist:hover,
+.btn-reel-wishlist.active {
+    background: #e11d48;
+    border-color: #e11d48;
     color: #ffffff;
-    border-color: #111111;
+}
+
+.btn-reel-view-product {
+    flex: 1.4;
+    padding: 13px 16px;
+    background: #111111; /* Dark Luxury Secondary Button */
+    color: #ffffff !important;
+    border: 1px solid #111111;
+    border-radius: 10px;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-reel-view-product:hover {
+    background: #2f889a;
+    border-color: #2f889a;
+    color: #ffffff !important;
+    transform: translateY(-1px);
 }

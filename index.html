@@ -1084,20 +1084,24 @@
             </div>
     </div>
 
-    <!-- Shoppable Reel Lightbox Split Modal (Matching Image 1) -->
+    <!-- Shoppable Reel Lightbox Split Modal -->
     <div class="shoppable-reel-modal" id="shoppable-reel-modal" aria-hidden="true">
         <div class="reel-modal-overlay" onclick="closeReelModal()"></div>
         <div class="reel-modal-dialog">
             <button class="reel-modal-close" onclick="closeReelModal()" aria-label="Close Modal">&times;</button>
             <div class="reel-modal-body">
-                <!-- Left: Full Height Reel Video Player -->
+                <!-- Left: Full Height Reel Video Panel -->
                 <div class="reel-video-panel">
-                    <video id="reel-modal-video" class="reel-modal-video" autoplay loop muted playsinline></video>
+                    <div id="reel-video-frame-container" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
                     <button class="reel-sound-toggle" id="reel-sound-toggle" onclick="toggleReelModalSound()" aria-label="Toggle Sound">
-                        <span id="reel-sound-icon">🔇</span>
+                        <span id="reel-sound-icon">🔊</span>
+                    </button>
+                    <!-- Video Overlay Wishlist Button (Bottom Right) -->
+                    <button class="reel-video-wishlist-btn" id="reel-video-wishlist-btn" aria-label="Add to Wishlist" title="Add to Wishlist">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
                     </button>
                 </div>
-                <!-- Right: Product Card Panel (Matching Image 1) -->
+                <!-- Right: Product Card Panel -->
                 <div class="reel-product-panel">
                     <div class="reel-product-img-box">
                         <img id="reel-modal-prod-img" src="assets/images/products/loop-1.webp" alt="Product Image">
@@ -1110,8 +1114,11 @@
                     </div>
                     <p class="reel-prod-desc" id="reel-modal-prod-desc">GILDED. GRAND. GLORIOUS. Quiet luxury and effortlessly premium handcrafted EDP.</p>
                     <div class="reel-modal-actions">
-                        <button class="btn-reel-add-cart" id="reel-modal-add-cart-btn">Add to cart</button>
-                        <a href="#" class="btn-reel-more-info" id="reel-modal-more-info-btn">More info</a>
+                        <button class="btn-reel-add-cart" id="reel-modal-add-cart-btn">ADD TO CART</button>
+                        <button class="btn-reel-wishlist" id="reel-modal-panel-wishlist-btn" aria-label="Wishlist" title="Add to Wishlist">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </button>
+                        <a href="#" class="btn-reel-view-product" id="reel-modal-view-prod-btn">VIEW PRODUCT ➔</a>
                     </div>
                 </div>
             </div>
