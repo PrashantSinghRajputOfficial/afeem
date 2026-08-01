@@ -846,7 +846,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/loop-1.webp",
-        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=198d1d3f-4d4a-4156-9799-5980e81cd9a7&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjE5OGQxZDNmLTRkNGEtNDE1Ni05Nzk5LTU5ODBlODFjZDlhNyIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.xHCcog0VVIMmJJhtcR_FN9sp50fdPgO3HpLdShfriLo&type=master&shop=pypyyn-d1.myshopify.com",
+        youtubeId: "W-dGxZb_0_k",
         desc: "GILDED. GRAND. GLORIOUS. Quiet luxury and effortlessly premium handcrafted EDP.",
         productPage: "product.html?id=afeem-loop"
     },
@@ -857,7 +857,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/ocean-1.webp",
-        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=1db0635c-b0ef-41e5-9c1e-b20f06899010&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjFkYjA2MzVjLWIwZWYtNDFlNS05YzFlLWIyMGYwNjg5OTAxMCIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.HGiuKeYGkHbnmdYB4N7aIwCv4Pf8pXgxbMI58AI8z6Q&type=master&shop=pypyyn-d1.myshopify.com",
+        youtubeId: "W-dGxZb_0_k",
         desc: "DEEP. MARINE. VIBRANT. Fresh sea breeze notes for high-power daytime confidence.",
         productPage: "product.html?id=afeem-ocean"
     },
@@ -868,7 +868,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/combat-1.webp",
-        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=7def9ad7-14f1-40ee-81cc-849f95e23b1f&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjdkZWY5YWQ3LTE0ZjEtNDBlZS04MWNjLTg0OWY5NWUyM2IxZiIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.F3K4VFcDzcls_h40xxHR4zL2pcMBIhZ17wtVJp99QwM&type=master&shop=pypyyn-d1.myshopify.com",
+        youtubeId: "W-dGxZb_0_k",
         desc: "BOLD. LEATHER. INTENSE. Warm spicy leather accord crafted for evening presence.",
         productPage: "product.html?id=afeem-combat"
     },
@@ -879,7 +879,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/buzz-1.webp",
-        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=3dd1f405-e186-4e54-927a-b0c008e41a8f&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjNkZDFmNDA1LWUxODYtNGU1NC05MjdhLWIwYzAwOGU4MWE4ZiIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.leOTc3FOZPUM1F8e4kmNKnht0ap9fbC3zLrAIEb_F3Q&type=master&shop=pypyyn-d1.myshopify.com",
+        youtubeId: "W-dGxZb_0_k",
         desc: "ELECTRIC. CITRUS. CHARMING. High energy zesty opening with smooth amber trail.",
         productPage: "product.html?id=afeem-buzz"
     },
@@ -890,7 +890,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/aura-1.webp",
-        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=198d1d3f-4d4a-4156-9799-5980e81cd9a7&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjE5OGQxZDNmLTRkNGEtNDE1Ni05Nzk5LTU5ODBlODFjZDlhNyIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.xHCcog0VVIMmJJhtcR_FN9sp50fdPgO3HpLdShfriLo&type=master&shop=pypyyn-d1.myshopify.com",
+        youtubeId: "W-dGxZb_0_k",
         desc: "SOPHISTICATED. MYSTICAL. LUXE. French-inspired master perfumery signature.",
         productPage: "product.html?id=afeem-aura"
     },
@@ -901,7 +901,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/pure-1.webp",
-        videoUrl: "https://reels.theconversioncompany.in/apps/reels/hls?video_id=1db0635c-b0ef-41e5-9c1e-b20f06899010&token=eyJzaG9wIjoicHlweXluLWQxLm15c2hvcGlmeS5jb20iLCJ2aWRlb19pZCI6IjFkYjA2MzVjLWIwZWYtNDFlNS05YzFlLWIyMGYwNjg5OTAxMCIsImV4cCI6MTc4NTU2NTE5MCwic2NvcGUiOiJ2aWRlbyJ9.HGiuKeYGkHbnmdYB4N7aIwCv4Pf8pXgxbMI58AI8z6Q&type=master&shop=pypyyn-d1.myshopify.com",
+        youtubeId: "W-dGxZb_0_k",
         desc: "PURE. ELEGANT. SILK. 24hr duration handcrafted French EDP experience.",
         productPage: "product.html?id=afeem-pure"
     }
@@ -914,7 +914,7 @@ function initShoppableReelsCarousel() {
     track.innerHTML = AFEEM_REELS_DATA.map((reel, index) => `
         <div class="reel-item-card" onclick="openReelModal(${index})">
             <div class="reel-video-box">
-                <video class="reel-card-video" src="${reel.videoUrl}" autoplay loop muted playsinline></video>
+                <iframe class="reel-card-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${reel.youtubeId}&playsinline=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; pointer-events:none; border:none;"></iframe>
                 <div class="reel-play-icon-overlay">▶</div>
                 <div class="reel-badge-thumb">
                     <img src="${reel.img}" alt="${reel.title}">
@@ -944,7 +944,7 @@ window.openReelModal = function(index) {
     if (!reel) return;
 
     const modal = document.getElementById("shoppable-reel-modal");
-    const video = document.getElementById("reel-modal-video");
+    const videoPanel = document.querySelector(".reel-video-panel");
     const img = document.getElementById("reel-modal-prod-img");
     const title = document.getElementById("reel-modal-prod-title");
     const price = document.getElementById("reel-modal-prod-price");
@@ -954,13 +954,10 @@ window.openReelModal = function(index) {
     const addCartBtn = document.getElementById("reel-modal-add-cart-btn");
     const moreInfoBtn = document.getElementById("reel-modal-more-info-btn");
 
-    if (modal && video) {
-        video.src = reel.videoUrl;
-        video.muted = false;
-        video.play().catch(() => { video.muted = true; video.play(); });
-
-        const soundIcon = document.getElementById("reel-sound-icon");
-        if (soundIcon) soundIcon.textContent = video.muted ? "🔇" : "🔊";
+    if (modal && videoPanel) {
+        videoPanel.innerHTML = `
+            <iframe id="reel-modal-video-iframe" class="reel-modal-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=0&controls=1&loop=1&playlist=${reel.youtubeId}&playsinline=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;"></iframe>
+        `;
 
         if (img) img.src = reel.img;
         if (title) title.textContent = reel.title;
@@ -994,23 +991,13 @@ window.openReelModal = function(index) {
 
 window.closeReelModal = function() {
     const modal = document.getElementById("shoppable-reel-modal");
-    const video = document.getElementById("reel-modal-video");
+    const videoPanel = document.querySelector(".reel-video-panel");
     if (modal) {
         modal.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
     }
-    if (video) {
-        video.pause();
-        video.src = "";
-    }
-};
-
-window.toggleReelModalSound = function() {
-    const video = document.getElementById("reel-modal-video");
-    const soundIcon = document.getElementById("reel-sound-icon");
-    if (video && soundIcon) {
-        video.muted = !video.muted;
-        soundIcon.textContent = video.muted ? "🔇" : "🔊";
+    if (videoPanel) {
+        videoPanel.innerHTML = "";
     }
 };
 
