@@ -503,6 +503,8 @@
         </div>
     </footer>
 
+    <!-- INTERACTIVE SIDE DRAWERS & MODALS (Universal on all pages) -->
+
     <!-- Mobile Navigation Drawer -->
     <aside class="drawer drawer-left" id="mobile-menu-drawer" aria-hidden="true">
         <div class="drawer-overlay" data-close></div>
@@ -522,9 +524,151 @@
         </div>
     </aside>
 
+    <!-- Shopping Cart Drawer -->
+    <aside class="drawer drawer-right" id="cart-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR SHOPPING BAG (<span id="cart-drawer-count">0</span>)</span>
+                <button class="drawer-close" aria-label="Close cart">&times;</button>
+            </div>
+            <div class="drawer-body" id="cart-drawer-body">
+                <div class="drawer-empty-state" id="cart-empty-state">
+                    <p>Your shopping bag is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Go to the shop</a>
+                </div>
+                <div class="drawer-items-list hidden" id="cart-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="cart-drawer-footer"></div>
+        </div>
+    </aside>
+
+    <!-- Search Slide-down Panel Overlay -->
+    <aside class="search-overlay" id="search-panel" aria-hidden="true">
+        <div class="search-overlay-bg" data-close></div>
+        <div class="search-container">
+            <div class="search-header">
+                <h3 class="search-title">Search Our Store</h3>
+                <button class="search-close" id="search-close-btn" aria-label="Close search">&times;</button>
+            </div>
+            <div class="search-body">
+                <form class="search-form" id="search-panel-form">
+                    <input type="search" placeholder="Search for fragrances, scents..." required id="search-input">
+                    <button type="submit" class="search-submit-btn" aria-label="Submit search">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </form>
+                <div class="search-results-preview" id="search-results-preview"></div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Wishlist Drawer -->
+    <aside class="drawer drawer-right" id="wishlist-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">YOUR WISHLIST</span>
+                <button class="drawer-close" aria-label="Close wishlist">&times;</button>
+            </div>
+            <div class="drawer-body" id="wishlist-drawer-body">
+                <div class="drawer-empty-state" id="wishlist-empty-state">
+                    <p>Your wishlist is empty</p>
+                    <a href="shop.html" class="btn btn-primary">Discover Fragrances</a>
+                </div>
+                <div class="drawer-items-list hidden" id="wishlist-items-container"></div>
+            </div>
+            <div class="drawer-footer hidden" id="wishlist-drawer-footer"></div>
+        </div>
+    </aside>
+
+    <!-- Login/Register / Recovery Account Drawer -->
+    <aside class="drawer drawer-right" id="account-drawer" aria-hidden="true">
+        <div class="drawer-overlay" data-close></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title" id="account-drawer-title">Login</span>
+                <button class="drawer-close" aria-label="Close account">&times;</button>
+            </div>
+            
+            <div class="drawer-body">
+                <!-- Login Panel -->
+                <div class="account-panel active" id="panel-login">
+                    <h3>Great to have you back!</h3>
+                    <form class="account-form" id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email Address *</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password *</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-recover">Forgot your password?</a>
+                            <a href="#" class="switch-panel-btn" data-target="panel-register">Register now</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Registration Panel -->
+                <div class="account-panel" id="panel-register">
+                    <h3>Create an Account</h3>
+                    <form class="account-form" id="register-form">
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text" id="register-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email Address *</label>
+                            <input type="email" id="register-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password *</label>
+                            <input type="password" id="register-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-login">Back to login</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Password Recovery Panel -->
+                <div class="account-panel" id="panel-recover">
+                    <h3>Reset your password</h3>
+                    <p class="panel-subtitle">We will send you an email to reset your password.</p>
+                    <form class="account-form" id="recover-form">
+                        <div class="form-group">
+                            <label for="recover-email">Email Address *</label>
+                            <input type="email" id="recover-email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        <div class="form-helper">
+                            <a href="#" class="switch-panel-btn" data-target="panel-login">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickview-modal" aria-hidden="true">
+        <div class="modal-overlay" data-close></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close dialog">&times;</button>
+            <div class="modal-content" id="quickview-modal-content"></div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="assets/js/menu.js" defer></script>
-    <script src="assets/js/products.js" defer></script>
+    <script src="assets/js/product.js" defer></script>
     <script src="assets/js/app.js" defer></script>
     <script>
         function toggleFaq(btn) {
