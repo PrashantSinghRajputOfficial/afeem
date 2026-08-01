@@ -1414,12 +1414,11 @@ function initProductRangeReelsCarousel(product) {
     }
 
     track.innerHTML = infiniteRangeData.map((reel) => {
-        const globalIndex = allReels.findIndex(r => r.id === reel.id || r.youtubeId === reel.youtubeId);
+        const globalIndex = allReels.findIndex(r => r.id === reel.id || r.externalUrl === reel.externalUrl);
         return `
             <div class="reel-item-card" onclick="openReelModalByData(window.AFEEM_REELS_DATA[${globalIndex >= 0 ? globalIndex : 0}])">
                 <div class="reel-video-box">
-                    <img src="${reel.img}" alt="${reel.title}" class="reel-card-img" loading="lazy">
-                    <div class="reel-card-play-icon">▶</div>
+                    <video class="reel-card-video" src="${reel.videoUrl}" autoplay loop muted playsinline poster="${reel.img}"></video>
                     <div class="reel-badge-thumb">
                         <img src="${reel.img}" alt="${reel.title}">
                     </div>
