@@ -1,39 +1,40 @@
-// 0. Universal Non-Blocking Toast Component (No Alert Popups!)
+// 0. Universal Non-Blocking Toast Component (Top-Center Light Theme)
 window.showWishlistToast = function(message) {
     let toast = document.getElementById("afeem-global-toast");
     if (!toast) {
         toast = document.createElement("div");
         toast.id = "afeem-global-toast";
         toast.style.position = "fixed";
-        toast.style.bottom = "24px";
-        toast.style.right = "24px";
-        toast.style.backgroundColor = "#0f172a";
-        toast.style.color = "#ffffff";
-        toast.style.padding = "12px 22px";
-        toast.style.borderRadius = "10px";
-        toast.style.fontSize = "13px";
+        toast.style.top = "24px";
+        toast.style.left = "50%";
+        toast.style.transform = "translateX(-50%) translateY(-20px)";
+        toast.style.backgroundColor = "#ffffff";
+        toast.style.color = "#0f172a";
+        toast.style.padding = "12px 24px";
+        toast.style.borderRadius = "30px";
+        toast.style.fontSize = "13.5px";
         toast.style.fontWeight = "700";
-        toast.style.boxShadow = "0 10px 30px rgba(0,0,0,0.35)";
+        toast.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06)";
         toast.style.zIndex = "999999";
-        toast.style.transition = "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
+        toast.style.transition = "all 0.35s cubic-bezier(0.16, 1, 0.3, 1)";
         toast.style.opacity = "0";
-        toast.style.transform = "translateY(20px)";
         toast.style.display = "flex";
         toast.style.alignItems = "center";
         toast.style.gap = "10px";
-        toast.style.border = "1px solid rgba(255,255,255,0.18)";
+        toast.style.border = "1px solid #cbd5e1";
         toast.style.pointerEvents = "none";
+        toast.style.letterSpacing = "0.02em";
         document.body.appendChild(toast);
     }
 
     toast.innerHTML = message;
     toast.style.opacity = "1";
-    toast.style.transform = "translateY(0)";
+    toast.style.transform = "translateX(-50%) translateY(0)";
 
     if (window.toastTimer) clearTimeout(window.toastTimer);
     window.toastTimer = setTimeout(() => {
         toast.style.opacity = "0";
-        toast.style.transform = "translateY(20px)";
+        toast.style.transform = "translateX(-50%) translateY(-20px)";
     }, 3000);
 };
 
@@ -289,11 +290,6 @@ const CartManager = {
             cartBadge.classList.remove("badge-icon-pop");
             void cartBadge.offsetWidth;
             cartBadge.classList.add("badge-icon-pop");
-        }
-
-        // Show toast feedback notification without opening drawer overlay
-        if (window.showWishlistToast) {
-            window.showWishlistToast(`✓ "${item.title || 'Product'}" added to your Bag!`);
         }
     },
 
