@@ -1096,13 +1096,17 @@
                     <button class="reel-sound-toggle" id="reel-sound-toggle" onclick="toggleReelModalSound()" aria-label="Toggle Sound">
                         <span id="reel-sound-icon">🔊</span>
                     </button>
-                    <!-- Video Overlay Wishlist Button (Bottom Right) -->
-                    <button class="reel-video-wishlist-btn" id="reel-video-wishlist-btn" aria-label="Add to Wishlist" title="Add to Wishlist">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <!-- Video Overlay Share Redirect Button (Bottom Right) -->
+                    <button class="reel-video-share-btn" id="reel-video-share-btn" aria-label="Share Video" title="Open Video Link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                     </button>
                 </div>
                 <!-- Right: Product Card Panel -->
                 <div class="reel-product-panel">
+                    <!-- Wishlist Heart Button Directly Below Close (X) Button -->
+                    <button class="reel-panel-wishlist-top-btn" id="reel-modal-panel-wishlist-btn" aria-label="Add to Wishlist" title="Add to Wishlist">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </button>
                     <div class="reel-product-img-box">
                         <img id="reel-modal-prod-img" src="assets/images/products/loop-1.webp" alt="Product Image">
                     </div>
@@ -1115,9 +1119,6 @@
                     <p class="reel-prod-desc" id="reel-modal-prod-desc">GILDED. GRAND. GLORIOUS. Quiet luxury and effortlessly premium handcrafted EDP.</p>
                     <div class="reel-modal-actions">
                         <button class="btn-reel-add-cart" id="reel-modal-add-cart-btn">ADD TO CART</button>
-                        <button class="btn-reel-wishlist" id="reel-modal-panel-wishlist-btn" aria-label="Wishlist" title="Add to Wishlist">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        </button>
                         <a href="#" class="btn-reel-view-product" id="reel-modal-view-prod-btn">VIEW PRODUCT ➔</a>
                     </div>
                 </div>

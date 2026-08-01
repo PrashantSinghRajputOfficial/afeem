@@ -6120,11 +6120,15 @@ a[href^="mailto:support@afeem.in"] {
 }
 
 .reel-card-video {
-    width: 100%;
-    height: 100%;
+    width: 140%;
+    height: 140%;
+    position: absolute;
+    top: -20%;
+    left: -20%;
     object-fit: cover;
     display: block;
     pointer-events: none;
+    border: none;
 }
 
 /* Overlaid Square Product Thumbnail Badge at Bottom Center (Image 2) */
@@ -6150,19 +6154,7 @@ a[href^="mailto:support@afeem.in"] {
 }
 
 .reel-play-icon-overlay {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.4);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    backdrop-filter: blur(4px);
+    display: none !important;
 }
 
 /* Card Meta Below Reel Video (Image 2) */
@@ -6248,38 +6240,40 @@ a[href^="mailto:support@afeem.in"] {
     background: #ffffff;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .reel-modal-close {
     position: absolute;
     top: 14px;
     right: 14px;
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background: #ffffff;
+    background: #f1f5f9;
     border: none;
-    font-size: 24px;
-    font-weight: 600;
     color: #111111;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
     cursor: pointer;
     z-index: 10;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .reel-modal-close:hover {
     transform: scale(1.1);
+    background: #e2e8f0;
 }
 
 .reel-modal-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100%;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -6298,11 +6292,11 @@ a[href^="mailto:support@afeem.in"] {
 }
 
 .reel-modal-video {
-    width: 124%;
-    height: 124%;
+    width: 140%;
+    height: 140%;
     position: absolute;
-    top: -12%;
-    left: -12%;
+    top: -20%;
+    left: -20%;
     object-fit: cover;
     display: block;
     border: none;
@@ -6336,8 +6330,8 @@ a[href^="mailto:support@afeem.in"] {
     background: #111111;
 }
 
-/* Floating Wishlist Button Bottom Right Over Video (Requested by User) */
-.reel-video-wishlist-btn {
+/* Floating Share Redirect Button Bottom Right Over Video */
+.reel-video-share-btn {
     position: absolute;
     bottom: 16px;
     right: 16px;
@@ -6358,31 +6352,59 @@ a[href^="mailto:support@afeem.in"] {
     pointer-events: auto;
 }
 
-.reel-video-wishlist-btn:hover,
-.reel-video-wishlist-btn.active {
-    background: #e11d48;
-    border-color: #e11d48;
+.reel-video-share-btn:hover {
+    background: #2f889a;
+    border-color: #2f889a;
     color: #ffffff;
     transform: scale(1.1);
 }
 
-.reel-video-wishlist-btn svg,
-.btn-reel-wishlist svg {
+.reel-video-share-btn svg,
+.reel-panel-wishlist-top-btn svg {
     transition: transform 0.2s ease;
 }
 
-.reel-video-wishlist-btn:hover svg,
-.btn-reel-wishlist:hover svg {
+.reel-video-share-btn:hover svg,
+.reel-panel-wishlist-top-btn:hover svg {
     transform: scale(1.15);
 }
 
-/* Right: Product Details Panel (Matching Image 1 & Brand Teal Theme) */
+/* Right: Product Details Panel */
 .reel-product-panel {
+    position: relative;
     padding: 36px 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: #ffffff;
+}
+
+/* Wishlist Heart Button Directly Below Close (X) Button */
+.reel-panel-wishlist-top-btn {
+    position: absolute;
+    top: 62px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.reel-panel-wishlist-top-btn:hover,
+.reel-panel-wishlist-top-btn.active {
+    background: #e11d48;
+    border-color: #e11d48;
+    color: #ffffff;
+    transform: scale(1.1);
 }
 
 .reel-product-img-box {
@@ -6434,7 +6456,7 @@ a[href^="mailto:support@afeem.in"] {
 .reel-price-discount {
     font-size: 13px;
     font-weight: 800;
-    color: #27a89d; /* Brand Teal Discount Tag */
+    color: #27a89d;
     background: #eefaf8;
     padding: 3px 8px;
     border-radius: 6px;
@@ -6452,28 +6474,29 @@ a[href^="mailto:support@afeem.in"] {
 .reel-modal-actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .btn-reel-add-cart {
     flex: 1.4;
-    padding: 13px 16px;
-    background: #2f889a; /* Brand Luxury Teal Primary Button */
-    color: #ffffff;
+    padding: 14px 20px;
+    background: #e2b13c; /* Golden Yellow Button Matching Product Page */
+    color: #111111;
     border: none;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 800;
     letter-spacing: 0.06em;
     cursor: pointer;
     transition: all 0.25s ease;
-    box-shadow: 0 4px 14px rgba(47, 136, 154, 0.3);
+    box-shadow: 0 4px 14px rgba(226, 177, 60, 0.35);
 }
 
 .btn-reel-add-cart:hover {
-    background: #246d7c;
+    background: #d4a029;
+    color: #111111;
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(47, 136, 154, 0.4);
+    box-shadow: 0 6px 18px rgba(226, 177, 60, 0.45);
 }
 
 .btn-reel-wishlist {
@@ -6499,7 +6522,7 @@ a[href^="mailto:support@afeem.in"] {
 
 .btn-reel-view-product {
     flex: 1.4;
-    padding: 13px 16px;
+    padding: 14px 20px;
     background: #111111; /* Dark Luxury Secondary Button */
     color: #ffffff !important;
     border: 1px solid #111111;

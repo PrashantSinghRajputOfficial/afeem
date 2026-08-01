@@ -1017,7 +1017,7 @@ window.openReelModal = function(index) {
     const desc = document.getElementById("reel-modal-prod-desc");
     const addCartBtn = document.getElementById("reel-modal-add-cart-btn");
     const viewProdBtn = document.getElementById("reel-modal-view-prod-btn");
-    const videoWishlistBtn = document.getElementById("reel-video-wishlist-btn");
+    const videoShareBtn = document.getElementById("reel-video-share-btn");
     const panelWishlistBtn = document.getElementById("reel-modal-panel-wishlist-btn");
 
     if (modal && videoFrameContainer) {
@@ -1050,21 +1050,29 @@ window.openReelModal = function(index) {
             viewProdBtn.href = reel.productPage;
         }
 
-        const handleWishlistToggle = function() {
-            if (window.WishlistManager) {
-                window.WishlistManager.toggleItem({
-                    id: reel.id,
-                    title: reel.title,
-                    price: reel.price,
-                    image: reel.img
-                });
-            } else if (window.showWishlistToast) {
-                window.showWishlistToast(`❤️ Added ${reel.title} to Wishlist!`);
-            }
-        };
+        // Share button opens YouTube Shorts URL in new tab
+        if (videoShareBtn) {
+            videoShareBtn.onclick = function() {
+                window.open(`https://www.youtube.com/shorts/${reel.youtubeId}`, '_blank');
+            };
+        }
 
-        if (videoWishlistBtn) videoWishlistBtn.onclick = handleWishlistToggle;
-        if (panelWishlistBtn) panelWishlistBtn.onclick = handleWishlistToggle;
+        // Wishlist button directly below X (close) button
+        if (panelWishlistBtn) {
+            panelWishlistBtn.onclick = function() {
+                if (window.WishlistManager) {
+                    window.WishlistManager.toggleItem({
+                        id: reel.id,
+                        title: reel.title,
+                        price: reel.price,
+                        image: reel.img
+                    });
+                } else if (window.showWishlistToast) {
+                    window.showWishlistToast(`❤️ Added ${reel.title} to Wishlist!`);
+                }
+                panelWishlistBtn.classList.toggle('active');
+            };
+        }
 
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";
