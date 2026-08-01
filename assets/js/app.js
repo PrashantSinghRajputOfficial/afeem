@@ -1,6 +1,41 @@
-/* ==========================================================================
-   Central Application & Cart Controller - AFEEM Fragrances (Vanilla JS)
-   ========================================================================== */
+// 0. Universal Non-Blocking Toast Component (No Alert Popups!)
+window.showWishlistToast = function(message) {
+    let toast = document.getElementById("afeem-global-toast");
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "afeem-global-toast";
+        toast.style.position = "fixed";
+        toast.style.bottom = "24px";
+        toast.style.right = "24px";
+        toast.style.backgroundColor = "#0f172a";
+        toast.style.color = "#ffffff";
+        toast.style.padding = "12px 22px";
+        toast.style.borderRadius = "10px";
+        toast.style.fontSize = "13px";
+        toast.style.fontWeight = "700";
+        toast.style.boxShadow = "0 10px 30px rgba(0,0,0,0.35)";
+        toast.style.zIndex = "999999";
+        toast.style.transition = "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)";
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(20px)";
+        toast.style.display = "flex";
+        toast.style.alignItems = "center";
+        toast.style.gap = "10px";
+        toast.style.border = "1px solid rgba(255,255,255,0.18)";
+        toast.style.pointerEvents = "none";
+        document.body.appendChild(toast);
+    }
+
+    toast.innerHTML = message;
+    toast.style.opacity = "1";
+    toast.style.transform = "translateY(0)";
+
+    if (window.toastTimer) clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(20px)";
+    }, 3000);
+};
 
 // 1. Global Public Coupons Dictionary
 const PUBLIC_COUPONS = {
@@ -31,11 +66,7 @@ const CartManager = {
 
     shareCart() {
         if (this.items.length === 0) {
-            if (window.showWishlistToast) {
-                window.showWishlistToast("⚠️ Your Cart is empty! Add products to share.");
-            } else {
-                alert("Your Cart is empty! Add products to share.");
-            }
+            window.showWishlistToast("⚠️ Your Cart is empty! Add products to share.");
             return;
         }
 
@@ -53,14 +84,10 @@ const CartManager = {
         const shareUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?cart_data=${encodedData}`;
 
         const copySuccess = () => {
-            if (window.showWishlistToast) {
-                window.showWishlistToast("🔗 Cart link copied! Share it with friends.");
-            } else {
-                alert("🔗 Cart link copied to clipboard!");
-            }
+            window.showWishlistToast("🔗 Cart link copied to clipboard!");
         };
 
-        // Silent direct clipboard copy (no prompt popup dialog!)
+        // Silent direct clipboard copy (NO browser alert/prompt popup dialog!)
         if (navigator.clipboard && window.isSecureContext) {
             navigator.clipboard.writeText(shareUrl).then(copySuccess).catch(() => {
                 this.fallbackCopyToClipboard(shareUrl, copySuccess);
