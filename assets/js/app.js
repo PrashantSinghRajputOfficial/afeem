@@ -1327,35 +1327,12 @@ window.toggleReelModalSound = function() {
     }
 };
 
-window.closeReelModal = function() {
-    const modal = document.getElementById("shoppable-reel-modal");
-    const videoFrameContainer = document.getElementById("reel-video-frame-container");
-    if (modal) {
-        modal.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
-    }
-    if (videoFrameContainer) {
-        videoFrameContainer.innerHTML = "";
-    }
-};
-
-window.toggleReelModalSound = function() {
-    const iframe = document.getElementById("reel-modal-video-iframe");
-    const soundIcon = document.getElementById("reel-sound-icon");
-    if (!iframe) return;
-
-    isReelModalMuted = !isReelModalMuted;
-    if (isReelModalMuted) {
-        iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
-        if (soundIcon) soundIcon.textContent = "🔇";
-    } else {
-        iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
-        if (soundIcon) soundIcon.textContent = "🔊";
-    }
-};
-
 document.addEventListener("DOMContentLoaded", function() {
-    initShoppableReelsCarousel();
+    // Only initialize all-reels carousel on non-product pages (product.html handles its own Collection Range filtering)
+    const isProductPage = window.location.pathname.includes("product.html") || !!document.getElementById("product-detail-container");
+    if (!isProductPage) {
+        initShoppableReelsCarousel();
+    }
 });
 
 
