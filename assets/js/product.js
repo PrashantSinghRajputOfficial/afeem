@@ -1395,16 +1395,32 @@ function initProductRangeReelsCarousel(product) {
     const allReels = window.AFEEM_REELS_DATA || [];
     if (!allReels.length) return;
 
-    // Filter reels matching this product or its collection range (multiple videos supported per product/range)
-    let rangeReels = allReels.filter(reel => {
-        return reel.id === product.id || 
-               reel.productPage.includes(product.id) || 
-               (product.category && reel.id.includes(product.category.split(' ')[0]));
+    const currentCategory = (product.category || "100ml new").toLowerCase().trim();
+
+    // WooCommerce Friendly: Match all products in PRODUCT_DATABASE sharing the exact Collection Range (category)
+    const matchingProductIds = Object.keys(PRODUCT_DATABASE || {}).filter(key => {
+        const prod = PRODUCT_DATABASE[key];
+        return prod && prod.category && prod.category.toLowerCase().trim() === currentCategory;
     });
 
-    // Fallback: Ensure at least 4 reels are shown in the carousel
-    if (rangeReels.length < 2) {
-        rangeReels = allReels.slice(0, 6);
+    // Ensure current product ID is included
+    if (!matchingProductIds.includes(product.id)) {
+        matchingProductIds.push(product.id);
+    }
+
+    // Filter reels matching products in this Collection Range
+    let rangeReels = allReels.filter(reel => {
+        const reelId = (reel.id || "").toLowerCase();
+        const reelPage = (reel.productPage || "").toLowerCase();
+        return matchingProductIds.some(pid => {
+            const cleanPid = pid.toLowerCase();
+            return reelId === cleanPid || reelPage.includes(cleanPid);
+        });
+    });
+
+    // Fallback if specific range reels not found: match by first category keyword or fallback slice
+    if (!rangeReels.length) {
+        rangeReels = allReels.filter(reel => reel.id.includes(currentCategory.split(' ')[0])) || allReels.slice(0, 6);
     }
 
     // Multiply array items to form seamless infinite marquee scroll track
@@ -1413,10 +1429,11 @@ function initProductRangeReelsCarousel(product) {
         infiniteRangeData = [...infiniteRangeData, ...rangeReels];
     }
 
+    // Render WooCommerce-ready cards with data-collection-range & data-product-id
     track.innerHTML = infiniteRangeData.map((reel) => {
         const globalIndex = allReels.findIndex(r => r.id === reel.id || r.externalUrl === reel.externalUrl);
         return `
-            <div class="reel-item-card" onclick="openReelModalByData(window.AFEEM_REELS_DATA[${globalIndex >= 0 ? globalIndex : 0}])">
+            <div class="reel-item-card" data-collection-range="${currentCategory}" data-product-id="${reel.id}" onclick="openReelModalByData(window.AFEEM_REELS_DATA[${globalIndex >= 0 ? globalIndex : 0}])">
                 <div class="reel-video-box">
                     <video class="reel-card-video" src="${reel.videoUrl}" autoplay loop muted playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" poster="${reel.img}"></video>
                     <div class="reel-badge-thumb">
