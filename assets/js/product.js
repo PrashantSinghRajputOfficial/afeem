@@ -488,7 +488,7 @@ function renderProductPage(product) {
         leftSizeBadge.innerHTML = `Selected Size: <strong>100ml EDP</strong>`;
     }
 
-    // E. Fragrance Notes Component Rendering (Image 4 Style: HEAD NOTES, HEART NOTES, BASE NOTES)
+    // E. Fragrance Notes Component Rendering (Image 2 Style: HEAD NOTES, HEART NOTES, BASE NOTES in Horizontal Rows)
     const notesContainer = document.getElementById("notes-grid-container");
     if (notesContainer) {
         const headNotes = product.headNotes || [
@@ -506,18 +506,16 @@ function renderProductPage(product) {
             { name: "Musk", img: "assets/images/notes/agarwood-oud.jpg" }
         ];
 
-        const renderNoteGroup = (title, items) => `
-            <div class="note-column-image4">
-                <div class="note-column-title-bar">
-                    <h4 class="note-column-title">${title}</h4>
-                </div>
-                <div class="note-ingredients-row">
+        const renderNoteTier = (title, items) => `
+            <div class="note-tier-row-block">
+                <h4 class="note-tier-title-head">${title}</h4>
+                <div class="note-tier-ingredients-flex">
                     ${items.map(item => `
-                        <div class="ingredient-item-box">
-                            <div class="ingredient-img-wrapper">
+                        <div class="note-ingredient-single">
+                            <div class="note-ingredient-img-box">
                                 <img src="${item.img}" alt="${item.name}">
                             </div>
-                            <span class="ingredient-label-name">${item.name}</span>
+                            <span class="note-ingredient-name-text">${item.name}</span>
                         </div>
                     `).join('')}
                 </div>
@@ -525,12 +523,10 @@ function renderProductPage(product) {
         `;
 
         notesContainer.innerHTML = `
-            <div class="fragrance-notes-section-image4">
-                <div class="fragrance-notes-image4-grid">
-                    ${renderNoteGroup("HEAD NOTES", headNotes)}
-                    ${renderNoteGroup("HEART NOTES", heartNotes)}
-                    ${renderNoteGroup("BASE NOTES", baseNotes)}
-                </div>
+            <div class="fragrance-notes-clean-wrapper">
+                ${renderNoteTier("HEAD NOTES", headNotes)}
+                ${renderNoteTier("HEART NOTES", heartNotes)}
+                ${renderNoteTier("BASE NOTES", baseNotes)}
             </div>
         `;
     }
