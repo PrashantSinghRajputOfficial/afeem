@@ -25,7 +25,104 @@ const CartManager = {
         if (storedCoupon) {
             try { this.appliedCoupon = JSON.parse(storedCoupon); } catch (e) { this.appliedCoupon = null; }
         }
+        this.checkSharedCartUrl();
         this.updateDOM();
+    },
+
+    shareCart() {
+        if (this.items.length === 0) {
+            if (window.showWishlistToast) {
+                window.showWishlistToast("⚠️ Your Cart is empty! Add products to share.");
+            } else {
+                alert("Your Cart is empty! Add products to share.");
+            }
+            return;
+        }
+
+        const cartCompact = this.items.map(item => `${item.id}:${item.qty}:${encodeURIComponent(item.size || '100ml')}`).join(';');
+        const shareUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?shared_cart=${encodeURIComponent(cartCompact)}`;
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                if (window.showWishlistToast) {
+                    window.showWishlistToast("🔗 Cart link copied! Share it with friends.");
+                } else {
+                    alert("🔗 Cart link copied to clipboard:\n" + shareUrl);
+                }
+            }).catch(() => {
+                prompt("Copy your cart share link below:", shareUrl);
+            });
+        } else {
+            prompt("Copy your cart share link below:", shareUrl);
+        }
+    },
+
+    checkSharedCartUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const sharedData = urlParams.get('shared_cart');
+        if (!sharedData) return;
+
+        try {
+            const itemPairs = decodeURIComponent(sharedData).split(';');
+            let addedCount = 0;
+
+            itemPairs.forEach(pair => {
+                const [id, qtyStr, sizeStr] = pair.split(':');
+                const qty = parseInt(qtyStr, 10) || 1;
+                const size = sizeStr ? decodeURIComponent(sizeStr) : '100ml';
+
+                let prod = null;
+                if (window.AFEEM_PRODUCTS) {
+                    prod = window.AFEEM_PRODUCTS.find(p => p.id === id);
+                }
+                if (!prod && window.AFEEM_REELS_DATA) {
+                    const reel = window.AFEEM_REELS_DATA.find(r => r.id === id);
+                    if (reel) {
+                        prod = {
+                            id: reel.id,
+                            title: reel.title,
+                            price: reel.price,
+                            image: reel.img
+                        };
+                    }
+                }
+
+                if (prod) {
+                    // MERGE into existing cart (DO NOT REPLACE)
+                    const match = this.items.find(i => i.id === id && i.size === size);
+                    if (match) {
+                        match.qty += qty;
+                    } else {
+                        this.items.push({
+                            id: prod.id,
+                            title: prod.title,
+                            size: size,
+                            price: prod.price,
+                            image: prod.image || prod.img,
+                            qty: qty
+                        });
+                    }
+                    addedCount += qty;
+                }
+            });
+
+            if (addedCount > 0) {
+                this.save();
+                setTimeout(() => {
+                    const drawer = document.getElementById("cart-drawer");
+                    if (drawer) drawer.setAttribute("aria-hidden", "false");
+                    if (window.showWishlistToast) {
+                        window.showWishlistToast(`🛒 ${addedCount} item(s) from shared cart added to your Bag!`);
+                    }
+                }, 400);
+            }
+
+            // Remove query string from address bar without reloading
+            const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+        } catch (e) {
+            console.error("Error parsing shared cart:", e);
+        }
     },
 
     save() {
@@ -259,7 +356,7 @@ const CartManager = {
                 `;
 
                 drawerFooter.innerHTML = `
-                    <div style="display: flex; flex-direction: column; gap: 12px; width: 100%; box-sizing: border-box;">
+                    <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; box-sizing: border-box;">
                         <!-- 1. TOP: Compact Coupon Bar & Selection Dropdown -->
                         ${couponSectionHTML}
 
@@ -276,7 +373,12 @@ const CartManager = {
                             </div>
                         </div>
 
-                        <!-- 3. BOTTOM: BUY NOW Button -->
+                        <!-- 3. SHARE CART BUTTON -->
+                        <button type="button" onclick="CartManager.shareCart()" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; width: 100%; padding: 10px 12px; font-weight: 800; font-size: 12px; text-transform: uppercase; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s ease;">
+                            <span>🔗 SHARE YOUR CART (COPY LINK)</span>
+                        </button>
+
+                        <!-- 4. BOTTOM: BUY NOW Button -->
                         <button class="btn btn-primary btn-block" style="background: linear-gradient(135deg, #2eaaa0 0%, #1c6d66 100%); color: #ffffff; width: 100%; padding: 14px; font-weight: 800; font-size: 14px; text-transform: uppercase; border: none; border-radius: 8px; cursor: pointer; letter-spacing: 0.08em; box-shadow: 0 4px 14px rgba(46, 170, 160, 0.35); display: flex; align-items: center; justify-content: center; gap: 8px;" onclick="alert('Proceeding to Checkout with Total: Rs. ${finalTotal.toFixed(2)}')">
                             <span>BUY NOW</span>
                             <span style="font-size: 16px;">➔</span>
