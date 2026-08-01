@@ -6294,32 +6294,46 @@ a[href^="mailto:support@afeem.in"] {
     position: relative;
     background: #000000;
     height: 100%;
+    overflow: hidden;
 }
 
 .reel-modal-video {
-    width: 100%;
-    height: 100%;
+    width: 124%;
+    height: 124%;
+    position: absolute;
+    top: -12%;
+    left: -12%;
     object-fit: cover;
     display: block;
+    border: none;
+    pointer-events: none;
 }
 
 .reel-sound-toggle {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(17, 17, 17, 0.75);
     color: #ffffff;
-    border: none;
-    font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 18px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease;
+    pointer-events: auto;
+}
+
+.reel-sound-toggle:hover {
+    transform: scale(1.1);
+    background: #111111;
 }
 
 /* Right: Product Details Panel (Matching Image 1) */

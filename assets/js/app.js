@@ -1000,9 +1000,12 @@ window.scrollReelsCarousel = function(direction) {
     }
 };
 
+let isReelModalMuted = false;
+
 window.openReelModal = function(index) {
     const reel = AFEEM_REELS_DATA[index];
     if (!reel) return;
+    isReelModalMuted = false;
 
     const modal = document.getElementById("shoppable-reel-modal");
     const videoPanel = document.querySelector(".reel-video-panel");
@@ -1017,7 +1020,10 @@ window.openReelModal = function(index) {
 
     if (modal && videoPanel) {
         videoPanel.innerHTML = `
-            <iframe id="reel-modal-video-iframe" class="reel-modal-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=0&controls=1&loop=1&playlist=${reel.youtubeId}&playsinline=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media" style="width:100%; height:100%; border:none;"></iframe>
+            <iframe id="reel-modal-video-iframe" class="reel-modal-video" src="https://www.youtube-nocookie.com/embed/${reel.youtubeId}?autoplay=1&mute=0&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&loop=1&playlist=${reel.youtubeId}&playsinline=1&enablejsapi=1" title="${reel.title}" frameborder="0" allow="autoplay; encrypted-media"></iframe>
+            <button class="reel-sound-toggle" id="reel-sound-toggle" onclick="toggleReelModalSound()" aria-label="Toggle Sound">
+                <span id="reel-sound-icon">🔊</span>
+            </button>
         `;
 
         if (img) img.src = reel.img;
@@ -1059,6 +1065,21 @@ window.closeReelModal = function() {
     }
     if (videoPanel) {
         videoPanel.innerHTML = "";
+    }
+};
+
+window.toggleReelModalSound = function() {
+    const iframe = document.getElementById("reel-modal-video-iframe");
+    const soundIcon = document.getElementById("reel-sound-icon");
+    if (!iframe) return;
+
+    isReelModalMuted = !isReelModalMuted;
+    if (isReelModalMuted) {
+        iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+        if (soundIcon) soundIcon.textContent = "🔇";
+    } else {
+        iframe.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+        if (soundIcon) soundIcon.textContent = "🔊";
     }
 };
 
