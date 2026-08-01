@@ -6119,16 +6119,20 @@ a[href^="mailto:support@afeem.in"] {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
+.reel-iframe-cropper {
+    position: absolute;
+    top: -28%;
+    left: -28%;
+    width: 156%;
+    height: 156%;
+    pointer-events: none;
+}
+
 .reel-card-video {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
     border: none;
+    pointer-events: none;
 }
 
 /* Touch Shield prevents YouTube overlay play/pause/rewind controls from ever appearing */
@@ -6138,7 +6142,7 @@ a[href^="mailto:support@afeem.in"] {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 5;
+    z-index: 10;
     background: transparent;
     cursor: pointer;
 }
@@ -6303,14 +6307,18 @@ a[href^="mailto:support@afeem.in"] {
     overflow: hidden;
 }
 
+.reel-modal-video-cropper {
+    position: absolute;
+    top: -28%;
+    left: -28%;
+    width: 156%;
+    height: 156%;
+    pointer-events: none;
+}
+
 .reel-modal-video {
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    display: block;
     border: none;
     pointer-events: none;
 }
