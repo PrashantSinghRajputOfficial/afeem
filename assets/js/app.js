@@ -846,7 +846,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/loop-1.webp",
-        youtubeId: "W-dGxZb_0_k",
+        youtubeId: "X9oGw8cJ_Pw",
         desc: "GILDED. GRAND. GLORIOUS. Quiet luxury and effortlessly premium handcrafted EDP.",
         productPage: "product.html?id=afeem-loop"
     },
@@ -857,7 +857,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/ocean-1.webp",
-        youtubeId: "W-dGxZb_0_k",
+        youtubeId: "3RGKaBxLV-0",
         desc: "DEEP. MARINE. VIBRANT. Fresh sea breeze notes for high-power daytime confidence.",
         productPage: "product.html?id=afeem-ocean"
     },
@@ -868,7 +868,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/combat-1.webp",
-        youtubeId: "W-dGxZb_0_k",
+        youtubeId: "FZXiWHJtzQo",
         desc: "BOLD. LEATHER. INTENSE. Warm spicy leather accord crafted for evening presence.",
         productPage: "product.html?id=afeem-combat"
     },
@@ -879,7 +879,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/buzz-1.webp",
-        youtubeId: "W-dGxZb_0_k",
+        youtubeId: "bNLaCgR6SBk",
         desc: "ELECTRIC. CITRUS. CHARMING. High energy zesty opening with smooth amber trail.",
         productPage: "product.html?id=afeem-buzz"
     },
@@ -890,7 +890,7 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/aura-1.webp",
-        youtubeId: "W-dGxZb_0_k",
+        youtubeId: "qF3jAq8v3qQ",
         desc: "SOPHISTICATED. MYSTICAL. LUXE. French-inspired master perfumery signature.",
         productPage: "product.html?id=afeem-aura"
     },
@@ -901,9 +901,64 @@ const AFEEM_REELS_DATA = [
         originalPrice: 999,
         discount: "50% OFF",
         img: "assets/images/products/pure-1.webp",
-        youtubeId: "W-dGxZb_0_k",
+        youtubeId: "3VQfDTdWXAI",
         desc: "PURE. ELEGANT. SILK. 24hr duration handcrafted French EDP experience.",
         productPage: "product.html?id=afeem-pure"
+    },
+    {
+        id: "afeem-raid",
+        title: "Afeem Raid - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/raid-1.webp",
+        youtubeId: "DlkKiwFdKuw",
+        desc: "RAW. POWERFUL. MAGNETIC. Spicy oriental blend for unstoppable charisma.",
+        productPage: "product.html?id=afeem-raid"
+    },
+    {
+        id: "afeem-guilty",
+        title: "Afeem Guilty - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/guilty-1.webp",
+        youtubeId: "t2IwafjRfmQ",
+        desc: "SEDUCTIVE. DARK. AMBER. Midnight luxury perfume for late-night impression.",
+        productPage: "product.html?id=afeem-guilty"
+    },
+    {
+        id: "afeem-royal",
+        title: "Afeem Royal - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/royal-1.webp",
+        youtubeId: "aRYc1AYdxKk",
+        desc: "KINGS. MAJESTIC. OUD. Imperial rich oud blend crafted for royalty.",
+        productPage: "product.html?id=afeem-royal"
+    },
+    {
+        id: "afeem-story",
+        title: "Afeem Story - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/loop-2.webp",
+        youtubeId: "n8IexNP6e5E",
+        desc: "UNFORGETTABLE. MEMORY. ROSE. Enchanting floral woody accord.",
+        productPage: "product.html?id=afeem-story"
+    },
+    {
+        id: "afeem-gold",
+        title: "Afeem Gold - 100ml",
+        price: 499,
+        originalPrice: 999,
+        discount: "50% OFF",
+        img: "assets/images/products/aura-2.webp",
+        youtubeId: "s4eG-Zz87dU",
+        desc: "GILDED. RADIANT. WARM. 24karat liquid gold scent experience.",
+        productPage: "product.html?id=afeem-gold"
     }
 ];
 
