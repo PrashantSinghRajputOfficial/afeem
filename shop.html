@@ -15,13 +15,15 @@
     <!-- Main Navigation Header -->
     <header class="main-header" id="site-header">
         <div class="header-container">
-            <!-- Mobile Menu Toggle -->
+            <!-- Mobile Menu Toggle (AFEEM Logo on Phone, MENU on Desktop) -->
             <button class="mobile-menu-btn" id="menu-toggle" aria-label="Open navigation menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="desktop-menu-icon">
                     <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
                     <line x1="4" y1="18" x2="20" y2="18"></line>
                 </svg>
+                <span class="menu-label-text desktop-menu-text">MENU</span>
+                <img src="assets/images/logo/logo.png" alt="AFEEM" class="mobile-menu-brand-logo">
             </button>
 
             <!-- Brand Logo -->
@@ -88,121 +90,133 @@
             </div>
         </section>
 
-        <!-- Catalog Toolbar (Filter Button & Sorting) -->
-        <section class="catalog-toolbar-section container">
-            <div class="catalog-toolbar-bar">
-                <!-- Left: Teal Filter Button matching Screenshot 2 -->
-                <button class="catalog-filter-btn teal-filter-btn" id="open-filter-drawer-btn" aria-expanded="false" aria-label="Toggle Filters Panel">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-                    </svg>
-                    <span>Filter</span>
-                </button>
+        <!-- Mobile Compact Filter Bar (<768px Phone Only) -->
+        <section class="mobile-catalog-toolbar-section container" id="mobile-catalog-toolbar">
+            <button type="button" class="mobile-filter-trigger-btn" id="open-mobile-filter-drawer-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+                <span>FILTER &amp; SORT</span>
+            </button>
 
-                <!-- Right: Sorting & View Toggles matching Screenshot 2 -->
-                <div class="catalog-toolbar-right">
-                    <div class="view-toggle-buttons">
-                        <button class="view-btn active" aria-label="Grid View">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
-                                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
-                                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
-                                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="sort-select-box">
-                        <select id="catalog-sort" class="catalog-select">
-                            <option value="default">Default sorting</option>
-                            <option value="bestseller">Best Selling</option>
-                            <option value="price-low-high">Price: Low to High</option>
-                            <option value="price-high-low">Price: High to Low</option>
-                            <option value="rating">Highest Rated</option>
-                        </select>
+            <!-- Category / Range Dropdown Selector on Mobile -->
+            <div class="mobile-category-select-wrap">
+                <select id="mobile-category-select" class="mobile-category-select-dropdown">
+                    <option value="all">Range: All Collections</option>
+                    <option value="100ml new">Range: 100ml New</option>
+                    <option value="2026 new">Range: 2026 New</option>
+                    <option value="prime 2026">Range: Prime 2026</option>
+                    <option value="100ml old">Range: 100ml Old</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Top Permanent Dropdown Filter Bar (Image 3 Wireframe) -->
+        <section class="top-horizontal-filters-section container">
+            <div class="top-filters-bar">
+                <!-- Dropdown 1: PRICE RANGE ▾ -->
+                <div class="filter-dropdown-wrapper" id="dropdown-wrap-price">
+                    <button type="button" class="filter-dropdown-btn" id="dropdown-btn-price">
+                        <span>PRICE RANGE</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="filter-dropdown-menu dropdown-menu-luxury" id="dropdown-menu-price">
+                        <div class="dropdown-header-label">FILTER BY PRICE</div>
+                        <div class="dropdown-menu-options-list">
+                            <label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="200-300"> <span>Rs. 200 &minus; Rs. 300</span></label>
+                            <label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="300-400"> <span>Rs. 300 &minus; Rs. 400</span></label>
+                            <label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="400-500"> <span>Rs. 400 &minus; Rs. 500</span></label>
+                            <label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="500-1000"> <span>Rs. 500 &amp; Above</span></label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Top Expanded Collapsible Filter Panel (Luxury Pure White Design) -->
-            <div class="top-collapsible-filter-panel" id="top-filter-panel">
-                <div class="filter-panel-card">
-                    <div class="filter-panel-grid">
-                        
-                        <!-- Col 1: RANGE / CATEGORIES -->
-                        <div class="filter-col">
-                            <h4 class="filter-col-title">RANGE / CATEGORIES</h4>
-                            <ul class="filter-link-list">
-                                <li><a href="#" class="filter-pill-link active" data-category="all">All Collections</a></li>
-                                <li><a href="#" class="filter-pill-link" data-category="100ml new">100ml New</a></li>
-                                <li><a href="#" class="filter-pill-link" data-category="2026 new">2026 New</a></li>
-                                <li><a href="#" class="filter-pill-link" data-category="prime 2026">Prime 2026</a></li>
-                                <li><a href="#" class="filter-pill-link" data-category="100ml old">100ml Old</a></li>
-                            </ul>
+                <!-- Dropdown 2: SELECT SIZE ▾ -->
+                <div class="filter-dropdown-wrapper" id="dropdown-wrap-size">
+                    <button type="button" class="filter-dropdown-btn" id="dropdown-btn-size">
+                        <span>SELECT SIZE</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="filter-dropdown-menu dropdown-menu-luxury dropdown-menu-size-popover" id="dropdown-menu-size">
+                        <div class="dropdown-header-label">CHOOSE BOTTLE SIZE</div>
+                        <div class="luxury-size-pills-grid">
+                            <button type="button" class="size-box luxury-size-pill active" data-size="all">ALL SIZES</button>
+                            <button type="button" class="size-box luxury-size-pill" data-size="50ml">50 ML</button>
+                            <button type="button" class="size-box luxury-size-pill" data-size="100ml">100 ML</button>
+                            <button type="button" class="size-box luxury-size-pill" data-size="150ml">150 ML</button>
                         </div>
-
-                        <!-- Col 2: PRICE -->
-                        <div class="filter-col">
-                            <h4 class="filter-col-title">PRICE RANGE</h4>
-                            <ul class="filter-checkbox-list">
-                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="200-300"> Rs. 200 - Rs. 300</label></li>
-                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="300-400"> Rs. 300 - Rs. 400</label></li>
-                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="400-500"> Rs. 400 - Rs. 500</label></li>
-                                <li><label class="custom-filter-checkbox"><input type="checkbox" name="filter-price" value="500-1000"> Rs. 500 & Above</label></li>
-                            </ul>
-                        </div>
-
-                        <!-- Col 3: SIZE -->
-                        <div class="filter-col">
-                            <h4 class="filter-col-title">SELECT SIZE</h4>
-                            <div class="size-swatch-boxes">
-                                <button type="button" class="size-box active" data-size="all">ALL</button>
-                                <button type="button" class="size-box" data-size="50ml">50ML</button>
-                                <button type="button" class="size-box" data-size="100ml">100ML</button>
-                                <button type="button" class="size-box" data-size="150ml">150ML</button>
-                            </div>
-                        </div>
-
-                        <!-- Col 4: COLOR / SCENT NOTES -->
-                        <div class="filter-col">
-                            <h4 class="filter-col-title">SCENT FAMILY</h4>
-                            <ul class="color-dots-list">
-                                <li data-scent="spicy"><span class="color-dot" style="background:#111111;"></span> Black Leather (Spicy)</li>
-                                <li data-scent="oceanic"><span class="color-dot" style="background:#2f889a;"></span> Ocean Blue (Oceanic)</li>
-                                <li data-scent="citrus"><span class="color-dot" style="background:#00ffff;"></span> Cyan Fresh (Citrus)</li>
-                                <li data-scent="floral"><span class="color-dot" style="background:#8b008b;"></span> Dark Magenta (Floral)</li>
-                                <li data-scent="woody"><span class="color-dot" style="background:#ff8c00;"></span> Dark Amber (Woody)</li>
-                                <li data-scent="oudh"><span class="color-dot" style="background:#d4af37;"></span> Gold Luxury (Oudh)</li>
-                            </ul>
-                        </div>
-
                     </div>
+                </div>
 
-                    <div class="filter-panel-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; margin-top: 20px; padding-top: 14px;">
-                        <span id="filter-active-count-label" style="font-size: 12px; font-weight: 700; color: #2eaaa0;">Showing All Fragrances</span>
-                        <button type="button" id="clear-all-filters-btn" style="background: none; border: 1px solid #ddd; padding: 6px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; cursor: pointer; color: #666; text-transform: uppercase;">Reset All Filters ✕</button>
+                <!-- Dropdown 3: SCENT FAMILY ▾ -->
+                <div class="filter-dropdown-wrapper" id="dropdown-wrap-scent">
+                    <button type="button" class="filter-dropdown-btn" id="dropdown-btn-scent">
+                        <span>SCENT FAMILY</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="filter-dropdown-menu dropdown-menu-luxury" id="dropdown-menu-scent">
+                        <div class="dropdown-header-label">SCENT PROFILE</div>
+                        <ul class="color-dots-list luxury-scent-list">
+                            <li data-scent="all" class="active"><span class="color-dot" style="background:#888888;"></span> All Scents</li>
+                            <li data-scent="spicy"><span class="color-dot" style="background:#111111;"></span> Black Leather (Spicy)</li>
+                            <li data-scent="oceanic"><span class="color-dot" style="background:#2f889a;"></span> Ocean Blue (Oceanic)</li>
+                            <li data-scent="citrus"><span class="color-dot" style="background:#00ffff;"></span> Cyan Fresh (Citrus)</li>
+                            <li data-scent="floral"><span class="color-dot" style="background:#8b008b;"></span> Dark Magenta (Floral)</li>
+                            <li data-scent="woody"><span class="color-dot" style="background:#ff8c00;"></span> Dark Amber (Woody)</li>
+                            <li data-scent="oudh"><span class="color-dot" style="background:#d4af37;"></span> Gold Luxury (Oudh)</li>
+                        </ul>
                     </div>
+                </div>
+
+                <!-- Sorting & Reset -->
+                <div class="top-filters-right-actions">
+                    <select id="catalog-sort" class="catalog-select">
+                        <option value="default">Default sorting</option>
+                        <option value="bestseller">Best Selling</option>
+                        <option value="price-low-high">Price: Low to High</option>
+                        <option value="price-high-low">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+
+                    <button type="button" id="clear-all-filters-btn" class="reset-filters-btn">RESET FILTERS ✕</button>
                 </div>
             </div>
         </section>
 
-        <!-- Main Catalog Section: ALL PRODUCTS -->
-        <section class="all-products-catalog-section container">
-            <div class="catalog-section-badge">
-                <span class="sparkle-icon">✨</span>
-                <h3 class="badge-title">ALL PRODUCTS</h3>
-            </div>
+        <!-- 2-Column Main Catalog Layout (Image 3 Wireframe) -->
+        <section class="shop-main-2col-layout container">
+            <!-- Left Sidebar Column: RANGE / CATEGORIES -->
+            <aside class="shop-left-sidebar">
+                <h4 class="sidebar-category-title">RANGE / CATEGORIES</h4>
+                <ul class="filter-link-list">
+                    <li><a href="#" class="filter-pill-link active" data-category="all">All Collections</a></li>
+                    <li><a href="#" class="filter-pill-link" data-category="100ml new">100ml New</a></li>
+                    <li><a href="#" class="filter-pill-link" data-category="2026 new">2026 New</a></li>
+                    <li><a href="#" class="filter-pill-link" data-category="prime 2026">Prime 2026</a></li>
+                    <li><a href="#" class="filter-pill-link" data-category="100ml old">100ml Old</a></li>
+                </ul>
+            </aside>
 
-            <!-- All Products 4-Column Grid -->
-            <div class="afeem-grid-4col product-grid-compact" id="all-products-grid">
-                <!-- Dynamically rendered by shop.js -->
-            </div>
+            <!-- Right Main Area: ALL PRODUCTS Grid -->
+            <main class="shop-right-products-area">
+                <div class="catalog-section-badge" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 12px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="sparkle-icon">✨</span>
+                        <h3 class="badge-title" style="font-family: var(--font-heading); font-size: 1.4rem; margin: 0; color: #111111;">ALL PRODUCTS</h3>
+                    </div>
+                    <span id="filter-active-count-label" style="font-size: 12px; font-weight: 700; color: #2f889a;">Showing All Fragrances</span>
+                </div>
 
-            <!-- Pagination Bar -->
-            <div class="catalog-pagination-bar" id="catalog-pagination">
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">&gt;</button>
-            </div>
+                <!-- Products Grid -->
+                <div class="afeem-grid-3col product-grid-compact" id="all-products-grid">
+                    <!-- Dynamically rendered by shop.js -->
+                </div>
+
+                <!-- Pagination Bar -->
+                <div class="catalog-pagination-bar" id="catalog-pagination">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">&gt;</button>
+                </div>
+            </main>
         </section>
 
     </main>
@@ -520,6 +534,75 @@
         <div class="modal-container">
             <button class="modal-close" aria-label="Close dialog">&times;</button>
             <div class="modal-content" id="quickview-modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Mobile Filter Bottom Sheet Drawer Modal -->
+    <div class="mobile-filter-drawer-overlay hidden" id="mobile-filter-drawer" aria-hidden="true">
+        <div class="mobile-drawer-backdrop" id="mobile-filter-backdrop"></div>
+        <div class="mobile-drawer-sheet">
+            <!-- Header -->
+            <div class="mobile-drawer-header">
+                <h3>🎛️ REFINE FRAGRANCES</h3>
+                <button type="button" class="mobile-drawer-close-btn" id="close-mobile-filter-drawer-btn" aria-label="Close Filter">&times;</button>
+            </div>
+
+            <!-- Content Body with Accordion Sections -->
+            <div class="mobile-drawer-body">
+                <!-- Section 1: Sort By -->
+                <div class="mobile-filter-group">
+                    <label class="mobile-filter-label">SORT FRAGRANCES BY</label>
+                    <select id="mobile-catalog-sort" class="mobile-filter-select">
+                        <option value="default">Default sorting</option>
+                        <option value="bestseller">Best Selling</option>
+                        <option value="price-low-high">Price: Low to High</option>
+                        <option value="price-high-low">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+
+                <!-- Section 2: Price Range -->
+                <div class="mobile-filter-group">
+                    <label class="mobile-filter-label">PRICE RANGE</label>
+                    <div class="mobile-checkbox-grid">
+                        <label class="mobile-custom-cb"><input type="checkbox" name="mobile-filter-price" value="200-300"> <span>Rs. 200 &minus; Rs. 300</span></label>
+                        <label class="mobile-custom-cb"><input type="checkbox" name="mobile-filter-price" value="300-400"> <span>Rs. 300 &minus; Rs. 400</span></label>
+                        <label class="mobile-custom-cb"><input type="checkbox" name="mobile-filter-price" value="400-500"> <span>Rs. 400 &minus; Rs. 500</span></label>
+                        <label class="mobile-custom-cb"><input type="checkbox" name="mobile-filter-price" value="500-1000"> <span>Rs. 500 &amp; Above</span></label>
+                    </div>
+                </div>
+
+                <!-- Section 3: Select Size -->
+                <div class="mobile-filter-group">
+                    <label class="mobile-filter-label">SELECT SIZE</label>
+                    <div class="mobile-size-swatches">
+                        <button type="button" class="mobile-size-btn active" data-size="all">ALL SIZES</button>
+                        <button type="button" class="mobile-size-btn" data-size="50ml">50 ML</button>
+                        <button type="button" class="mobile-size-btn" data-size="100ml">100 ML</button>
+                        <button type="button" class="mobile-size-btn" data-size="150ml">150 ML</button>
+                    </div>
+                </div>
+
+                <!-- Section 4: Scent Family -->
+                <div class="mobile-filter-group">
+                    <label class="mobile-filter-label">SCENT FAMILY</label>
+                    <div class="mobile-scent-grid">
+                        <button type="button" class="mobile-scent-btn active" data-scent="all"><span class="color-dot" style="background:#888888;"></span> All Scents</button>
+                        <button type="button" class="mobile-scent-btn" data-scent="spicy"><span class="color-dot" style="background:#111111;"></span> Black Leather (Spicy)</button>
+                        <button type="button" class="mobile-scent-btn" data-scent="oceanic"><span class="color-dot" style="background:#2f889a;"></span> Ocean Blue (Oceanic)</button>
+                        <button type="button" class="mobile-scent-btn" data-scent="citrus"><span class="color-dot" style="background:#00ffff;"></span> Cyan Fresh (Citrus)</button>
+                        <button type="button" class="mobile-scent-btn" data-scent="floral"><span class="color-dot" style="background:#8b008b;"></span> Dark Magenta (Floral)</button>
+                        <button type="button" class="mobile-scent-btn" data-scent="woody"><span class="color-dot" style="background:#ff8c00;"></span> Dark Amber (Woody)</button>
+                        <button type="button" class="mobile-scent-btn" data-scent="oudh"><span class="color-dot" style="background:#d4af37;"></span> Gold Luxury (Oudh)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Bottom CTA -->
+            <div class="mobile-drawer-footer">
+                <button type="button" class="mobile-reset-btn" id="mobile-reset-filters-btn">RESET ALL</button>
+                <button type="button" class="mobile-apply-btn" id="mobile-apply-filters-btn">APPLY FILTERS</button>
+            </div>
         </div>
     </div>
 

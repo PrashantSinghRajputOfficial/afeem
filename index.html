@@ -17,17 +17,18 @@
     <!-- Main Navigation Header -->
     <header class="main-header" id="site-header">
         <div class="header-container">
-            <!-- Mobile Menu Toggle with MENU text (afeem.in style) -->
+            <!-- Mobile Menu Toggle (AFEEM Logo on Phone, MENU on Desktop) -->
             <button class="mobile-menu-btn" id="menu-toggle" aria-label="Open navigation menu">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="desktop-menu-icon">
                     <line x1="4" y1="6" x2="20" y2="6"></line>
                     <line x1="4" y1="12" x2="20" y2="12"></line>
                     <line x1="4" y1="18" x2="20" y2="18"></line>
                 </svg>
-                <span class="menu-label-text">MENU</span>
+                <span class="menu-label-text desktop-menu-text">MENU</span>
+                <img src="assets/images/logo/logo.png" alt="AFEEM" class="mobile-menu-brand-logo">
             </button>
 
-            <!-- Brand Logo -->
+            <!-- Brand Logo (Centered on Desktop) -->
             <div class="logo">
                 <a href="index.html">
                     <img src="assets/images/logo/logo.png" alt="AFEEM" class="brand-logo-img">
@@ -44,9 +45,9 @@
                 </ul>
             </nav>
 
-            <!-- Header Action Icons -->
+            <!-- Header Action Icons (Tightly Grouped Search, Profile, Wishlist, Cart) -->
             <div class="header-actions">
-                <button class="action-btn" id="search-trigger" aria-label="Search website">
+                <button class="action-btn" id="search-trigger" aria-label="Open search bar">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>

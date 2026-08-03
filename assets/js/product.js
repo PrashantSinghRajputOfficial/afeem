@@ -744,11 +744,11 @@ function renderReviews(product) {
                     <div class="reviewer-profile-info">
                         <div class="reviewer-avatar">${initial}</div>
                         <div class="reviewer-meta">
-                            <div class="reviewer-name-row">
-                                <strong class="reviewer-name">${rev.author}</strong>
+                            <strong class="reviewer-name">${rev.author}</strong>
+                            <div class="reviewer-badge-row" style="margin-top: 3px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                                 <span class="verified-badge">✓ Verified Buyer</span>
+                                <span class="review-date" style="font-size: 11px; color: #64748b;">${rev.date || 'Verified Reviewer'}</span>
                             </div>
-                            <span class="review-date">${rev.date || 'Verified Reviewer'}</span>
                         </div>
                     </div>
                     <!-- Bold Rating Number + Larger Bold Gold Stars -->
@@ -1215,6 +1215,7 @@ function initProductInteractions(product) {
     const selectedSizeLabel = document.getElementById("selected-size-label");
     const currentPriceEl = document.getElementById("product-price-display");
     const stickyPriceEl = document.getElementById("sticky-price-display");
+    const stickyPriceMobileEl = document.getElementById("sticky-price-display-mobile");
 
     const updateSizeAndPrice = (size) => {
         if (selectedSizeLabel) selectedSizeLabel.textContent = size;
@@ -1255,6 +1256,7 @@ function initProductInteractions(product) {
         const newPrice = product.price * priceMultiplier;
         if (currentPriceEl) currentPriceEl.textContent = `Rs. ${newPrice.toFixed(2)}`;
         if (stickyPriceEl) stickyPriceEl.textContent = `Rs. ${newPrice.toFixed(2)}`;
+        if (stickyPriceMobileEl) stickyPriceMobileEl.textContent = `Rs. ${newPrice.toFixed(2)}`;
     };
 
     if (sizeSelectors) {
@@ -1372,17 +1374,14 @@ window.scrollToGalleryMedia = function(targetId, btnEl) {
     }
 };
 
-    // Sticky bar Add to Cart button trigger
-    const stickyAddToCartBtn = document.getElementById("sticky-add-to-cart-submit-btn");
-    if (stickyAddToCartBtn) {
-        // Remove previous event listener just in case by cloning
-        const newBtn = stickyAddToCartBtn.cloneNode(true);
-        stickyAddToCartBtn.parentNode.replaceChild(newBtn, stickyAddToCartBtn);
-        newBtn.addEventListener("click", (e) => {
+    // Sticky bar Add to Cart buttons trigger (Desktop & Mobile)
+    const stickyAddToCartBtns = document.querySelectorAll("#sticky-add-to-cart-submit-btn, #sticky-add-to-cart-mobile-btn, .mobile-add-to-cart-btn");
+    stickyAddToCartBtns.forEach(btn => {
+        btn.addEventListener("click", (e) => {
             e.preventDefault();
             triggerAddToCart();
         });
-    }
+    });
 
     const triggerAddToCart = () => {
         const selectedSize = stickySizeSelect ? stickySizeSelect.value : "100ml";
@@ -1407,10 +1406,17 @@ window.scrollToGalleryMedia = function(targetId, btnEl) {
         }
     };
 
-    // Sticky Bottom Bar visibility on scroll
+    // Sticky Bottom Bar visibility & expand toggle click listener
     const stickyBar = document.getElementById("sticky-bottom-bar");
+    const stickyExpandBtn = document.getElementById("sticky-expand-toggle-btn");
     if (stickyBar) {
         stickyBar.classList.add("visible");
+    }
+    if (stickyExpandBtn && stickyBar) {
+        stickyExpandBtn.onclick = function(e) {
+            e.stopPropagation();
+            stickyBar.classList.toggle("sticky-expanded-active");
+        };
     }
 
     // Initialize Collection Range Filtered Shoppable Video Reels Carousel

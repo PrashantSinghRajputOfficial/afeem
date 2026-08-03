@@ -347,17 +347,139 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // E. Top Collapsible Filter Panel Toggle
-    if (openFilterBtn && topFilterPanel) {
-        openFilterBtn.addEventListener("click", () => {
-            const isExpanded = openFilterBtn.getAttribute("aria-expanded") === "true";
-            if (isExpanded) {
-                openFilterBtn.setAttribute("aria-expanded", "false");
-                topFilterPanel.classList.remove("open");
-            } else {
-                openFilterBtn.setAttribute("aria-expanded", "true");
-                topFilterPanel.classList.add("open");
-            }
+    // Top Horizontal Dropdown Filters Click Handlers (Image 3 Wireframe)
+    const dropdownWrappers = document.querySelectorAll(".filter-dropdown-wrapper");
+    dropdownWrappers.forEach(wrapper => {
+        const btn = wrapper.querySelector(".filter-dropdown-btn");
+        if (btn) {
+            btn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                dropdownWrappers.forEach(other => {
+                    if (other !== wrapper) other.classList.remove("open");
+                });
+                wrapper.classList.toggle("open");
+            });
+        }
+    });
+
+    document.addEventListener("click", () => {
+        dropdownWrappers.forEach(wrapper => wrapper.classList.remove("open"));
+    });
+
+    // Mobile Filter Drawer Controls (<768px Phone Only)
+    const mobileDrawer = document.getElementById("mobile-filter-drawer");
+    const openMobileDrawerBtn = document.getElementById("open-mobile-filter-drawer-btn");
+    const closeMobileDrawerBtn = document.getElementById("close-mobile-filter-drawer-btn");
+    const mobileBackdrop = document.getElementById("mobile-filter-backdrop");
+    const mobileApplyBtn = document.getElementById("mobile-apply-filters-btn");
+    const mobileResetBtn = document.getElementById("mobile-reset-filters-btn");
+    const mobileSortSelect = document.getElementById("mobile-catalog-sort");
+
+    const openMobileDrawer = () => {
+        if (mobileDrawer) {
+            mobileDrawer.classList.remove("hidden");
+            mobileDrawer.setAttribute("aria-hidden", "false");
+        }
+    };
+
+    const closeMobileDrawer = () => {
+        if (mobileDrawer) {
+            mobileDrawer.classList.add("hidden");
+            mobileDrawer.setAttribute("aria-hidden", "true");
+        }
+    };
+
+    if (openMobileDrawerBtn) openMobileDrawerBtn.addEventListener("click", openMobileDrawer);
+    if (closeMobileDrawerBtn) closeMobileDrawerBtn.addEventListener("click", closeMobileDrawer);
+    if (mobileBackdrop) mobileBackdrop.addEventListener("click", closeMobileDrawer);
+
+    // Mobile Category Dropdown Selector Sync
+    const mobileCatSelect = document.getElementById("mobile-category-select");
+    if (mobileCatSelect) {
+        mobileCatSelect.addEventListener("change", (e) => {
+            const cat = e.target.value;
+            activeCategory = cat;
+            document.querySelectorAll(".filter-link-list a").forEach(l => {
+                if ((l.getAttribute("data-category") || "all") === cat) l.classList.add("active");
+                else l.classList.remove("active");
+            });
+            applyFiltersAndSort();
+        });
+    }
+
+    // Mobile Price Checkbox Sync
+    document.querySelectorAll('input[name="mobile-filter-price"]').forEach(cb => {
+        cb.addEventListener("change", () => {
+            selectedPriceRanges = Array.from(document.querySelectorAll('input[name="mobile-filter-price"]:checked')).map(c => c.value);
+            document.querySelectorAll('input[name="filter-price"]').forEach(dCb => {
+                dCb.checked = selectedPriceRanges.includes(dCb.value);
+            });
+        });
+    });
+
+    // Mobile Size Swatches Sync
+    document.querySelectorAll(".mobile-size-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelectorAll(".mobile-size-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const sz = btn.getAttribute("data-size") || "all";
+            document.querySelectorAll(".size-swatch-boxes .size-box").forEach(dB => {
+                if ((dB.getAttribute("data-size") || "all") === sz) dB.classList.add("active");
+                else dB.classList.remove("active");
+            });
+        });
+    });
+
+    // Mobile Scent Grid Sync
+    document.querySelectorAll(".mobile-scent-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelectorAll(".mobile-scent-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const sct = btn.getAttribute("data-scent") || "all";
+            activeScent = sct;
+            document.querySelectorAll(".color-dots-list li").forEach(dL => {
+                if ((dL.getAttribute("data-scent") || "all") === sct) dL.classList.add("active");
+                else dL.classList.remove("active");
+            });
+        });
+    });
+
+    // Mobile Sort Sync
+    if (mobileSortSelect) {
+        mobileSortSelect.addEventListener("change", (e) => {
+            currentSort = e.target.value;
+            if (sortSelect) sortSelect.value = currentSort;
+        });
+    }
+
+    // Mobile Apply Button
+    if (mobileApplyBtn) {
+        mobileApplyBtn.addEventListener("click", () => {
+            applyFiltersAndSort();
+            closeMobileDrawer();
+        });
+    }
+
+    // Mobile Reset Button
+    if (mobileResetBtn) {
+        mobileResetBtn.addEventListener("click", () => {
+            if (clearFiltersBtn) clearFiltersBtn.click();
+            document.querySelectorAll('input[name="mobile-filter-price"]').forEach(c => c.checked = false);
+            document.querySelectorAll(".mobile-size-btn").forEach(b => b.classList.remove("active"));
+            const defaultMobileSize = document.querySelector('.mobile-size-btn[data-size="all"]');
+            if (defaultMobileSize) defaultMobileSize.classList.add("active");
+
+            document.querySelectorAll(".mobile-scent-btn").forEach(b => b.classList.remove("active"));
+            const defaultMobileScent = document.querySelector('.mobile-scent-btn[data-scent="all"]');
+            if (defaultMobileScent) defaultMobileScent.classList.add("active");
+
+            if (mobileSortSelect) mobileSortSelect.value = "default";
+            applyFiltersAndSort();
+            closeMobileDrawer();
         });
     }
 

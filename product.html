@@ -15,13 +15,15 @@
     <!-- Main Navigation Header (Centered Nav Links) -->
     <header class="main-header" id="site-header">
         <div class="header-container">
-            <!-- Mobile Menu Toggle -->
+            <!-- Mobile Menu Toggle (AFEEM Logo on Phone, MENU on Desktop) -->
             <button class="mobile-menu-btn" id="menu-toggle" aria-label="Open navigation menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="desktop-menu-icon">
                     <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
                     <line x1="4" y1="18" x2="20" y2="18"></line>
                 </svg>
+                <span class="menu-label-text desktop-menu-text">MENU</span>
+                <img src="assets/images/logo/logo.png" alt="AFEEM" class="mobile-menu-brand-logo">
             </button>
 
             <!-- Brand Logo (Left) -->
@@ -655,41 +657,88 @@
         </div>
     </div>
 
-    <!-- Sticky Bottom Action Bar -->
+    <!-- Desktop & Mobile Sticky Bottom Action Bar (Image 2 Desktop Layout) -->
     <div class="sticky-bottom-action-bar" id="sticky-bottom-bar">
-        <div class="sticky-bar-container container">
-            <div class="sticky-bar-product-info">
-                <span class="sticky-product-title" id="sticky-title-display">Afeem - Ocean</span>
-            </div>
-            <div class="sticky-bar-actions">
-                <div class="sticky-stock-status" id="sticky-stock-badge">
-                    <span class="stock-green-dot">🟢</span>
-                    <span class="stock-label-text">In Stock</span>
-                </div>
+        <!-- Up/Down Chevron Toggle Button (Mobile Only <768px) -->
+        <button type="button" class="sticky-expand-toggle-btn" id="sticky-expand-toggle-btn" aria-label="Toggle options view" title="Toggle Size & Quantity Options">
+            <span class="sticky-expand-label">SELECT OPTIONS</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="sticky-chevron-icon" style="transition: transform 0.3s ease;">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
 
+        <div class="sticky-bar-container container">
+            <!-- Left Side (Desktop Only >768px): Product Name -->
+            <div class="sticky-desktop-product-title" id="sticky-desktop-product-title">
+                Afeem - Loop
+            </div>
+
+            <!-- Mobile Only Expandable Drawer (<768px) -->
+            <div class="sticky-expandable-drawer" id="sticky-expandable-drawer">
                 <div class="sticky-option-group">
-                    <select class="sticky-size-select" id="sticky-size-select-input">
+                    <label style="font-size: 11px; font-weight: 700; color: #475569; text-transform: uppercase;">Size:</label>
+                    <select class="sticky-size-select" id="sticky-size-select-input-mobile">
                         <option value="50ml">50ml</option>
                         <option value="100ml" selected>100ml</option>
                         <option value="150ml">150ml</option>
                     </select>
                 </div>
                 
-                <div class="sticky-quantity-picker">
-                    <button type="button" class="sticky-qty-btn" id="sticky-qty-minus">&minus;</button>
-                    <input type="number" id="sticky-qty-input" value="1" min="1" max="10" readonly>
-                    <button type="button" class="sticky-qty-btn" id="sticky-qty-plus">&plus;</button>
+                <div class="sticky-quantity-group">
+                    <label style="font-size: 11px; font-weight: 700; color: #475569; text-transform: uppercase;">Qty:</label>
+                    <div class="sticky-quantity-picker">
+                        <button type="button" class="sticky-qty-btn" id="sticky-qty-minus-mobile">&minus;</button>
+                        <input type="number" id="sticky-qty-input-mobile" value="1" min="1" max="10" readonly>
+                        <button type="button" class="sticky-qty-btn" id="sticky-qty-plus-mobile">&plus;</button>
+                    </div>
                 </div>
 
-                <span class="sticky-product-price" id="sticky-price-display">Rs. 499.00</span>
-                
-                <button type="button" class="btn sticky-add-to-cart-btn" id="sticky-add-to-cart-submit-btn" style="background: linear-gradient(135deg, #ffaa00 0%, #ff5500 100%); color: #ffffff; font-weight: 800; font-size: 14px; letter-spacing: 0.08em; border: none; border-radius: 6px; padding: 12px 28px; box-shadow: 0 4px 16px rgba(255, 120, 0, 0.45); cursor: pointer;">ADD TO CART</button>
-                
                 <button type="button" class="sticky-wishlist-btn add-to-wishlist" data-product-id="afeem-loop" aria-label="Add to Wishlist" title="Add to Wishlist">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                     </svg>
                 </button>
+            </div>
+
+            <!-- Main Bar Controls: Desktop Right Controls / Mobile Bottom Row -->
+            <div class="sticky-main-bar-row">
+                <!-- Desktop Controls Row (>768px): Stock Badge + Size Select + Qty + Price + Add To Cart + Wishlist -->
+                <div class="sticky-desktop-controls-group">
+                    <div class="sticky-stock-status">
+                        <span class="stock-green-dot">&bull;</span> In Stock
+                    </div>
+
+                    <select class="sticky-size-select" id="sticky-size-select-input">
+                        <option value="50ml">50ml</option>
+                        <option value="100ml" selected>100ml</option>
+                        <option value="150ml">150ml</option>
+                    </select>
+
+                    <div class="sticky-quantity-picker">
+                        <button type="button" class="sticky-qty-btn" id="sticky-qty-minus">&minus;</button>
+                        <input type="number" id="sticky-qty-input" value="1" min="1" max="10" readonly>
+                        <button type="button" class="sticky-qty-btn" id="sticky-qty-plus">&plus;</button>
+                    </div>
+
+                    <span class="sticky-product-price" id="sticky-price-display">Rs. 499.00</span>
+                    
+                    <button type="button" class="btn sticky-add-to-cart-btn" id="sticky-add-to-cart-submit-btn">ADD TO CART</button>
+                    
+                    <button type="button" class="sticky-wishlist-btn add-to-wishlist" data-product-id="afeem-loop" aria-label="Add to Wishlist" title="Add to Wishlist">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Only Main Bar Row (<768px): Price Info Left + ADD TO CART Button Right -->
+                <div class="mobile-main-bar-content">
+                    <div class="sticky-bar-price-info">
+                        <span class="sticky-product-price" id="sticky-price-display-mobile">Rs. 499.00</span>
+                        <span class="sticky-stock-text" style="font-size: 10.5px; color: #0f766e; font-weight: 700; display: block;">In Stock &bull; Free Shipping</span>
+                    </div>
+                    <button type="button" class="btn sticky-add-to-cart-btn mobile-add-to-cart-btn" id="sticky-add-to-cart-mobile-btn">ADD TO CART</button>
+                </div>
             </div>
         </div>
     </div>

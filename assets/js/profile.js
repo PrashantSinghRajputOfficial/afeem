@@ -152,29 +152,28 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             if (emptyState) emptyState.style.display = "none";
             if (cartFooter) cartFooter.style.display = "block";
-            cartContainer.style.display = "flex";
+            cartContainer.style.display = "block";
             cartContainer.innerHTML = cartItems.map(item => `
-                <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid #f0f0f0;">
-                    <a href="product.html?id=${item.id}" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit; cursor: pointer;" title="View ${item.title}">
-                        <img src="${item.image}" alt="${item.title}" style="width: 64px; height: 64px; object-fit: cover; border-radius: 10px; background: #f8fafc; flex-shrink: 0;">
-                        <div>
-                            <h4 style="font-size: 15px; font-weight: 700; margin: 0 0 4px 0; color: #111; text-transform: uppercase;">${item.title}</h4>
-                            <span style="font-size: 12px; color: #777;">Size: ${item.size} &bull; Unit Price: Rs. ${item.price.toFixed(2)}</span>
+                <div class="profile-cart-item-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); width: 100%; box-sizing: border-box;">
+                    <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;">
+                        <a href="product.html?id=${item.id}" style="text-decoration: none; display: block; flex-shrink: 0;" title="View ${item.title}">
+                            <img src="${item.image}" alt="${item.title}" style="width: 64px; height: 64px; object-fit: cover; border-radius: 8px; background: #f8fafc;">
+                        </a>
+                        <div style="flex: 1; min-width: 0;">
+                            <h4 style="font-size: 14px; font-weight: 700; margin: 0 0 4px 0; color: #0f172a; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.title}</h4>
+                            <div style="font-size: 11.5px; color: #64748b; margin-bottom: 2px;">Size: <strong>${item.size}</strong> &bull; Unit: Rs. ${item.price.toFixed(2)}</div>
+                            <div style="font-size: 14px; font-weight: 800; color: #0f766e;">Total: Rs. ${(item.price * item.qty).toFixed(2)}</div>
                         </div>
-                    </a>
-                    <div style="display: flex; align-items: center; gap: 24px;">
-                        <!-- Quantity Increment/Decrement Controls -->
-                        <div style="display: flex; align-items: center; border: 1px solid #dddddd; border-radius: 6px; overflow: hidden; background: #ffffff;">
-                            <button style="padding: 6px 14px; border: none; background: #f6f6f6; cursor: pointer; font-weight: bold; font-size: 14px;" onclick="CartManager.updateQty('${item.id}', '${item.size}', -1); syncProfileCart();">-</button>
-                            <span style="padding: 6px 14px; font-size: 13px; font-weight: 700;">${item.qty}</span>
-                            <button style="padding: 6px 14px; border: none; background: #f6f6f6; cursor: pointer; font-weight: bold; font-size: 14px;" onclick="CartManager.updateQty('${item.id}', '${item.size}', 1); syncProfileCart();">+</button>
+                        <button style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; width: 32px; height: 32px; font-size: 13px; color: #ef4444; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" onclick="CartManager.removeItem('${item.id}', '${item.size}'); syncProfileCart();" title="Remove item">&times;</button>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9; padding-top: 10px;">
+                        <span style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase;">QUANTITY:</span>
+                        <div style="display: flex; align-items: center; border: 1px solid #cbd5e1; border-radius: 6px; overflow: hidden; background: #ffffff;">
+                            <button style="padding: 5px 12px; border: none; background: #f8fafc; cursor: pointer; font-weight: bold; font-size: 13px;" onclick="CartManager.updateQty('${item.id}', '${item.size}', -1); syncProfileCart();">-</button>
+                            <span style="padding: 5px 12px; font-size: 12px; font-weight: 700; color: #0f172a;">${item.qty}</span>
+                            <button style="padding: 5px 12px; border: none; background: #f8fafc; cursor: pointer; font-weight: bold; font-size: 13px;" onclick="CartManager.updateQty('${item.id}', '${item.size}', 1); syncProfileCart();">+</button>
                         </div>
-                        <div style="font-size: 15px; font-weight: 700; color: #111; min-width: 100px; text-align: right;">
-                            Rs. ${(item.price * item.qty).toFixed(2)}
-                        </div>
-                        <button style="background: #fff5f5; border: 1px solid #fecaca; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: #e74c3c; cursor: pointer; font-weight: 600;" onclick="CartManager.removeItem('${item.id}', '${item.size}'); syncProfileCart();" title="Remove item">
-                            🗑️ Delete
-                        </button>
                     </div>
                 </div>
             `).join('');
@@ -352,26 +351,75 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Expose sync functions globally
-    window.syncProfileWishlist = syncProfileWishlist;
-    window.syncProfileCart = syncProfileCart;
-    window.renderAddressCards = renderAddressCards;
-    window.showWishlistToast = showWishlistToast;
+    // Dynamic Profile User Manager
+    function getInitials(name) {
+        if (!name) return "A";
+        const parts = name.trim().split(" ");
+        if (parts.length >= 2) {
+            return (parts[0][0] + parts[1][0]).toUpperCase();
+        }
+        return parts[0].substring(0, 2).toUpperCase();
+    }
 
-    // Profile Form Save Feedback
+    function loadProfileData() {
+        const saved = localStorage.getItem("afeem_user_profile");
+        const profile = saved ? JSON.parse(saved) : {
+            name: "Rahul Sharma",
+            email: "vip.user@afeem.in",
+            phone: "+91 98765 43210"
+        };
+
+        const nameInput = document.getElementById("profile-input-name");
+        const emailInput = document.getElementById("profile-input-email");
+        const phoneInput = document.getElementById("profile-input-phone");
+        const displayName = document.getElementById("profile-display-name");
+        const displayEmail = document.getElementById("profile-display-email");
+        const avatarPreview = document.getElementById("profile-avatar-preview");
+
+        if (nameInput) nameInput.value = profile.name;
+        if (emailInput) emailInput.value = profile.email;
+        if (phoneInput) phoneInput.value = profile.phone;
+        if (displayName) displayName.textContent = profile.name;
+        if (displayEmail) displayEmail.textContent = profile.email;
+        if (avatarPreview && !avatarPreview.querySelector("img")) {
+            avatarPreview.textContent = getInitials(profile.name);
+        }
+    }
+
+    // Profile Form Save Feedback & Dynamic Update
     const profileForm = document.getElementById("personal-info-form");
     if (profileForm) {
         profileForm.addEventListener("submit", (e) => {
             e.preventDefault();
+            const newName = document.getElementById("profile-input-name").value.trim();
+            const newEmail = document.getElementById("profile-input-email").value.trim();
+            const newPhone = document.getElementById("profile-input-phone").value.trim();
+
+            const updatedProfile = { name: newName, email: newEmail, phone: newPhone };
+            localStorage.setItem("afeem_user_profile", JSON.stringify(updatedProfile));
+
+            // Update UI elements instantly
+            const displayName = document.getElementById("profile-display-name");
+            const displayEmail = document.getElementById("profile-display-email");
+            const avatarPreview = document.getElementById("profile-avatar-preview");
+
+            if (displayName) displayName.textContent = newName;
+            if (displayEmail) displayEmail.textContent = newEmail;
+            if (avatarPreview && !avatarPreview.querySelector("img")) {
+                avatarPreview.textContent = getInitials(newName);
+            }
+
             const toast = document.getElementById("profile-save-toast");
             if (toast) {
+                toast.textContent = `✓ Profile updated successfully! Hello, ${newName}`;
                 toast.style.display = "block";
-                setTimeout(() => toast.style.display = "none", 3000);
+                setTimeout(() => toast.style.display = "none", 3500);
             }
         });
     }
 
     // Initial Sync Execution
+    loadProfileData();
     syncProfileWishlist();
     syncProfileCart();
     renderAddressCards();

@@ -1327,12 +1327,95 @@ window.toggleReelModalSound = function() {
     }
 };
 
+function enableReelsHandDrag() {
+    const trackContainers = document.querySelectorAll('.reels-carousel-track-container');
+    trackContainers.forEach(container => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let autoScrollTimer = null;
+        let isUserInteracting = false;
+        let resumeTimeout = null;
+
+        // Smooth Auto-Move Loop
+        function autoMoveStep() {
+            if (!isUserInteracting && container) {
+                container.scrollLeft += 1.0; // 1.0px continuous smooth auto movement
+                if (container.scrollLeft >= (container.scrollWidth - container.clientWidth - 2)) {
+                    container.scrollLeft = 0; // Infinite loop reset
+                }
+            }
+            autoScrollTimer = requestAnimationFrame(autoMoveStep);
+        }
+
+        autoScrollTimer = requestAnimationFrame(autoMoveStep);
+
+        function onDragStart(e) {
+            isUserInteracting = true;
+            isDown = true;
+            container.classList.add('active-drag');
+            const pageX = e.touches ? e.touches[0].pageX : e.pageX;
+            startX = pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            if (resumeTimeout) clearTimeout(resumeTimeout);
+        }
+
+        function onDragEnd() {
+            isDown = false;
+            container.classList.remove('active-drag');
+            if (resumeTimeout) clearTimeout(resumeTimeout);
+            resumeTimeout = setTimeout(() => {
+                isUserInteracting = false;
+            }, 1800); // Resume auto movement after 1.8s idle
+        }
+
+        function onDragMove(e) {
+            if (!isDown) return;
+            isUserInteracting = true;
+            const pageX = e.touches ? e.touches[0].pageX : e.pageX;
+            const x = pageX - container.offsetLeft;
+            const walk = (x - startX) * 2.0;
+            container.scrollLeft = scrollLeft - walk;
+        }
+
+        // Mouse Listeners
+        container.addEventListener('mousedown', onDragStart);
+        container.addEventListener('mouseleave', onDragEnd);
+        container.addEventListener('mouseup', onDragEnd);
+        container.addEventListener('mousemove', onDragMove);
+
+        // Touch Hand Listeners
+        container.addEventListener('touchstart', onDragStart, { passive: true });
+        container.addEventListener('touchend', onDragEnd, { passive: true });
+        container.addEventListener('touchcancel', onDragEnd, { passive: true });
+        container.addEventListener('touchmove', onDragMove, { passive: true });
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     // Only initialize all-reels carousel on non-product pages (product.html handles its own Collection Range filtering)
     const isProductPage = window.location.pathname.includes("product.html") || !!document.getElementById("product-detail-container");
     if (!isProductPage) {
         initShoppableReelsCarousel();
     }
+    // Mobile Header Quick Actions Expand Bar Toggle
+    const mobileExpandBtn = document.getElementById("mobile-expand-trigger");
+    const headerActions = document.querySelector(".header-actions");
+
+    if (mobileExpandBtn && headerActions) {
+        mobileExpandBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            headerActions.classList.toggle("mobile-expand-active");
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!headerActions.contains(e.target)) {
+                headerActions.classList.remove("mobile-expand-active");
+            }
+        });
+    }
+
+    enableReelsHandDrag();
 });
 
 

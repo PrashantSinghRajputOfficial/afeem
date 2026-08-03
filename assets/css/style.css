@@ -2109,14 +2109,28 @@ h1, h2, h3, h4, h5, h6 {
    Product Detail 3-Column Luxury Layout
    ========================================================================== */
 .product-details-section {
-    padding: 12px 0 0;
-    margin-bottom: 0;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 12px 40px 0 !important;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+    .product-details-section {
+        padding: 12px 24px 0 !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product-details-section {
+        padding: 12px 16px 0 !important;
+    }
 }
 
 .product-three-col-layout {
     display: grid;
     grid-template-columns: 27% 45% 28%;
-    gap: 20px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -2430,6 +2444,265 @@ h1, h2, h3, h4, h5, h6 {
     color: #27ae60;
     margin-right: 6px;
     font-size: 10px;
+}
+
+/* ==========================================================================
+   Image 3 Wireframe: Top Horizontal Dropdown Filters Bar & 2-Col Layout
+   ========================================================================== */
+.top-horizontal-filters-section {
+    padding: 16px 0 24px;
+}
+
+.top-filters-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.filter-dropdown-wrapper {
+    position: relative;
+}
+
+.filter-dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-dropdown-btn:hover,
+.filter-dropdown-wrapper.open .filter-dropdown-btn {
+    background: #ffffff;
+    border-color: #2f889a;
+    color: #2f889a;
+    box-shadow: 0 2px 8px rgba(47, 136, 154, 0.15);
+}
+
+.filter-dropdown-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.filter-dropdown-wrapper.open .filter-dropdown-btn svg {
+    transform: rotate(180deg);
+}
+
+.filter-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    min-width: 240px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(15, 23, 42, 0.05);
+    z-index: 500;
+}
+
+.filter-dropdown-wrapper.open .filter-dropdown-menu {
+    display: block;
+    animation: dropdownPopIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownPopIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dropdown-header-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Size Popover Grid */
+.dropdown-menu-size-popover {
+    min-width: 260px;
+}
+
+.luxury-size-pills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.luxury-size-pill {
+    padding: 10px 14px !important;
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    color: #334155 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-align: center !important;
+}
+
+.luxury-size-pill:hover {
+    background: #ffffff !important;
+    border-color: #2f889a !important;
+    color: #2f889a !important;
+}
+
+.luxury-size-pill.active {
+    background: #0f172a !important;
+    border-color: #0f172a !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2) !important;
+}
+
+/* Checkbox & Scent List items in dropdown */
+.dropdown-menu-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dropdown-menu-options-list .custom-filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.dropdown-menu-options-list .custom-filter-checkbox:hover {
+    background: #f8fafc;
+    color: #2f889a;
+}
+
+.luxury-scent-list li {
+    padding: 8px 10px !important;
+    border-radius: 6px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    color: #334155 !important;
+    transition: all 0.15s ease !important;
+}
+
+.luxury-scent-list li:hover,
+.luxury-scent-list li.active {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+}
+
+.top-filters-right-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.reset-filters-btn {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-filters-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background: #fef2f2;
+}
+
+/* 2-Column Main Layout: Left Sidebar + Right Products Grid */
+.shop-main-2col-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+    align-items: start;
+    padding-bottom: 60px;
+}
+
+.shop-left-sidebar {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-category-title {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #0f172a;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid #2f889a;
+    margin-bottom: 14px;
+}
+
+.shop-left-sidebar .filter-link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.shop-left-sidebar .filter-pill-link {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.shop-left-sidebar .filter-pill-link:hover {
+    background: #f8fafc;
+    color: #2f889a;
+}
+
+.shop-left-sidebar .filter-pill-link.active {
+    background: #eef8f7;
+    color: #2f889a;
+    font-weight: 800;
+    border-left: 3px solid #2f889a;
 }
 
 /* Visitor counter ticker */
@@ -6104,15 +6377,29 @@ a[href^="mailto:support@afeem.in"] {
 
 .reels-carousel-track-container {
     width: 100%;
-    overflow: hidden;
-    padding: 10px 0 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 10px 16px 24px;
+    cursor: grab;
+}
+
+.reels-carousel-track-container::-webkit-scrollbar {
+    display: none;
+}
+
+.reels-carousel-track-container.active-drag {
+    cursor: grabbing;
+    user-select: none;
 }
 
 .reels-carousel-track {
     display: flex;
     gap: 20px;
     width: max-content;
-    animation: reelsMarquee 35s linear infinite;
     will-change: transform;
 }
 
